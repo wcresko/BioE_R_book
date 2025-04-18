@@ -1,0 +1,21 @@
+# R_basics
+
+## Math and assigning variables
+
+```{r}
+3+4
+
+y <- 3+4
+
+y
+
+y_log <- log(y)
+
+y_log
+```
+
+
+```{r}
+
+```
+

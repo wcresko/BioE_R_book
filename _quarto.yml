@@ -3,13 +3,14 @@ project:
   output-dir: docs
 
 book:
-  title: "BioE_Stat_Rscripts"
-  author: "Norah Jones"
+  title: "BioEngineering Statistics Computational Tools"
+  author: "Bill Cresko"
   date: "4/18/2025"
   chapters:
     - index.qmd
     - intro.qmd
     - R_basics.qmd
+    - Tidyverse.qmd
     - summary.qmd
     - references.qmd
 

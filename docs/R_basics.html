@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; R_basics – BioE_Stat_Rscripts</title>
+<title>2&nbsp; R basics – BioEngineering Statistics Computational Tools</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R_basics.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R_basics</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./R_basics.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R basics</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -130,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">BioE_Stat_Rscripts</a> 
+      <a href="./">BioEngineering Statistics Computational Tools</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -155,7 +155,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./R_basics.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R_basics</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R basics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -181,6 +181,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#math-and-assigning-variables" id="toc-math-and-assigning-variables" class="nav-link active" data-scroll-target="#math-and-assigning-variables"><span class="header-section-number">2.1</span> Math and assigning variables</a></li>
+  <li><a href="#why-use-r" id="toc-why-use-r" class="nav-link" data-scroll-target="#why-use-r"><span class="header-section-number">3</span> Why use <code>R</code>?</a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">3.1</span> </a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"><span class="header-section-number">3.2</span> </a></li>
+  <li><a href="#r-resources" id="toc-r-resources" class="nav-link" data-scroll-target="#r-resources"><span class="header-section-number">3.3</span> <code>R</code> resources</a></li>
+  <li><a href="#running-r" id="toc-running-r" class="nav-link" data-scroll-target="#running-r"><span class="header-section-number">3.4</span> Running <code>R</code></a></li>
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link" data-scroll-target="#rstudio"><span class="header-section-number">3.5</span> <code>RStudio</code></a></li>
+  <li><a href="#exercise-1.1---exploring-rstudio" id="toc-exercise-1.1---exploring-rstudio" class="nav-link" data-scroll-target="#exercise-1.1---exploring-rstudio"><span class="header-section-number">3.6</span> Exercise 1.1 - Exploring <code>RStudio</code></a></li>
+  </ul></li>
+  <li><a href="#introduction-to-rmarkdown" id="toc-introduction-to-rmarkdown" class="nav-link" data-scroll-target="#introduction-to-rmarkdown"><span class="header-section-number">4</span> Introduction to <code>RMarkdown</code></a>
+  <ul class="collapse">
+  <li><a href="#rmarkdown" id="toc-rmarkdown" class="nav-link" data-scroll-target="#rmarkdown"><span class="header-section-number">4.1</span> <code>RMarkdown</code></a></li>
+  <li><a href="#exercise-1.2---intro-to-rmarkdown-files" id="toc-exercise-1.2---intro-to-rmarkdown-files" class="nav-link" data-scroll-target="#exercise-1.2---intro-to-rmarkdown-files"><span class="header-section-number">4.2</span> Exercise 1.2 - Intro to <code>RMarkdown</code> Files</a></li>
+  </ul></li>
+  <li><a href="#basics-of-r" id="toc-basics-of-r" class="nav-link" data-scroll-target="#basics-of-r"><span class="header-section-number">5</span> BASICS of <code>R</code></a>
+  <ul class="collapse">
+  <li><a href="#basics-of-r-1" id="toc-basics-of-r-1" class="nav-link" data-scroll-target="#basics-of-r-1"><span class="header-section-number">5.1</span> BASICS of <code>R</code></a></li>
+  <li><a href="#basics-of-r-2" id="toc-basics-of-r-2" class="nav-link" data-scroll-target="#basics-of-r-2"><span class="header-section-number">5.2</span> BASICS of <code>R</code></a></li>
+  <li><a href="#assigning-variables" id="toc-assigning-variables" class="nav-link" data-scroll-target="#assigning-variables"><span class="header-section-number">5.3</span> Assigning Variables</a></li>
+  <li><a href="#assigning-variables-1" id="toc-assigning-variables-1" class="nav-link" data-scroll-target="#assigning-variables-1"><span class="header-section-number">5.4</span> Assigning Variables</a></li>
+  <li><a href="#arithmetic-operations-on-functions" id="toc-arithmetic-operations-on-functions" class="nav-link" data-scroll-target="#arithmetic-operations-on-functions"><span class="header-section-number">5.5</span> Arithmetic operations on functions</a></li>
+  <li><a href="#arithmetic-operations-on-functions-1" id="toc-arithmetic-operations-on-functions-1" class="nav-link" data-scroll-target="#arithmetic-operations-on-functions-1"><span class="header-section-number">5.6</span> Arithmetic operations on functions</a></li>
+  <li><a href="#arithmetic-operations-on-functions-2" id="toc-arithmetic-operations-on-functions-2" class="nav-link" data-scroll-target="#arithmetic-operations-on-functions-2"><span class="header-section-number">5.7</span> Arithmetic operations on functions</a></li>
+  <li><a href="#strings" id="toc-strings" class="nav-link" data-scroll-target="#strings"><span class="header-section-number">5.8</span> STRINGS</a></li>
+  <li><a href="#strings-1" id="toc-strings-1" class="nav-link" data-scroll-target="#strings-1"><span class="header-section-number">5.9</span> STRINGS</a></li>
+  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors"><span class="header-section-number">5.10</span> VECTORS</a></li>
+  <li><a href="#vectors-1" id="toc-vectors-1" class="nav-link" data-scroll-target="#vectors-1"><span class="header-section-number">5.11</span> VECTORS</a></li>
+  <li><a href="#factors" id="toc-factors" class="nav-link" data-scroll-target="#factors"><span class="header-section-number">5.12</span> FACTORS</a></li>
+  <li><a href="#factors-1" id="toc-factors-1" class="nav-link" data-scroll-target="#factors-1"><span class="header-section-number">5.13</span> FACTORS</a></li>
+  <li><a href="#factors-2" id="toc-factors-2" class="nav-link" data-scroll-target="#factors-2"><span class="header-section-number">5.14</span> FACTORS</a></li>
+  <li><a href="#types-or-classes-of-vectors-of-data" id="toc-types-or-classes-of-vectors-of-data" class="nav-link" data-scroll-target="#types-or-classes-of-vectors-of-data"><span class="header-section-number">5.15</span> Types or ‘classes’ of vectors of data</a></li>
+  <li><a href="#types-of-vectors-of-data" id="toc-types-of-vectors-of-data" class="nav-link" data-scroll-target="#types-of-vectors-of-data"><span class="header-section-number">5.16</span> Types of vectors of data</a></li>
+  <li><a href="#types-of-vectors-of-data-1" id="toc-types-of-vectors-of-data-1" class="nav-link" data-scroll-target="#types-of-vectors-of-data-1"><span class="header-section-number">5.17</span> Types of vectors of data</a></li>
+  <li><a href="#basic-statistics" id="toc-basic-statistics" class="nav-link" data-scroll-target="#basic-statistics"><span class="header-section-number">5.18</span> Basic Statistics</a></li>
+  <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help"><span class="header-section-number">5.19</span> Getting Help</a></li>
+  <li><a href="#getting-help-1" id="toc-getting-help-1" class="nav-link" data-scroll-target="#getting-help-1"><span class="header-section-number">5.20</span> Getting Help</a></li>
+  <li><a href="#creating-vectors" id="toc-creating-vectors" class="nav-link" data-scroll-target="#creating-vectors"><span class="header-section-number">5.21</span> Creating vectors</a></li>
+  <li><a href="#creating-vectors-1" id="toc-creating-vectors-1" class="nav-link" data-scroll-target="#creating-vectors-1"><span class="header-section-number">5.22</span> Creating vectors</a></li>
+  <li><a href="#creating-vectors-2" id="toc-creating-vectors-2" class="nav-link" data-scroll-target="#creating-vectors-2"><span class="header-section-number">5.23</span> Creating vectors</a></li>
+  <li><a href="#creating-vectors-3" id="toc-creating-vectors-3" class="nav-link" data-scroll-target="#creating-vectors-3"><span class="header-section-number">5.24</span> Creating vectors</a></li>
+  <li><a href="#creating-vectors-4" id="toc-creating-vectors-4" class="nav-link" data-scroll-target="#creating-vectors-4"><span class="header-section-number">5.25</span> Creating vectors</a></li>
+  <li><a href="#r-interlude" id="toc-r-interlude" class="nav-link" data-scroll-target="#r-interlude"><span class="header-section-number">5.26</span> R Interlude</a></li>
+  <li><a href="#drawing-samples-from-distributions" id="toc-drawing-samples-from-distributions" class="nav-link" data-scroll-target="#drawing-samples-from-distributions"><span class="header-section-number">5.27</span> Drawing samples from distributions</a></li>
+  <li><a href="#drawing-samples-from-distributions-1" id="toc-drawing-samples-from-distributions-1" class="nav-link" data-scroll-target="#drawing-samples-from-distributions-1"><span class="header-section-number">5.28</span> Drawing samples from distributions</a></li>
+  <li><a href="#drawing-samples-from-distributions-2" id="toc-drawing-samples-from-distributions-2" class="nav-link" data-scroll-target="#drawing-samples-from-distributions-2"><span class="header-section-number">5.29</span> Drawing samples from distributions</a></li>
+  <li><a href="#drawing-samples-from-distributions-3" id="toc-drawing-samples-from-distributions-3" class="nav-link" data-scroll-target="#drawing-samples-from-distributions-3"><span class="header-section-number">5.30</span> Drawing samples from distributions</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -189,7 +236,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R_basics</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R basics</span></h1>
 </div>
 
 
@@ -226,8 +273,614 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <pre><code>[1] 1.94591</code></pre>
 </div>
 </div>
+</section>
+<section id="why-use-r" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Why use <code>R</code>?</h1>
+<section id="section" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="section"><span class="header-section-number">3.1</span> </h2>
+<ul>
+<li>R is a <em>statistical</em> programming language (derived from S)</li>
+<li>Superb data management &amp; graphics capabilities</li>
+<li>You can write your own functions</li>
+<li>Powerful and flexible</li>
+<li>Runs on all computer platforms</li>
+<li>Well established system of packages and documentation</li>
+<li>Active development and dedicated community</li>
+<li>Can use a nice GUI front end such as <code>Rstudio</code></li>
+<li>Reproducibility
+<ul>
+<li>keep your scripts to see exactly what was done</li>
+<li>distribute these with your data</li>
+<li>embed your <code>R</code> analyses in polished <code>RMarkdown</code> files</li>
+</ul></li>
+<li>FREE</li>
+</ul>
+</section>
+<section id="section-1" class="level2 flexbox vcenter" data-number="3.2">
+<h2 class="flexbox vcenter anchored" data-number="3.2" data-anchor-id="section-1"><span class="header-section-number">3.2</span> </h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="images/volcano_plot.png" class="img-fluid figure-img" style="width:35.0%"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="images/rainbow_boxplot.png" class="img-fluid figure-img" style="width:35.0%"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="images/blob_plot.png" class="img-fluid figure-img" style="width:35.0%"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="images/Stacked_barplot.png" class="img-fluid figure-img" style="width:35.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="r-resources" class="level2 flexbox vcenter" data-number="3.3">
+<h2 class="flexbox vcenter anchored" data-number="3.3" data-anchor-id="r-resources"><span class="header-section-number">3.3</span> <code>R</code> resources</h2>
+<ul>
+<li>The R Project Homepage: http://www.r-project.org</li>
+<li>Quick R Homepage: http://www.statmethods.net</li>
+<li>Bioconductor: http://www.bioconductor.org<br>
+</li>
+<li>An Introduction to R (long!): http://cran.r-project.org/doc/manuals/R-intro.html</li>
+<li>R for Data Science: https://r4ds.had.co.nz</li>
+<li>Google - tutorials, guides, demos, packages and more</li>
+</ul>
+</section>
+<section id="running-r" class="level2 flexbox vcenter" data-number="3.4">
+<h2 class="flexbox vcenter anchored" data-number="3.4" data-anchor-id="running-r"><span class="header-section-number">3.4</span> Running <code>R</code></h2>
+<ul>
+<li>Need to make sure that you have <code>R</code> installed
+<ul>
+<li>locally or on a server</li>
+<li>https://www.r-project.org</li>
+</ul></li>
+<li>Run R from the command line
+<ul>
+<li>just type <code>R</code></li>
+<li>can run it locally as well as on clusters</li>
+</ul></li>
+<li>Install a R <em>Integrated Development Environment</em> (IDE)
+<ul>
+<li>RStudio: http://www.rstudio.com</li>
+<li>Makes working with R much easier, particularly for a new R user</li>
+<li>Run on Windows, Mac or Linux OS</li>
+<li>We’re running as a server on the AWS instances</li>
+</ul></li>
+</ul>
+</section>
+<section id="rstudio" class="level2 flexbox vcenter" data-number="3.5">
+<h2 class="flexbox vcenter anchored" data-number="3.5" data-anchor-id="rstudio"><span class="header-section-number">3.5</span> <code>RStudio</code></h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/RStudio_Screenshot.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:75.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-1.1---exploring-rstudio" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="exercise-1.1---exploring-rstudio"><span class="header-section-number">3.6</span> Exercise 1.1 - Exploring <code>RStudio</code></h2>
+<ul>
+<li>Open <code>RStudio</code> by adding <code>:8787</code> to your AMI url<br>
+</li>
+<li>Take a few minutes to familiarize yourself with the <code>Rstudio</code> environment by locating the following features:
+<ul>
+<li>See what types of new files can be made in <code>Rstudio</code> by clicking the top left icon- open a new R script.</li>
+<li>The windows clockwise from top left are: the code editor, the workspace and history, the plots and files window, and the R console.</li>
+<li>In the plots and files window, click on the packages and help tabs to see what they offer.</li>
+</ul></li>
+<li>Now open the file called <em>Exercises_for_R_Lectures.Rmd</em> in /workshop_materials/evomics_stat_2019/03.Exercises/
+<ul>
+<li>This file will serve as your digital notebook for parts of the workshop and contains the other exercises.</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="introduction-to-rmarkdown" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Introduction to <code>RMarkdown</code></h1>
+<section id="rmarkdown" class="level2 flexbox vcenter" data-number="4.1">
+<h2 class="flexbox vcenter anchored" data-number="4.1" data-anchor-id="rmarkdown"><span class="header-section-number">4.1</span> <code>RMarkdown</code></h2>
+<ul>
+<li>A great way to embed <code>R code</code> into descriptive files to keep your life organized
+<ul>
+<li>http://kbroman.org/knitr_knutshell/pages/Rmarkdown.html</li>
+<li>https://bookdown.org/yihui/rmarkdown/</li>
+<li>https://bookdown.org/yihui/bookdown/</li>
+</ul></li>
+<li>You can insert <code>R chunks</code> into <code>Rmarkdown</code> documents</li>
+<li>You will be doing more with markdown on Thursday</li>
+</ul>
+</section>
+<section id="exercise-1.2---intro-to-rmarkdown-files" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="exercise-1.2---intro-to-rmarkdown-files"><span class="header-section-number">4.2</span> Exercise 1.2 - Intro to <code>RMarkdown</code> Files</h2>
+<ul>
+<li>Take a few minutes to familiarize yourself with RMarkdown files by completing exercise 1.2 in your exercises document.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="basics-of-r" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> BASICS of <code>R</code></h1>
+<section id="basics-of-r-1" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="basics-of-r-1"><span class="header-section-number">5.1</span> BASICS of <code>R</code></h2>
+<ul>
+<li>Commands can be submitted through
+<ul>
+<li>terminal, console or scripts</li>
+<li>can be embedded as <code>code chunks</code> in RMarkdown</li>
+</ul></li>
+<li>On these slides evaluating code chunks and showing output
+<ul>
+<li>shown here after the two <code>#</code> symbols</li>
+<li>the number of output items is in <code>[]</code></li>
+</ul></li>
+<li><code>R</code> follows the normal priority of mathematical evaluation (PEDMAS)</li>
+</ul>
+</section>
+<section id="basics-of-r-2" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="basics-of-r-2"><span class="header-section-number">5.2</span> BASICS of <code>R</code></h2>
+<p>Input code chunk and then output</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">4</span><span class="sc">*</span><span class="dv">4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 16</code></pre>
+</div>
+</div>
+<p>Input code chunk and then output</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">4</span><span class="sc">+</span><span class="dv">3</span><span class="sc">*</span><span class="dv">2</span><span class="sc">^</span><span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 16</code></pre>
+</div>
+</div>
+</section>
+<section id="assigning-variables" class="level2 flexbox vcenter" data-number="5.3">
+<h2 class="flexbox vcenter anchored" data-number="5.3" data-anchor-id="assigning-variables"><span class="header-section-number">5.3</span> Assigning Variables</h2>
+<ul>
+<li>A better way to do this is to assign variables</li>
+<li>Variables are assigned values using the <code>&lt;-</code> operator.</li>
+<li>Variable names must begin with a letter, but other than that, just about anything goes.</li>
+<li>Do keep in mind that <code>R</code> is <strong>case sensitive</strong>.</li>
+</ul>
+</section>
+<section id="assigning-variables-1" class="level2 flexbox vcenter" data-number="5.4">
+<h2 class="flexbox vcenter anchored" data-number="5.4" data-anchor-id="assigning-variables-1"><span class="header-section-number">5.4</span> Assigning Variables</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>x<span class="sc">*</span><span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 6</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x <span class="sc">*</span> <span class="dv">3</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>y<span class="dv">-2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4</code></pre>
+</div>
+</div>
+<p>These do not work</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span>y <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span><span class="sc">*</span>y <span class="ot">&lt;-</span> <span class="dv">3</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="arithmetic-operations-on-functions" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="arithmetic-operations-on-functions"><span class="header-section-number">5.5</span> Arithmetic operations on functions</h2>
+<ul>
+<li>Arithmetic operations can be performed easily on functions as well as numbers.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">12</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>x<span class="sc">+</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 14</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>x<span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 144</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.484907</code></pre>
+</div>
+</div>
+</section>
+<section id="arithmetic-operations-on-functions-1" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="arithmetic-operations-on-functions-1"><span class="header-section-number">5.6</span> Arithmetic operations on functions</h2>
+<ul>
+<li>Note that the last of these - <code>log</code> - is a built in function of <code>R</code>, and therefore the object of the function needs to be put in parentheses</li>
+<li>These parentheses will be important, and we’ll come back to them later when we add arguments after the object in the parentheses<br>
+</li>
+<li>The outcome of calculations can be assigned to new variables as well, and the results can be checked using the <code>print</code> command</li>
+</ul>
+</section>
+<section id="arithmetic-operations-on-functions-2" class="level2 flexbox vcenter" data-number="5.7">
+<h2 class="flexbox vcenter anchored" data-number="5.7" data-anchor-id="arithmetic-operations-on-functions-2"><span class="header-section-number">5.7</span> Arithmetic operations on functions</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">67</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 67</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">124</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> (x<span class="sc">*</span>y)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 69022864</code></pre>
+</div>
+</div>
+</section>
+<section id="strings" class="level2 flexbox vcenter" data-number="5.8">
+<h2 class="flexbox vcenter anchored" data-number="5.8" data-anchor-id="strings"><span class="header-section-number">5.8</span> STRINGS</h2>
+<ul>
+<li>Operations can be performed on <em>character</em> variables as well</li>
+<li>Note that “characters” need to be set off by quotation marks to differentiate them from numbers</li>
+<li>The <code>c</code> stands for <code>concatenate</code></li>
+<li>Note that we are using the same variable names as we did previously, which means that we’re overwriting our previous assignment</li>
+<li>A good rule of thumb is to use new names for each variable, and make them short but still descriptive</li>
+</ul>
+</section>
+<section id="strings-1" class="level2 flexbox vcenter" data-number="5.9">
+<h2 class="flexbox vcenter anchored" data-number="5.9" data-anchor-id="strings-1"><span class="header-section-number">5.9</span> STRINGS</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="st">"I Love"</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span> (x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "I Love"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="st">"Biostatistics"</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span> (y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Biostatistics"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> <span class="fu">c</span>(x,y)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span> (z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "I Love"        "Biostatistics"</code></pre>
+</div>
+</div>
+</section>
+<section id="vectors" class="level2 flexbox vcenter" data-number="5.10">
+<h2 class="flexbox vcenter anchored" data-number="5.10" data-anchor-id="vectors"><span class="header-section-number">5.10</span> VECTORS</h2>
+<ul>
+<li>In general <code>R</code> thinks in terms of vectors
+<ul>
+<li>a list of characters, factors or numerical values (“I Love”)</li>
+<li>it will benefit any <code>R</code> user to try to write scripts with that in mind</li>
+<li>it will simplify most things</li>
+</ul></li>
+<li>Vectors can be assigned directly using the ‘c()’ function and then entering the exact values.</li>
+</ul>
+</section>
+<section id="vectors-1" class="level2 flexbox vcenter" data-number="5.11">
+<h2 class="flexbox vcenter anchored" data-number="5.11" data-anchor-id="vectors-1"><span class="header-section-number">5.11</span> VECTORS</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">10</span>,<span class="dv">8</span>,<span class="dv">9</span>)</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(n)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  2  3  4  2  1  2  4  5 10  8  9</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> n <span class="sc">+</span><span class="dv">3</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(z)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  5  6  7  5  4  5  7  8 13 11 12</code></pre>
+</div>
+</div>
+</section>
+<section id="factors" class="level2 flexbox vcenter" data-number="5.12">
+<h2 class="flexbox vcenter anchored" data-number="5.12" data-anchor-id="factors"><span class="header-section-number">5.12</span> FACTORS</h2>
+<ul>
+<li>The vector <code>x</code> is now what is called a list of character values (“I Love”).</li>
+<li>Sometimes we would like to treat the characters as if they were units for subsequent calculations.</li>
+<li>These are called <code>factors</code>, and we can redefine our character variables as factors.</li>
+<li>This might seem a bit strange, but it’s important for statistical analyses where we might want to see the mean or variance for two different treatments.</li>
+</ul>
+</section>
+<section id="factors-1" class="level2 flexbox vcenter" data-number="5.13">
+<h2 class="flexbox vcenter anchored" data-number="5.13" data-anchor-id="factors-1"><span class="header-section-number">5.13</span> FACTORS</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>x_factor <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(x)</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span> (x_factor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] I Love
+Levels: I Love</code></pre>
+</div>
+</div>
+<ul>
+<li>Note that factor levels are reported alphabetically</li>
+</ul>
+</section>
+<section id="factors-2" class="level2 flexbox vcenter" data-number="5.14">
+<h2 class="flexbox vcenter anchored" data-number="5.14" data-anchor-id="factors-2"><span class="header-section-number">5.14</span> FACTORS</h2>
+<ul>
+<li>We can also determine how <code>R</code> “sees” a variable using <code>str()</code> or <code>class()</code> functions.</li>
+<li>This is a useful check when importing datasets or verifying that you assigned a class correctly</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> chr "I Love"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+</div>
+</section>
+<section id="types-or-classes-of-vectors-of-data" class="level2 smaller" data-number="5.15">
+<h2 class="smaller anchored" data-number="5.15" data-anchor-id="types-or-classes-of-vectors-of-data"><span class="header-section-number">5.15</span> Types or ‘classes’ of vectors of data</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/week_3.014.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="types-of-vectors-of-data" class="level2" data-number="5.16">
+<h2 data-number="5.16" class="anchored" data-anchor-id="types-of-vectors-of-data"><span class="header-section-number">5.16</span> Types of vectors of data</h2>
+<ul>
+<li><p><code>int</code> stands for integers</p></li>
+<li><p><code>dbl</code> stands for doubles, or real numbers</p></li>
+<li><p><code>chr</code> stands for character vectors, or strings</p></li>
+<li><p><code>dttm</code> stands for date-times (a date + a time)</p></li>
+<li><p><code>lgl</code> stands for logical, vectors that contain only TRUE or FALSE</p></li>
+<li><p><code>fctr</code> stands for factors, which R uses to represent categorical variables with fixed possible values</p></li>
+<li><p><code>date</code> stands for dates</p></li>
+</ul>
+</section>
+<section id="types-of-vectors-of-data-1" class="level2 smaller" data-number="5.17">
+<h2 class="smaller anchored" data-number="5.17" data-anchor-id="types-of-vectors-of-data-1"><span class="header-section-number">5.17</span> Types of vectors of data</h2>
+<ul>
+<li>Logical vectors can take only three possible values:
+<ul>
+<li><code>FALSE</code></li>
+<li><code>TRUE</code></li>
+<li><code>NA</code> which is ‘not available’.</li>
+</ul></li>
+<li>Integer and double vectors are known collectively as numeric vectors.
+<ul>
+<li>In <code>R</code> numbers are doubles by default.</li>
+</ul></li>
+<li>Integers have one special value: NA, while doubles have four:
+<ul>
+<li><code>NA</code></li>
+<li><code>NaN</code> which is ‘not a number’</li>
+<li><code>Inf</code></li>
+<li><code>-Inf</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="basic-statistics" class="level2 flexbox vcenter" data-number="5.18">
+<h2 class="flexbox vcenter anchored" data-number="5.18" data-anchor-id="basic-statistics"><span class="header-section-number">5.18</span> Basic Statistics</h2>
+<p>Many functions exist to operate on vectors.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(n)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(n)</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(n)</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="fu">log</span>(n)</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(n)</span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(n)</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(n)</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(n)</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(n, <span class="at">replace =</span> T) <span class="co">#has an additional argument (replace=T)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Arguments modify or direct the function in some way
+<ul>
+<li>There are many arguments for each function, some of which are defaults</li>
+<li>Tab complete is helpful to view argument options</li>
+</ul></li>
+</ul>
+</section>
+<section id="getting-help" class="level2 flexbox vcenter" data-number="5.19">
+<h2 class="flexbox vcenter anchored" data-number="5.19" data-anchor-id="getting-help"><span class="header-section-number">5.19</span> Getting Help</h2>
+<ul>
+<li>Getting Help on any function is very easy - just type a question mark and the name of the function.</li>
+<li>There are functions for just about anything within <code>R</code> and it is easy enough to write your own functions if none already exist to do what you want to do.</li>
+<li>In general, function calls have a simple structure: a function name, a set of parentheses and an optional set of parameters/arguments to send to the function.</li>
+<li>Help pages exist for all functions that, at a minimum, explain what parameters exist for the function.</li>
+</ul>
+</section>
+<section id="getting-help-1" class="level2 flexbox vcenter" data-number="5.20">
+<h2 class="flexbox vcenter anchored" data-number="5.20" data-anchor-id="getting-help-1"><span class="header-section-number">5.20</span> Getting Help</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> <span class="fu">help</span>(mean)</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> ?mean</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> <span class="fu">example</span>(mean)</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> <span class="fu">help.search</span>(<span class="st">"mean"</span>)</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> <span class="fu">apropos</span>(<span class="st">"mean"</span>)</span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span> <span class="fu">args</span>(mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="creating-vectors" class="level2" data-number="5.21">
+<h2 data-number="5.21" class="anchored" data-anchor-id="creating-vectors"><span class="header-section-number">5.21</span> Creating vectors</h2>
+<ul>
+<li>Creating a vector of new data by entering it by hand can be a drag</li>
+<li>However, it is also very easy to use functions such as
+<ul>
+<li><code>seq</code></li>
+<li><code>sample</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="creating-vectors-1" class="level2" data-number="5.22">
+<h2 data-number="5.22" class="anchored" data-anchor-id="creating-vectors-1"><span class="header-section-number">5.22</span> Creating vectors</h2>
+<ul>
+<li>What do the arguments mean?</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>seq_1 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">0.0</span>, <span class="fl">10.0</span>, <span class="at">by =</span> <span class="fl">0.1</span>)</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(seq_1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1]  0.0  0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.0  1.1  1.2  1.3  1.4
+ [16]  1.5  1.6  1.7  1.8  1.9  2.0  2.1  2.2  2.3  2.4  2.5  2.6  2.7  2.8  2.9
+ [31]  3.0  3.1  3.2  3.3  3.4  3.5  3.6  3.7  3.8  3.9  4.0  4.1  4.2  4.3  4.4
+ [46]  4.5  4.6  4.7  4.8  4.9  5.0  5.1  5.2  5.3  5.4  5.5  5.6  5.7  5.8  5.9
+ [61]  6.0  6.1  6.2  6.3  6.4  6.5  6.6  6.7  6.8  6.9  7.0  7.1  7.2  7.3  7.4
+ [76]  7.5  7.6  7.7  7.8  7.9  8.0  8.1  8.2  8.3  8.4  8.5  8.6  8.7  8.8  8.9
+ [91]  9.0  9.1  9.2  9.3  9.4  9.5  9.6  9.7  9.8  9.9 10.0</code></pre>
+</div>
+</div>
+</section>
+<section id="creating-vectors-2" class="level2" data-number="5.23">
+<h2 data-number="5.23" class="anchored" data-anchor-id="creating-vectors-2"><span class="header-section-number">5.23</span> Creating vectors</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>seq_2 <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="fl">10.0</span>, <span class="fl">0.0</span>, <span class="at">by =</span> <span class="sc">-</span><span class="fl">0.1</span>)</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(seq_2)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] 10.0  9.9  9.8  9.7  9.6  9.5  9.4  9.3  9.2  9.1  9.0  8.9  8.8  8.7  8.6
+ [16]  8.5  8.4  8.3  8.2  8.1  8.0  7.9  7.8  7.7  7.6  7.5  7.4  7.3  7.2  7.1
+ [31]  7.0  6.9  6.8  6.7  6.6  6.5  6.4  6.3  6.2  6.1  6.0  5.9  5.8  5.7  5.6
+ [46]  5.5  5.4  5.3  5.2  5.1  5.0  4.9  4.8  4.7  4.6  4.5  4.4  4.3  4.2  4.1
+ [61]  4.0  3.9  3.8  3.7  3.6  3.5  3.4  3.3  3.2  3.1  3.0  2.9  2.8  2.7  2.6
+ [76]  2.5  2.4  2.3  2.2  2.1  2.0  1.9  1.8  1.7  1.6  1.5  1.4  1.3  1.2  1.1
+ [91]  1.0  0.9  0.8  0.7  0.6  0.5  0.4  0.3  0.2  0.1  0.0</code></pre>
+</div>
+</div>
+</section>
+<section id="creating-vectors-3" class="level2 smaller" data-number="5.24">
+<h2 class="smaller anchored" data-number="5.24" data-anchor-id="creating-vectors-3"><span class="header-section-number">5.24</span> Creating vectors</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>seq_square <span class="ot">&lt;-</span> (seq_2)<span class="sc">*</span>(seq_2)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(seq_square)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] 100.00  98.01  96.04  94.09  92.16  90.25  88.36  86.49  84.64  82.81
+ [11]  81.00  79.21  77.44  75.69  73.96  72.25  70.56  68.89  67.24  65.61
+ [21]  64.00  62.41  60.84  59.29  57.76  56.25  54.76  53.29  51.84  50.41
+ [31]  49.00  47.61  46.24  44.89  43.56  42.25  40.96  39.69  38.44  37.21
+ [41]  36.00  34.81  33.64  32.49  31.36  30.25  29.16  28.09  27.04  26.01
+ [51]  25.00  24.01  23.04  22.09  21.16  20.25  19.36  18.49  17.64  16.81
+ [61]  16.00  15.21  14.44  13.69  12.96  12.25  11.56  10.89  10.24   9.61
+ [71]   9.00   8.41   7.84   7.29   6.76   6.25   5.76   5.29   4.84   4.41
+ [81]   4.00   3.61   3.24   2.89   2.56   2.25   1.96   1.69   1.44   1.21
+ [91]   1.00   0.81   0.64   0.49   0.36   0.25   0.16   0.09   0.04   0.01
+[101]   0.00</code></pre>
+</div>
+</div>
+</section>
+<section id="creating-vectors-4" class="level2 smaller" data-number="5.25">
+<h2 class="smaller anchored" data-number="5.25" data-anchor-id="creating-vectors-4"><span class="header-section-number">5.25</span> Creating vectors</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>seq_square_new <span class="ot">&lt;-</span> (seq_2)<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(seq_square_new)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] 100.00  98.01  96.04  94.09  92.16  90.25  88.36  86.49  84.64  82.81
+ [11]  81.00  79.21  77.44  75.69  73.96  72.25  70.56  68.89  67.24  65.61
+ [21]  64.00  62.41  60.84  59.29  57.76  56.25  54.76  53.29  51.84  50.41
+ [31]  49.00  47.61  46.24  44.89  43.56  42.25  40.96  39.69  38.44  37.21
+ [41]  36.00  34.81  33.64  32.49  31.36  30.25  29.16  28.09  27.04  26.01
+ [51]  25.00  24.01  23.04  22.09  21.16  20.25  19.36  18.49  17.64  16.81
+ [61]  16.00  15.21  14.44  13.69  12.96  12.25  11.56  10.89  10.24   9.61
+ [71]   9.00   8.41   7.84   7.29   6.76   6.25   5.76   5.29   4.84   4.41
+ [81]   4.00   3.61   3.24   2.89   2.56   2.25   1.96   1.69   1.44   1.21
+ [91]   1.00   0.81   0.64   0.49   0.36   0.25   0.16   0.09   0.04   0.01
+[101]   0.00</code></pre>
+</div>
+</div>
+</section>
+<section id="r-interlude" class="level2" data-number="5.26">
+<h2 data-number="5.26" class="anchored" data-anchor-id="r-interlude"><span class="header-section-number">5.26</span> R Interlude</h2>
+<p>Complete Exercises 1.3-1.6</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Mr_Rog_and_cat.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="drawing-samples-from-distributions" class="level2 smaller" data-number="5.27">
+<h2 class="smaller anchored" data-number="5.27" data-anchor-id="drawing-samples-from-distributions"><span class="header-section-number">5.27</span> Drawing samples from distributions</h2>
+<ul>
+<li>Here is a way to create your own data sets that are random samples…</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span> (<span class="at">n =</span> <span class="dv">10000</span>, <span class="at">mean =</span> <span class="dv">0</span>, <span class="at">sd =</span> <span class="dv">10</span>)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">sample</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>, <span class="dv">10000</span>, <span class="at">replace =</span> T)</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>xy <span class="ot">&lt;-</span> <span class="fu">cbind</span>(x,y)</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(xy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="R_basics_files/figure-html/Samples from distributions 2-1.png" class="img-fluid figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="drawing-samples-from-distributions-1" class="level2 smaller" data-number="5.28">
+<h2 class="smaller anchored" data-number="5.28" data-anchor-id="drawing-samples-from-distributions-1"><span class="header-section-number">5.28</span> Drawing samples from distributions</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span> (<span class="dv">10000</span>, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">sample</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">10000</span>, <span class="dv">10000</span>, <span class="at">replace =</span> T)</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>xy <span class="ot">&lt;-</span> <span class="fu">cbind</span>(x,y)</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="R_basics_files/figure-html/Samples from distributions 3-1.png" class="img-fluid figure-img" style="width:50.0%"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="drawing-samples-from-distributions-2" class="level2 flexbox vcenter" data-number="5.29">
+<h2 class="flexbox vcenter anchored" data-number="5.29" data-anchor-id="drawing-samples-from-distributions-2"><span class="header-section-number">5.29</span> Drawing samples from distributions</h2>
+<ul>
+<li>You’ve probably figured out that y from the last example is drawing numbers with equal probability.</li>
+<li>What if you want to draw from a distribution?</li>
+<li>Again, play around with the arguments in the parentheses to see what happens.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span> (<span class="dv">10000</span>, <span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">sample</span> (???, <span class="dv">10000</span>, <span class="at">replace =</span> ???)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="drawing-samples-from-distributions-3" class="level2 flexbox vcenter" data-out.width="50%" data-number="5.30">
+<h2 class="flexbox vcenter anchored" data-out.width="50%" data-number="5.30" data-anchor-id="drawing-samples-from-distributions-3"><span class="header-section-number">5.30</span> Drawing samples from distributions</h2>
+<ul>
+<li><code>dnorm()</code> generates the probability density, which can be plotted using the <code>curve()</code> function.</li>
+<li>Note that is curve is added to the plot using <code>add=TRUE</code></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span><span class="fu">rnorm</span>(<span class="dv">1000</span>, <span class="dv">0</span>, <span class="dv">100</span>)</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(x, <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">500</span>,<span class="dv">500</span>))</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="dv">50000</span><span class="sc">*</span><span class="fu">dnorm</span>(x, <span class="dv">0</span>, <span class="dv">100</span>), <span class="at">xlim =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">500</span>,<span class="dv">500</span>), <span class="at">add=</span><span class="cn">TRUE</span>, <span class="at">col=</span><span class="st">'Red'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="R_basics_files/figure-html/unnamed-chunk-18-1.png" class="img-fluid figure-img" style="width:30.0%"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

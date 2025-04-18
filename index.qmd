@@ -1,9 +1,5 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+This is a Quarto book that contains helpful R and other scripting material for *BioE610 - Bioengineering Statistics* at the University of Oregon.
 
 To learn more about Quarto books visit <https://quarto.org/docs/books>.
-
-```{r}
-1 + 1
-```

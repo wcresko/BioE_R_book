@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "BioE_Stat_Rscripts",
+    "title": "BioEngineering Statistics Computational Tools",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "text": "Preface\nThis is a Quarto book that contains helpful R and other scripting material for BioE610 - Bioengineering Statistics at the University of Oregon.\nTo learn more about Quarto books visit https://quarto.org/docs/books.",
     "crumbs": [
       "Preface"
     ]
@@ -14,7 +14,7 @@
     "href": "intro.html",
     "title": "1  Introduction",
     "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "text": "This book contains a lot of R scripts, tips and tricks that will be useful for students in BioE610 - Bioengineering Statistics at the University of Oregon.\nThis is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
     ]
@@ -22,11 +22,11 @@
   {
     "objectID": "R_basics.html",
     "href": "R_basics.html",
-    "title": "2  R_basics",
+    "title": "2  R basics",
     "section": "",
     "text": "2.1 Math and assigning variables\n3+4\n\n[1] 7\n\ny &lt;- 3+4\n\ny\n\n[1] 7\n\ny_log &lt;- log(y)\n\ny_log\n\n[1] 1.94591",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R_basics</span>"
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
     ]
   },
   {
@@ -47,6 +47,856 @@
     "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
     "crumbs": [
       "References"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#section",
+    "href": "R_basics.html#section",
+    "title": "2  R basics",
+    "section": "3.1 ",
+    "text": "3.1 \n\nR is a statistical programming language (derived from S)\nSuperb data management & graphics capabilities\nYou can write your own functions\nPowerful and flexible\nRuns on all computer platforms\nWell established system of packages and documentation\nActive development and dedicated community\nCan use a nice GUI front end such as Rstudio\nReproducibility\n\nkeep your scripts to see exactly what was done\ndistribute these with your data\nembed your R analyses in polished RMarkdown files\n\nFREE",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#section-1",
+    "href": "R_basics.html#section-1",
+    "title": "2  R basics",
+    "section": "3.2 ",
+    "text": "3.2",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#r-resources",
+    "href": "R_basics.html#r-resources",
+    "title": "2  R basics",
+    "section": "3.3 R resources",
+    "text": "3.3 R resources\n\nThe R Project Homepage: http://www.r-project.org\nQuick R Homepage: http://www.statmethods.net\nBioconductor: http://www.bioconductor.org\n\nAn Introduction to R (long!): http://cran.r-project.org/doc/manuals/R-intro.html\nR for Data Science: https://r4ds.had.co.nz\nGoogle - tutorials, guides, demos, packages and more",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#running-r",
+    "href": "R_basics.html#running-r",
+    "title": "2  R basics",
+    "section": "3.4 Running R",
+    "text": "3.4 Running R\n\nNeed to make sure that you have R installed\n\nlocally or on a server\nhttps://www.r-project.org\n\nRun R from the command line\n\njust type R\ncan run it locally as well as on clusters\n\nInstall a R Integrated Development Environment (IDE)\n\nRStudio: http://www.rstudio.com\nMakes working with R much easier, particularly for a new R user\nRun on Windows, Mac or Linux OS\nWe’re running as a server on the AWS instances",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#rstudio",
+    "href": "R_basics.html#rstudio",
+    "title": "2  R basics",
+    "section": "3.5 RStudio",
+    "text": "3.5 RStudio",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#exercise-1.1---exploring-rstudio",
+    "href": "R_basics.html#exercise-1.1---exploring-rstudio",
+    "title": "2  R basics",
+    "section": "3.6 Exercise 1.1 - Exploring RStudio",
+    "text": "3.6 Exercise 1.1 - Exploring RStudio\n\nOpen RStudio by adding :8787 to your AMI url\n\nTake a few minutes to familiarize yourself with the Rstudio environment by locating the following features:\n\nSee what types of new files can be made in Rstudio by clicking the top left icon- open a new R script.\nThe windows clockwise from top left are: the code editor, the workspace and history, the plots and files window, and the R console.\nIn the plots and files window, click on the packages and help tabs to see what they offer.\n\nNow open the file called Exercises_for_R_Lectures.Rmd in /workshop_materials/evomics_stat_2019/03.Exercises/\n\nThis file will serve as your digital notebook for parts of the workshop and contains the other exercises.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#rmarkdown",
+    "href": "R_basics.html#rmarkdown",
+    "title": "2  R basics",
+    "section": "4.1 RMarkdown",
+    "text": "4.1 RMarkdown\n\nA great way to embed R code into descriptive files to keep your life organized\n\nhttp://kbroman.org/knitr_knutshell/pages/Rmarkdown.html\nhttps://bookdown.org/yihui/rmarkdown/\nhttps://bookdown.org/yihui/bookdown/\n\nYou can insert R chunks into Rmarkdown documents\nYou will be doing more with markdown on Thursday",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#exercise-1.2---intro-to-rmarkdown-files",
+    "href": "R_basics.html#exercise-1.2---intro-to-rmarkdown-files",
+    "title": "2  R basics",
+    "section": "4.2 Exercise 1.2 - Intro to RMarkdown Files",
+    "text": "4.2 Exercise 1.2 - Intro to RMarkdown Files\n\nTake a few minutes to familiarize yourself with RMarkdown files by completing exercise 1.2 in your exercises document.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#basics-of-r-1",
+    "href": "R_basics.html#basics-of-r-1",
+    "title": "2  R basics",
+    "section": "5.1 BASICS of R",
+    "text": "5.1 BASICS of R\n\nCommands can be submitted through\n\nterminal, console or scripts\ncan be embedded as code chunks in RMarkdown\n\nOn these slides evaluating code chunks and showing output\n\nshown here after the two # symbols\nthe number of output items is in []\n\nR follows the normal priority of mathematical evaluation (PEDMAS)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#basics-of-r-2",
+    "href": "R_basics.html#basics-of-r-2",
+    "title": "2  R basics",
+    "section": "5.2 BASICS of R",
+    "text": "5.2 BASICS of R\nInput code chunk and then output\n\n4*4\n\n[1] 16\n\n\nInput code chunk and then output\n\n(4+3*2^2)\n\n[1] 16",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#assigning-variables",
+    "href": "R_basics.html#assigning-variables",
+    "title": "2  R basics",
+    "section": "5.3 Assigning Variables",
+    "text": "5.3 Assigning Variables\n\nA better way to do this is to assign variables\nVariables are assigned values using the &lt;- operator.\nVariable names must begin with a letter, but other than that, just about anything goes.\nDo keep in mind that R is case sensitive.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#assigning-variables-1",
+    "href": "R_basics.html#assigning-variables-1",
+    "title": "2  R basics",
+    "section": "5.4 Assigning Variables",
+    "text": "5.4 Assigning Variables\n\nx &lt;- 2\nx*3\n\n[1] 6\n\ny &lt;- x * 3\ny-2\n\n[1] 4\n\n\nThese do not work\n\n3y &lt;- 3\n3*y &lt;- 3",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#arithmetic-operations-on-functions",
+    "href": "R_basics.html#arithmetic-operations-on-functions",
+    "title": "2  R basics",
+    "section": "5.5 Arithmetic operations on functions",
+    "text": "5.5 Arithmetic operations on functions\n\nArithmetic operations can be performed easily on functions as well as numbers.\n\n\nx &lt;- 12\nx+2\n\n[1] 14\n\nx^2\n\n[1] 144\n\nlog(x)\n\n[1] 2.484907",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#arithmetic-operations-on-functions-1",
+    "href": "R_basics.html#arithmetic-operations-on-functions-1",
+    "title": "2  R basics",
+    "section": "5.6 Arithmetic operations on functions",
+    "text": "5.6 Arithmetic operations on functions\n\nNote that the last of these - log - is a built in function of R, and therefore the object of the function needs to be put in parentheses\nThese parentheses will be important, and we’ll come back to them later when we add arguments after the object in the parentheses\n\nThe outcome of calculations can be assigned to new variables as well, and the results can be checked using the print command",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#arithmetic-operations-on-functions-2",
+    "href": "R_basics.html#arithmetic-operations-on-functions-2",
+    "title": "2  R basics",
+    "section": "5.7 Arithmetic operations on functions",
+    "text": "5.7 Arithmetic operations on functions\n\ny &lt;- 67\nprint(y)\n\n[1] 67\n\nx &lt;- 124\nz &lt;- (x*y)^2\nprint(z)\n\n[1] 69022864",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#strings",
+    "href": "R_basics.html#strings",
+    "title": "2  R basics",
+    "section": "5.8 STRINGS",
+    "text": "5.8 STRINGS\n\nOperations can be performed on character variables as well\nNote that “characters” need to be set off by quotation marks to differentiate them from numbers\nThe c stands for concatenate\nNote that we are using the same variable names as we did previously, which means that we’re overwriting our previous assignment\nA good rule of thumb is to use new names for each variable, and make them short but still descriptive",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#strings-1",
+    "href": "R_basics.html#strings-1",
+    "title": "2  R basics",
+    "section": "5.9 STRINGS",
+    "text": "5.9 STRINGS\n\nx &lt;- \"I Love\"\nprint (x)\n\n[1] \"I Love\"\n\ny &lt;- \"Biostatistics\"\nprint (y)\n\n[1] \"Biostatistics\"\n\nz &lt;- c(x,y)\nprint (z)\n\n[1] \"I Love\"        \"Biostatistics\"",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#vectors",
+    "href": "R_basics.html#vectors",
+    "title": "2  R basics",
+    "section": "5.10 VECTORS",
+    "text": "5.10 VECTORS\n\nIn general R thinks in terms of vectors\n\na list of characters, factors or numerical values (“I Love”)\nit will benefit any R user to try to write scripts with that in mind\nit will simplify most things\n\nVectors can be assigned directly using the ‘c()’ function and then entering the exact values.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#vectors-1",
+    "href": "R_basics.html#vectors-1",
+    "title": "2  R basics",
+    "section": "5.11 VECTORS",
+    "text": "5.11 VECTORS\n\nn &lt;- c(2,3,4,2,1,2,4,5,10,8,9)\nprint(n)\n\n [1]  2  3  4  2  1  2  4  5 10  8  9\n\n\n\nz &lt;- n +3\nprint(z)\n\n [1]  5  6  7  5  4  5  7  8 13 11 12",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#factors",
+    "href": "R_basics.html#factors",
+    "title": "2  R basics",
+    "section": "5.12 FACTORS",
+    "text": "5.12 FACTORS\n\nThe vector x is now what is called a list of character values (“I Love”).\nSometimes we would like to treat the characters as if they were units for subsequent calculations.\nThese are called factors, and we can redefine our character variables as factors.\nThis might seem a bit strange, but it’s important for statistical analyses where we might want to see the mean or variance for two different treatments.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#factors-1",
+    "href": "R_basics.html#factors-1",
+    "title": "2  R basics",
+    "section": "5.13 FACTORS",
+    "text": "5.13 FACTORS\n\nx_factor &lt;- as.factor(x)\nprint (x_factor)\n\n[1] I Love\nLevels: I Love\n\n\n\nNote that factor levels are reported alphabetically",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#factors-2",
+    "href": "R_basics.html#factors-2",
+    "title": "2  R basics",
+    "section": "5.14 FACTORS",
+    "text": "5.14 FACTORS\n\nWe can also determine how R “sees” a variable using str() or class() functions.\nThis is a useful check when importing datasets or verifying that you assigned a class correctly\n\n\nstr(x)\n\n chr \"I Love\"\n\nclass(x)\n\n[1] \"character\"",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#types-or-classes-of-vectors-of-data",
+    "href": "R_basics.html#types-or-classes-of-vectors-of-data",
+    "title": "2  R basics",
+    "section": "5.15 Types or ‘classes’ of vectors of data",
+    "text": "5.15 Types or ‘classes’ of vectors of data",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#types-of-vectors-of-data",
+    "href": "R_basics.html#types-of-vectors-of-data",
+    "title": "2  R basics",
+    "section": "5.16 Types of vectors of data",
+    "text": "5.16 Types of vectors of data\n\nint stands for integers\ndbl stands for doubles, or real numbers\nchr stands for character vectors, or strings\ndttm stands for date-times (a date + a time)\nlgl stands for logical, vectors that contain only TRUE or FALSE\nfctr stands for factors, which R uses to represent categorical variables with fixed possible values\ndate stands for dates",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#types-of-vectors-of-data-1",
+    "href": "R_basics.html#types-of-vectors-of-data-1",
+    "title": "2  R basics",
+    "section": "5.17 Types of vectors of data",
+    "text": "5.17 Types of vectors of data\n\nLogical vectors can take only three possible values:\n\nFALSE\nTRUE\nNA which is ‘not available’.\n\nInteger and double vectors are known collectively as numeric vectors.\n\nIn R numbers are doubles by default.\n\nIntegers have one special value: NA, while doubles have four:\n\nNA\nNaN which is ‘not a number’\nInf\n-Inf",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#basic-statistics",
+    "href": "R_basics.html#basic-statistics",
+    "title": "2  R basics",
+    "section": "5.18 Basic Statistics",
+    "text": "5.18 Basic Statistics\nMany functions exist to operate on vectors.\n\nmean(n)\nmedian(n)\nvar(n)\nlog(n)\nexp(n)\nsqrt(n)\nsum(n)\nlength(n)\nsample(n, replace = T) #has an additional argument (replace=T)\n\n\nArguments modify or direct the function in some way\n\nThere are many arguments for each function, some of which are defaults\nTab complete is helpful to view argument options",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#getting-help",
+    "href": "R_basics.html#getting-help",
+    "title": "2  R basics",
+    "section": "5.19 Getting Help",
+    "text": "5.19 Getting Help\n\nGetting Help on any function is very easy - just type a question mark and the name of the function.\nThere are functions for just about anything within R and it is easy enough to write your own functions if none already exist to do what you want to do.\nIn general, function calls have a simple structure: a function name, a set of parentheses and an optional set of parameters/arguments to send to the function.\nHelp pages exist for all functions that, at a minimum, explain what parameters exist for the function.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#getting-help-1",
+    "href": "R_basics.html#getting-help-1",
+    "title": "2  R basics",
+    "section": "5.20 Getting Help",
+    "text": "5.20 Getting Help\n\n- help(mean)\n- ?mean\n- example(mean)\n- help.search(\"mean\")\n- apropos(\"mean\")\n- args(mean)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#creating-vectors",
+    "href": "R_basics.html#creating-vectors",
+    "title": "2  R basics",
+    "section": "5.21 Creating vectors",
+    "text": "5.21 Creating vectors\n\nCreating a vector of new data by entering it by hand can be a drag\nHowever, it is also very easy to use functions such as\n\nseq\nsample",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#creating-vectors-1",
+    "href": "R_basics.html#creating-vectors-1",
+    "title": "2  R basics",
+    "section": "5.22 Creating vectors",
+    "text": "5.22 Creating vectors\n\nWhat do the arguments mean?\n\n\nseq_1 &lt;- seq(0.0, 10.0, by = 0.1)\nprint(seq_1)\n\n  [1]  0.0  0.1  0.2  0.3  0.4  0.5  0.6  0.7  0.8  0.9  1.0  1.1  1.2  1.3  1.4\n [16]  1.5  1.6  1.7  1.8  1.9  2.0  2.1  2.2  2.3  2.4  2.5  2.6  2.7  2.8  2.9\n [31]  3.0  3.1  3.2  3.3  3.4  3.5  3.6  3.7  3.8  3.9  4.0  4.1  4.2  4.3  4.4\n [46]  4.5  4.6  4.7  4.8  4.9  5.0  5.1  5.2  5.3  5.4  5.5  5.6  5.7  5.8  5.9\n [61]  6.0  6.1  6.2  6.3  6.4  6.5  6.6  6.7  6.8  6.9  7.0  7.1  7.2  7.3  7.4\n [76]  7.5  7.6  7.7  7.8  7.9  8.0  8.1  8.2  8.3  8.4  8.5  8.6  8.7  8.8  8.9\n [91]  9.0  9.1  9.2  9.3  9.4  9.5  9.6  9.7  9.8  9.9 10.0",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#creating-vectors-2",
+    "href": "R_basics.html#creating-vectors-2",
+    "title": "2  R basics",
+    "section": "5.23 Creating vectors",
+    "text": "5.23 Creating vectors\n\nseq_2 &lt;- seq(10.0, 0.0, by = -0.1)\nprint(seq_2)\n\n  [1] 10.0  9.9  9.8  9.7  9.6  9.5  9.4  9.3  9.2  9.1  9.0  8.9  8.8  8.7  8.6\n [16]  8.5  8.4  8.3  8.2  8.1  8.0  7.9  7.8  7.7  7.6  7.5  7.4  7.3  7.2  7.1\n [31]  7.0  6.9  6.8  6.7  6.6  6.5  6.4  6.3  6.2  6.1  6.0  5.9  5.8  5.7  5.6\n [46]  5.5  5.4  5.3  5.2  5.1  5.0  4.9  4.8  4.7  4.6  4.5  4.4  4.3  4.2  4.1\n [61]  4.0  3.9  3.8  3.7  3.6  3.5  3.4  3.3  3.2  3.1  3.0  2.9  2.8  2.7  2.6\n [76]  2.5  2.4  2.3  2.2  2.1  2.0  1.9  1.8  1.7  1.6  1.5  1.4  1.3  1.2  1.1\n [91]  1.0  0.9  0.8  0.7  0.6  0.5  0.4  0.3  0.2  0.1  0.0",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#creating-vectors-3",
+    "href": "R_basics.html#creating-vectors-3",
+    "title": "2  R basics",
+    "section": "5.24 Creating vectors",
+    "text": "5.24 Creating vectors\n\nseq_square &lt;- (seq_2)*(seq_2)\nprint(seq_square)\n\n  [1] 100.00  98.01  96.04  94.09  92.16  90.25  88.36  86.49  84.64  82.81\n [11]  81.00  79.21  77.44  75.69  73.96  72.25  70.56  68.89  67.24  65.61\n [21]  64.00  62.41  60.84  59.29  57.76  56.25  54.76  53.29  51.84  50.41\n [31]  49.00  47.61  46.24  44.89  43.56  42.25  40.96  39.69  38.44  37.21\n [41]  36.00  34.81  33.64  32.49  31.36  30.25  29.16  28.09  27.04  26.01\n [51]  25.00  24.01  23.04  22.09  21.16  20.25  19.36  18.49  17.64  16.81\n [61]  16.00  15.21  14.44  13.69  12.96  12.25  11.56  10.89  10.24   9.61\n [71]   9.00   8.41   7.84   7.29   6.76   6.25   5.76   5.29   4.84   4.41\n [81]   4.00   3.61   3.24   2.89   2.56   2.25   1.96   1.69   1.44   1.21\n [91]   1.00   0.81   0.64   0.49   0.36   0.25   0.16   0.09   0.04   0.01\n[101]   0.00",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#creating-vectors-4",
+    "href": "R_basics.html#creating-vectors-4",
+    "title": "2  R basics",
+    "section": "5.25 Creating vectors",
+    "text": "5.25 Creating vectors\n\nseq_square_new &lt;- (seq_2)^2\nprint(seq_square_new)\n\n  [1] 100.00  98.01  96.04  94.09  92.16  90.25  88.36  86.49  84.64  82.81\n [11]  81.00  79.21  77.44  75.69  73.96  72.25  70.56  68.89  67.24  65.61\n [21]  64.00  62.41  60.84  59.29  57.76  56.25  54.76  53.29  51.84  50.41\n [31]  49.00  47.61  46.24  44.89  43.56  42.25  40.96  39.69  38.44  37.21\n [41]  36.00  34.81  33.64  32.49  31.36  30.25  29.16  28.09  27.04  26.01\n [51]  25.00  24.01  23.04  22.09  21.16  20.25  19.36  18.49  17.64  16.81\n [61]  16.00  15.21  14.44  13.69  12.96  12.25  11.56  10.89  10.24   9.61\n [71]   9.00   8.41   7.84   7.29   6.76   6.25   5.76   5.29   4.84   4.41\n [81]   4.00   3.61   3.24   2.89   2.56   2.25   1.96   1.69   1.44   1.21\n [91]   1.00   0.81   0.64   0.49   0.36   0.25   0.16   0.09   0.04   0.01\n[101]   0.00",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#r-interlude",
+    "href": "R_basics.html#r-interlude",
+    "title": "2  R basics",
+    "section": "5.26 R Interlude",
+    "text": "5.26 R Interlude\nComplete Exercises 1.3-1.6",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#drawing-samples-from-distributions",
+    "href": "R_basics.html#drawing-samples-from-distributions",
+    "title": "2  R basics",
+    "section": "5.27 Drawing samples from distributions",
+    "text": "5.27 Drawing samples from distributions\n\nHere is a way to create your own data sets that are random samples…\n\n\nx &lt;- rnorm (n = 10000, mean = 0, sd = 10)\ny &lt;- sample (1:10000, 10000, replace = T)\nxy &lt;- cbind(x,y)\nplot(xy)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#drawing-samples-from-distributions-1",
+    "href": "R_basics.html#drawing-samples-from-distributions-1",
+    "title": "2  R basics",
+    "section": "5.28 Drawing samples from distributions",
+    "text": "5.28 Drawing samples from distributions\n\nx &lt;- rnorm (10000, 0, 10)\ny &lt;- sample (1:10000, 10000, replace = T)\nxy &lt;- cbind(x,y)\nhist(x)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#drawing-samples-from-distributions-2",
+    "href": "R_basics.html#drawing-samples-from-distributions-2",
+    "title": "2  R basics",
+    "section": "5.29 Drawing samples from distributions",
+    "text": "5.29 Drawing samples from distributions\n\nYou’ve probably figured out that y from the last example is drawing numbers with equal probability.\nWhat if you want to draw from a distribution?\nAgain, play around with the arguments in the parentheses to see what happens.\n\n\nx &lt;- rnorm (10000, 0, 10)\ny &lt;- sample (???, 10000, replace = ???)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "R_basics.html#drawing-samples-from-distributions-3",
+    "href": "R_basics.html#drawing-samples-from-distributions-3",
+    "title": "2  R basics",
+    "section": "5.30 Drawing samples from distributions",
+    "text": "5.30 Drawing samples from distributions\n\ndnorm() generates the probability density, which can be plotted using the curve() function.\nNote that is curve is added to the plot using add=TRUE\n\n\nx &lt;-rnorm(1000, 0, 100)\nhist(x, xlim = c(-500,500))\ncurve(50000*dnorm(x, 0, 100), xlim = c(-500,500), add=TRUE, col='Red')",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>R basics</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html",
+    "href": "Tidyverse.html",
+    "title": "3  Tidyverse",
+    "section": "",
+    "text": "3.1 The tidyverse\nA collection of packages particularly helpful for working with tables.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#the-tidyverse",
+    "href": "Tidyverse.html#the-tidyverse",
+    "title": "3  Tidyverse",
+    "section": "",
+    "text": "dplyr - manipulating data frames\nggplot2 - data visualization\nreadr - importing data\nstringr - string manipulation\nlubridate - dates and times\npurrr package for working with functions",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#the-tidyverse-1",
+    "href": "Tidyverse.html#the-tidyverse-1",
+    "title": "3  Tidyverse",
+    "section": "3.2 The tidyverse",
+    "text": "3.2 The tidyverse\nLoad the main packages like this:\n\nlibrary(tidyverse)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#tidy-data",
+    "href": "Tidyverse.html#tidy-data",
+    "title": "3  Tidyverse",
+    "section": "3.3 Tidy data",
+    "text": "3.3 Tidy data\n\nEach row represents one observation\nColumns represent the different variables",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#tidy-data-1",
+    "href": "Tidyverse.html#tidy-data-1",
+    "title": "3  Tidyverse",
+    "section": "3.4 Tidy data",
+    "text": "3.4 Tidy data\nThe murders dataset is an example of a tidy data frame.\n\nlibrary(dslabs)\ndata(murders)\nhead(murders)\n\n       state abb region population total\n1    Alabama  AL  South    4779736   135\n2     Alaska  AK   West     710231    19\n3    Arizona  AZ   West    6392017   232\n4   Arkansas  AR  South    2915918    93\n5 California  CA   West   37253956  1257\n6   Colorado  CO   West    5029196    65",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#wide-data",
+    "href": "Tidyverse.html#wide-data",
+    "title": "3  Tidyverse",
+    "section": "3.5 Wide data",
+    "text": "3.5 Wide data\nThis is not tidy:\n\n\n      country 1960 1961 1962 1963 1964 1965\n1     Germany 2.41 2.44 2.47 2.49 2.49 2.48\n2 South Korea 6.16 5.99 5.79 5.57 5.36 5.16\n\n\nLater we learn how to wrangle into tidy format.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#tidy-data-2",
+    "href": "Tidyverse.html#tidy-data-2",
+    "title": "3  Tidyverse",
+    "section": "3.6 Tidy data",
+    "text": "3.6 Tidy data\nSame information in tidy format.\n\n\n       country year fertility\n1      Germany 1960      2.41\n2  South Korea 1960      6.16\n3      Germany 1961      2.44\n4  South Korea 1961      5.99\n5      Germany 1962      2.47\n6  South Korea 1962      5.79\n7      Germany 1963      2.49\n8  South Korea 1963      5.57\n9      Germany 1964      2.49\n10 South Korea 1964      5.36\n11     Germany 1965      2.48\n12 South Korea 1965      5.16",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#manipulating-data-frames-with-dplyr",
+    "href": "Tidyverse.html#manipulating-data-frames-with-dplyr",
+    "title": "3  Tidyverse",
+    "section": "3.7 Manipulating data frames with dplyr",
+    "text": "3.7 Manipulating data frames with dplyr\n\nmutate - change or add columns\n\nfilter- filter rows based on a rule\nselect - Subset the data by selecting specific columns",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#adding-a-column-with-mutate",
+    "href": "Tidyverse.html#adding-a-column-with-mutate",
+    "title": "3  Tidyverse",
+    "section": "3.8 Adding a column with mutate",
+    "text": "3.8 Adding a column with mutate\n\ndata(\"murders\")\nmurders &lt;- mutate(murders, rate = total / population * 100000)\n\nNotice that here we used total and population inside the function, which are objects that are not defined in our workspace.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#adding-a-column-with-mutate-1",
+    "href": "Tidyverse.html#adding-a-column-with-mutate-1",
+    "title": "3  Tidyverse",
+    "section": "3.9 Adding a column with mutate",
+    "text": "3.9 Adding a column with mutate\nWe can see the new column now\n\nhead(murders)\n\n       state abb region population total     rate\n1    Alabama  AL  South    4779736   135 2.824424\n2     Alaska  AK   West     710231    19 2.675186\n3    Arizona  AZ   West    6392017   232 3.629527\n4   Arkansas  AR  South    2915918    93 3.189390\n5 California  CA   West   37253956  1257 3.374138\n6   Colorado  CO   West    5029196    65 1.292453",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#subsetting-with-filter",
+    "href": "Tidyverse.html#subsetting-with-filter",
+    "title": "3  Tidyverse",
+    "section": "3.10 Subsetting with filter",
+    "text": "3.10 Subsetting with filter\n\nfilter(murders, rate &lt;= 0.71)\n\n          state abb        region population total      rate\n1        Hawaii  HI          West    1360301     7 0.5145920\n2          Iowa  IA North Central    3046355    21 0.6893484\n3 New Hampshire  NH     Northeast    1316470     5 0.3798036\n4  North Dakota  ND North Central     672591     4 0.5947151\n5       Vermont  VT     Northeast     625741     2 0.3196211",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#selecting-columns-with-select",
+    "href": "Tidyverse.html#selecting-columns-with-select",
+    "title": "3  Tidyverse",
+    "section": "3.11 Selecting columns with select",
+    "text": "3.11 Selecting columns with select\n\nnew_table &lt;- select(murders, state, region, rate)\nfilter(new_table, rate &lt;= 0.71)\n\n          state        region      rate\n1        Hawaii          West 0.5145920\n2          Iowa North Central 0.6893484\n3 New Hampshire     Northeast 0.3798036\n4  North Dakota North Central 0.5947151\n5       Vermont     Northeast 0.3196211",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#the-pipe",
+    "href": "Tidyverse.html#the-pipe",
+    "title": "3  Tidyverse",
+    "section": "3.12 The pipe: %>%",
+    "text": "3.12 The pipe: %&gt;%\n\\[ \\mbox{original data }\n\\rightarrow \\mbox{ select }\n\\rightarrow \\mbox{ filter } \\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#the-pipe-1",
+    "href": "Tidyverse.html#the-pipe-1",
+    "title": "3  Tidyverse",
+    "section": "3.13 The pipe: %>%",
+    "text": "3.13 The pipe: %&gt;%\nWhen using the pipe, functions take left hand side as first argumemt:\n\nmurders %&gt;% select(state, region, rate) %&gt;% filter(rate &lt;= 0.71)\n\n          state        region      rate\n1        Hawaii          West 0.5145920\n2          Iowa North Central 0.6893484\n3 New Hampshire     Northeast 0.3798036\n4  North Dakota North Central 0.5947151\n5       Vermont     Northeast 0.3196211",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#more-pipe-example",
+    "href": "Tidyverse.html#more-pipe-example",
+    "title": "3  Tidyverse",
+    "section": "3.14 More pipe example",
+    "text": "3.14 More pipe example\n\nsqrt(16)\n\n[1] 4\n\n16 %&gt;% sqrt()\n\n[1] 4\n\n\n\nlog2(sqrt(16))\n\n[1] 2\n\n16 %&gt;% sqrt() %&gt;% log2()\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#example-use-arguments-with-pipe",
+    "href": "Tidyverse.html#example-use-arguments-with-pipe",
+    "title": "3  Tidyverse",
+    "section": "3.15 Example: Use arguments with pipe",
+    "text": "3.15 Example: Use arguments with pipe\n\n16 %&gt;% sqrt() %&gt;% log(base = 2)\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#pipe-example",
+    "href": "Tidyverse.html#pipe-example",
+    "title": "3  Tidyverse",
+    "section": "3.16 Pipe example",
+    "text": "3.16 Pipe example\n\nmurders %&gt;% \n  select(state, region, rate) %&gt;% \n  filter(rate &lt;= 0.71)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#summarizing-data",
+    "href": "Tidyverse.html#summarizing-data",
+    "title": "3  Tidyverse",
+    "section": "3.17 Summarizing data",
+    "text": "3.17 Summarizing data\nSummarizing variables is very common operation.\nAverage female heights:\n\ndata(heights)\ns &lt;- heights %&gt;% \n  filter(sex == \"Female\") %&gt;%\n  summarize(average = mean(height))",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#tidyverse-always-returns-tables",
+    "href": "Tidyverse.html#tidyverse-always-returns-tables",
+    "title": "3  Tidyverse",
+    "section": "3.18 Tidyverse always returns tables",
+    "text": "3.18 Tidyverse always returns tables\n\ns$average\n\n[1] 64.93942",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#summarizing-data-1",
+    "href": "Tidyverse.html#summarizing-data-1",
+    "title": "3  Tidyverse",
+    "section": "3.19 Summarizing data",
+    "text": "3.19 Summarizing data\nYou can compute more than one summary\n\ndata(heights)\nheights %&gt;% \n  filter(sex == \"Female\") %&gt;%\n  summarize(median = median(height), \n            q25 = quantile(height, .25),\n            q75 = quantile(height, .75))\n\n    median q25 q75\n1 64.98031  63  67",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#summarize-only-wors-with-one-variable-summaries",
+    "href": "Tidyverse.html#summarize-only-wors-with-one-variable-summaries",
+    "title": "3  Tidyverse",
+    "section": "3.20 Summarize only wors with one variable summaries",
+    "text": "3.20 Summarize only wors with one variable summaries\nYou can compute more than one summary\n\ndata(heights)\nheights %&gt;% \n  filter(sex == \"Female\") %&gt;%\n  summarize(qs = quantile(height, c(1,2,3) / 4))\n\nError in summarise_impl(.data, dots) : \n  Column `qs` must be length 1 (a summary value), not 3",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#pull",
+    "href": "Tidyverse.html#pull",
+    "title": "3  Tidyverse",
+    "section": "3.21 pull",
+    "text": "3.21 pull\nThe us_murder_rate object defined above represents just one number. Yet we are storing it in a data frame:\n\ns &lt;- heights %&gt;% \n  filter(sex == \"Female\") %&gt;%\n  summarize(average = mean(height))\nclass(s)\n\n[1] \"data.frame\"",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#pull-1",
+    "href": "Tidyverse.html#pull-1",
+    "title": "3  Tidyverse",
+    "section": "3.22 pull",
+    "text": "3.22 pull\n\ns %&gt;% pull(average)\n\n[1] 64.93942",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#group-then-summarize",
+    "href": "Tidyverse.html#group-then-summarize",
+    "title": "3  Tidyverse",
+    "section": "3.23 Group then summarize",
+    "text": "3.23 Group then summarize\n\nheights %&gt;% group_by(sex)\n\n# A tibble: 1,050 × 2\n# Groups:   sex [2]\n   sex    height\n   &lt;fct&gt;   &lt;dbl&gt;\n 1 Male       75\n 2 Male       70\n 3 Male       68\n 4 Male       74\n 5 Male       61\n 6 Female     65\n 7 Female     66\n 8 Female     62\n 9 Female     66\n10 Male       67\n# ℹ 1,040 more rows\n\n\n\nThe result does not look very different from heights, except we see Groups: sex [2] when we print the object.\nAlthough not immediately obvious from its appearance, this is now a special data frame called a grouped data frame",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#group-then-summarize-1",
+    "href": "Tidyverse.html#group-then-summarize-1",
+    "title": "3  Tidyverse",
+    "section": "3.24 Group then summarize",
+    "text": "3.24 Group then summarize\n\nheights %&gt;% \n  group_by(sex) %&gt;%\n  summarize(average = mean(height), sd = sd(height))\n\n# A tibble: 2 × 3\n  sex    average    sd\n  &lt;fct&gt;    &lt;dbl&gt; &lt;dbl&gt;\n1 Female    64.9  3.76\n2 Male      69.3  3.61",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#the-dot-operator",
+    "href": "Tidyverse.html#the-dot-operator",
+    "title": "3  Tidyverse",
+    "section": "3.25 The dot operator",
+    "text": "3.25 The dot operator\n\nWhen using the pipe, the object being passed by the expression on the left side of the pipe can be accessed via .\nHere is an example that is equivalent to pull:\n\n\ns %&gt;% .$average\n\n[1] 64.93942",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#do",
+    "href": "Tidyverse.html#do",
+    "title": "3  Tidyverse",
+    "section": "3.26 do",
+    "text": "3.26 do\n\nWe saw that summarize does not permit the use of functions that return more than one scaler\nOne way to apply such function is with do\nThink of do as a connection between R base and the tidyverse.\nGeneral idea, write a function that returns what you want in a data frame, then call it with do.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#do-1",
+    "href": "Tidyverse.html#do-1",
+    "title": "3  Tidyverse",
+    "section": "3.27 do",
+    "text": "3.27 do\n\nqs &lt;- function(x){\n  res &lt;- quantile(x,  c(1,2,3) / 4)\n  data_frame(q25 = res[1], median = res[2],  q75 = res[3])\n}\nheights %&gt;% \n  group_by(sex) %&gt;%\n  do(qs(.$height))\n\nWarning: `data_frame()` was deprecated in tibble 1.1.0.\nℹ Please use `tibble()` instead.\n\n\n# A tibble: 2 × 4\n# Groups:   sex [2]\n  sex      q25 median   q75\n  &lt;fct&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;\n1 Female    63   65.0    67\n2 Male      67   69      72",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#sorting-data-frames",
+    "href": "Tidyverse.html#sorting-data-frames",
+    "title": "3  Tidyverse",
+    "section": "3.28 Sorting data frames",
+    "text": "3.28 Sorting data frames\n\nmurders %&gt;%\n  arrange(population) %&gt;%\n  head()\n\n                 state abb        region population total       rate\n1              Wyoming  WY          West     563626     5  0.8871131\n2 District of Columbia  DC         South     601723    99 16.4527532\n3              Vermont  VT     Northeast     625741     2  0.3196211\n4         North Dakota  ND North Central     672591     4  0.5947151\n5               Alaska  AK          West     710231    19  2.6751860\n6         South Dakota  SD North Central     814180     8  0.9825837",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#sorting-data-frames-1",
+    "href": "Tidyverse.html#sorting-data-frames-1",
+    "title": "3  Tidyverse",
+    "section": "3.29 Sorting data frames",
+    "text": "3.29 Sorting data frames\n\nmurders %&gt;% \n  arrange(rate) %&gt;% \n  head()\n\n          state abb        region population total      rate\n1       Vermont  VT     Northeast     625741     2 0.3196211\n2 New Hampshire  NH     Northeast    1316470     5 0.3798036\n3        Hawaii  HI          West    1360301     7 0.5145920\n4  North Dakota  ND North Central     672591     4 0.5947151\n5          Iowa  IA North Central    3046355    21 0.6893484\n6         Idaho  ID          West    1567582    12 0.7655102",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#sorting-data-frames-2",
+    "href": "Tidyverse.html#sorting-data-frames-2",
+    "title": "3  Tidyverse",
+    "section": "3.30 Sorting data frames",
+    "text": "3.30 Sorting data frames\n\nmurders %&gt;% \n  arrange(desc(rate)) %&gt;% \n  head()\n\n                 state abb        region population total      rate\n1 District of Columbia  DC         South     601723    99 16.452753\n2            Louisiana  LA         South    4533372   351  7.742581\n3             Missouri  MO North Central    5988927   321  5.359892\n4             Maryland  MD         South    5773552   293  5.074866\n5       South Carolina  SC         South    4625364   207  4.475323\n6             Delaware  DE         South     897934    38  4.231937",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#nested-sorting",
+    "href": "Tidyverse.html#nested-sorting",
+    "title": "3  Tidyverse",
+    "section": "3.31 Nested sorting",
+    "text": "3.31 Nested sorting\n\nmurders %&gt;% \n  arrange(region, rate) %&gt;% \n  head()\n\n          state abb    region population total      rate\n1       Vermont  VT Northeast     625741     2 0.3196211\n2 New Hampshire  NH Northeast    1316470     5 0.3798036\n3         Maine  ME Northeast    1328361    11 0.8280881\n4  Rhode Island  RI Northeast    1052567    16 1.5200933\n5 Massachusetts  MA Northeast    6547629   118 1.8021791\n6      New York  NY Northeast   19378102   517 2.6679599",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#the-top-n",
+    "href": "Tidyverse.html#the-top-n",
+    "title": "3  Tidyverse",
+    "section": "3.32 The top \\(n\\)",
+    "text": "3.32 The top \\(n\\)\n\nmurders %&gt;% top_n(10, rate)\n\n                  state abb        region population total      rate\n1               Arizona  AZ          West    6392017   232  3.629527\n2              Delaware  DE         South     897934    38  4.231937\n3  District of Columbia  DC         South     601723    99 16.452753\n4               Georgia  GA         South    9920000   376  3.790323\n5             Louisiana  LA         South    4533372   351  7.742581\n6              Maryland  MD         South    5773552   293  5.074866\n7              Michigan  MI North Central    9883640   413  4.178622\n8           Mississippi  MS         South    2967297   120  4.044085\n9              Missouri  MO North Central    5988927   321  5.359892\n10       South Carolina  SC         South    4625364   207  4.475323",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#tibbles",
+    "href": "Tidyverse.html#tibbles",
+    "title": "3  Tidyverse",
+    "section": "3.33 Tibbles",
+    "text": "3.33 Tibbles\n\ndata(murders)\nclass(murders)\n\n[1] \"data.frame\"\n\n\n\nRemember group_by permits stratifying data before computing summary statistics.\nBut where is the group information stored in the data frame?",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#tibbles-1",
+    "href": "Tidyverse.html#tibbles-1",
+    "title": "3  Tidyverse",
+    "section": "3.34 Tibbles",
+    "text": "3.34 Tibbles\n\nmurders %&gt;% group_by(region) %&gt;% head()\n\n# A tibble: 6 × 5\n# Groups:   region [2]\n  state      abb   region population total\n  &lt;chr&gt;      &lt;chr&gt; &lt;fct&gt;       &lt;dbl&gt; &lt;dbl&gt;\n1 Alabama    AL    South     4779736   135\n2 Alaska     AK    West       710231    19\n3 Arizona    AZ    West      6392017   232\n4 Arkansas   AR    South     2915918    93\n5 California CA    West     37253956  1257\n6 Colorado   CO    West      5029196    65",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#tibbles-2",
+    "href": "Tidyverse.html#tibbles-2",
+    "title": "3  Tidyverse",
+    "section": "3.35 Tibbles",
+    "text": "3.35 Tibbles\n\nmurders %&gt;% group_by(region) %&gt;% class()\n\n[1] \"grouped_df\" \"tbl_df\"     \"tbl\"        \"data.frame\"",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#tibles-versus-data-frames",
+    "href": "Tidyverse.html#tibles-versus-data-frames",
+    "title": "3  Tidyverse",
+    "section": "3.36 Tibles versus data frames",
+    "text": "3.36 Tibles versus data frames\n\nTibbles display better\nSubsets of tibbles are tibbles\n\n\nclass(murders[,4])\n\n[1] \"numeric\"\n\nclass(as_tibble(murders)[,4])\n\n[1] \"tbl_df\"     \"tbl\"        \"data.frame\"",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#tibles-versus-data-frames-1",
+    "href": "Tidyverse.html#tibles-versus-data-frames-1",
+    "title": "3  Tidyverse",
+    "section": "3.37 Tibles versus data frames",
+    "text": "3.37 Tibles versus data frames\n\nmurders$Population\n\nNULL\n\nas_tibble(murders)$Population\n\nWarning: Unknown or uninitialised column: `Population`.\n\n\nNULL",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#tibles-versus-data-frames-2",
+    "href": "Tidyverse.html#tibles-versus-data-frames-2",
+    "title": "3  Tidyverse",
+    "section": "3.38 Tibles versus data frames",
+    "text": "3.38 Tibles versus data frames\n\nTibbles can have complex entries\n\n\ntibble(id = c(1, 2, 3), func = c(mean, median, sd))\n\n# A tibble: 3 × 2\n     id func  \n  &lt;dbl&gt; &lt;list&gt;\n1     1 &lt;fn&gt;  \n2     2 &lt;fn&gt;  \n3     3 &lt;fn&gt;",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#tibles-versus-data-frames-3",
+    "href": "Tidyverse.html#tibles-versus-data-frames-3",
+    "title": "3  Tidyverse",
+    "section": "3.39 Tibles versus data frames",
+    "text": "3.39 Tibles versus data frames\n\nTibbles can be grouped",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#create-a-tibble-using-data_frame",
+    "href": "Tidyverse.html#create-a-tibble-using-data_frame",
+    "title": "3  Tidyverse",
+    "section": "3.40 Create a tibble using data_frame",
+    "text": "3.40 Create a tibble using data_frame\n\ngrades &lt;- data_frame(names = c(\"John\", \"Juan\", \"Jean\", \"Yao\"), \n                     exam_1 = c(95, 80, 90, 85), \n                     exam_2 = c(90, 85, 85, 90))\ngrades\n\n# A tibble: 4 × 3\n  names exam_1 exam_2\n  &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 John      95     90\n2 Juan      80     85\n3 Jean      90     85\n4 Yao       85     90",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#another-difference",
+    "href": "Tidyverse.html#another-difference",
+    "title": "3  Tidyverse",
+    "section": "3.41 Another difference",
+    "text": "3.41 Another difference\n\ngrades &lt;- data.frame(names = c(\"John\", \"Juan\", \"Jean\", \"Yao\"), \n                     exam_1 = c(95, 80, 90, 85), \n                     exam_2 = c(90, 85, 85, 90))\nclass(grades$names)\n\n[1] \"character\"",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#another-difference-1",
+    "href": "Tidyverse.html#another-difference-1",
+    "title": "3  Tidyverse",
+    "section": "3.42 Another difference",
+    "text": "3.42 Another difference\n\nTo avoid this, we use the rather cumbersome argument stringsAsFactors:\n\n\ngrades &lt;- data.frame(names = c(\"John\", \"Juan\", \"Jean\", \"Yao\"), \n                     exam_1 = c(95, 80, 90, 85), \n                     exam_2 = c(90, 85, 85, 90),\n                     stringsAsFactors = FALSE)\nclass(grades$names)\n\n[1] \"character\"",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#conver-to-tibble",
+    "href": "Tidyverse.html#conver-to-tibble",
+    "title": "3  Tidyverse",
+    "section": "3.43 Conver to tibble",
+    "text": "3.43 Conver to tibble\n\nas_tibble(grades) %&gt;% class()\n\n[1] \"tbl_df\"     \"tbl\"        \"data.frame\"",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#conditionals",
+    "href": "Tidyverse.html#conditionals",
+    "title": "3  Tidyverse",
+    "section": "3.44 Conditionals",
+    "text": "3.44 Conditionals\n\nYou should be familiar with the ifelse function. But let’s review it as it is very useful in the tidyverse\nifelse vectorizes conditional assignments. Here is an example\n\n\nx &lt;- seq(-5, 5)\nifelse(x&gt;0, \"positive\", \"non-positive\")\n\n [1] \"non-positive\" \"non-positive\" \"non-positive\" \"non-positive\" \"non-positive\"\n [6] \"non-positive\" \"positive\"     \"positive\"     \"positive\"     \"positive\"    \n[11] \"positive\"",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#conditionals-1",
+    "href": "Tidyverse.html#conditionals-1",
+    "title": "3  Tidyverse",
+    "section": "3.45 Conditionals",
+    "text": "3.45 Conditionals\n\nThe tidyverse offers another useful tool: case_when\n\n\nx &lt;- seq(-5, 5)\ncase_when(x &gt; 0 ~ \"positive\",\n          x &lt; 0 ~ \"negative\",\n          TRUE ~ \"zero\")\n\n [1] \"negative\" \"negative\" \"negative\" \"negative\" \"negative\" \"zero\"    \n [7] \"positive\" \"positive\" \"positive\" \"positive\" \"positive\"",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
+    ]
+  },
+  {
+    "objectID": "Tidyverse.html#remapping",
+    "href": "Tidyverse.html#remapping",
+    "title": "3  Tidyverse",
+    "section": "3.46 Remapping",
+    "text": "3.46 Remapping\nThe recode function is a related useful function for dealing with factor names.\n\nx &lt;- seq(-5, 5)\nrecode(sign(x), \"1\" = \"positive\", \"0\" = \"zero\", \"-1\" = \"nonpositive\")\n\n [1] \"nonpositive\" \"nonpositive\" \"nonpositive\" \"nonpositive\" \"nonpositive\"\n [6] \"zero\"        \"positive\"    \"positive\"    \"positive\"    \"positive\"   \n[11] \"positive\"   \n\n\nMainly useful for changing codes to actual meaningful level names.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Tidyverse</span>"
     ]
   }
 ]

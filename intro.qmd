@@ -1,9 +1,8 @@
 # Introduction
 
+This book contains a lot of R scripts, tips and tricks that will be useful for students in `BioE610 - Bioengineering Statistics` at the University of Oregon.
+
 This is a book created from markdown and executable code.
 
 See @knuth84 for additional discussion of literate programming.
 
-```{r}
-1 + 1
-```

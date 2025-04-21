@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Tidyverse – BioEngineering Statistics Computational Tools</title>
+<title>4&nbsp; Tidyverse – BioEngineering Statistics Computational Tools</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./summary.html" rel="next">
-<link href="./R_basics.html" rel="prev">
+<link href="./Git_GitHub.html" rel="next">
+<link href="./Programming_Basics.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -144,7 +144,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Tidyverse.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tidyverse</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Tidyverse.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tidyverse</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -189,14 +189,26 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./Programming_Basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Programming Basics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./Tidyverse.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tidyverse</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tidyverse</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./Git_GitHub.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git and GitHub</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -215,52 +227,52 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#the-tidyverse" id="toc-the-tidyverse" class="nav-link active" data-scroll-target="#the-tidyverse"><span class="header-section-number">3.1</span> The tidyverse</a></li>
-  <li><a href="#the-tidyverse-1" id="toc-the-tidyverse-1" class="nav-link" data-scroll-target="#the-tidyverse-1"><span class="header-section-number">3.2</span> The tidyverse</a></li>
-  <li><a href="#tidy-data" id="toc-tidy-data" class="nav-link" data-scroll-target="#tidy-data"><span class="header-section-number">3.3</span> Tidy data</a></li>
-  <li><a href="#tidy-data-1" id="toc-tidy-data-1" class="nav-link" data-scroll-target="#tidy-data-1"><span class="header-section-number">3.4</span> Tidy data</a></li>
-  <li><a href="#wide-data" id="toc-wide-data" class="nav-link" data-scroll-target="#wide-data"><span class="header-section-number">3.5</span> Wide data</a></li>
-  <li><a href="#tidy-data-2" id="toc-tidy-data-2" class="nav-link" data-scroll-target="#tidy-data-2"><span class="header-section-number">3.6</span> Tidy data</a></li>
-  <li><a href="#manipulating-data-frames-with-dplyr" id="toc-manipulating-data-frames-with-dplyr" class="nav-link" data-scroll-target="#manipulating-data-frames-with-dplyr"><span class="header-section-number">3.7</span> Manipulating data frames with dplyr</a></li>
-  <li><a href="#adding-a-column-with-mutate" id="toc-adding-a-column-with-mutate" class="nav-link" data-scroll-target="#adding-a-column-with-mutate"><span class="header-section-number">3.8</span> Adding a column with <code>mutate</code></a></li>
-  <li><a href="#adding-a-column-with-mutate-1" id="toc-adding-a-column-with-mutate-1" class="nav-link" data-scroll-target="#adding-a-column-with-mutate-1"><span class="header-section-number">3.9</span> Adding a column with <code>mutate</code></a></li>
-  <li><a href="#subsetting-with-filter" id="toc-subsetting-with-filter" class="nav-link" data-scroll-target="#subsetting-with-filter"><span class="header-section-number">3.10</span> Subsetting with <code>filter</code></a></li>
-  <li><a href="#selecting-columns-with-select" id="toc-selecting-columns-with-select" class="nav-link" data-scroll-target="#selecting-columns-with-select"><span class="header-section-number">3.11</span> Selecting columns with <code>select</code></a></li>
-  <li><a href="#the-pipe" id="toc-the-pipe" class="nav-link" data-scroll-target="#the-pipe"><span class="header-section-number">3.12</span> The pipe: <code>%&gt;%</code></a></li>
-  <li><a href="#the-pipe-1" id="toc-the-pipe-1" class="nav-link" data-scroll-target="#the-pipe-1"><span class="header-section-number">3.13</span> The pipe: <code>%&gt;%</code></a></li>
-  <li><a href="#more-pipe-example" id="toc-more-pipe-example" class="nav-link" data-scroll-target="#more-pipe-example"><span class="header-section-number">3.14</span> More pipe example</a></li>
-  <li><a href="#example-use-arguments-with-pipe" id="toc-example-use-arguments-with-pipe" class="nav-link" data-scroll-target="#example-use-arguments-with-pipe"><span class="header-section-number">3.15</span> Example: Use arguments with pipe</a></li>
-  <li><a href="#pipe-example" id="toc-pipe-example" class="nav-link" data-scroll-target="#pipe-example"><span class="header-section-number">3.16</span> Pipe example</a></li>
-  <li><a href="#summarizing-data" id="toc-summarizing-data" class="nav-link" data-scroll-target="#summarizing-data"><span class="header-section-number">3.17</span> Summarizing data</a></li>
-  <li><a href="#tidyverse-always-returns-tables" id="toc-tidyverse-always-returns-tables" class="nav-link" data-scroll-target="#tidyverse-always-returns-tables"><span class="header-section-number">3.18</span> Tidyverse always returns tables</a></li>
-  <li><a href="#summarizing-data-1" id="toc-summarizing-data-1" class="nav-link" data-scroll-target="#summarizing-data-1"><span class="header-section-number">3.19</span> Summarizing data</a></li>
-  <li><a href="#summarize-only-wors-with-one-variable-summaries" id="toc-summarize-only-wors-with-one-variable-summaries" class="nav-link" data-scroll-target="#summarize-only-wors-with-one-variable-summaries"><span class="header-section-number">3.20</span> Summarize only wors with one variable summaries</a></li>
-  <li><a href="#pull" id="toc-pull" class="nav-link" data-scroll-target="#pull"><span class="header-section-number">3.21</span> <code>pull</code></a></li>
-  <li><a href="#pull-1" id="toc-pull-1" class="nav-link" data-scroll-target="#pull-1"><span class="header-section-number">3.22</span> <code>pull</code></a></li>
-  <li><a href="#group-then-summarize" id="toc-group-then-summarize" class="nav-link" data-scroll-target="#group-then-summarize"><span class="header-section-number">3.23</span> Group then summarize</a></li>
-  <li><a href="#group-then-summarize-1" id="toc-group-then-summarize-1" class="nav-link" data-scroll-target="#group-then-summarize-1"><span class="header-section-number">3.24</span> Group then summarize</a></li>
-  <li><a href="#the-dot-operator" id="toc-the-dot-operator" class="nav-link" data-scroll-target="#the-dot-operator"><span class="header-section-number">3.25</span> The dot operator</a></li>
-  <li><a href="#do" id="toc-do" class="nav-link" data-scroll-target="#do"><span class="header-section-number">3.26</span> <code>do</code></a></li>
-  <li><a href="#do-1" id="toc-do-1" class="nav-link" data-scroll-target="#do-1"><span class="header-section-number">3.27</span> <code>do</code></a></li>
-  <li><a href="#sorting-data-frames" id="toc-sorting-data-frames" class="nav-link" data-scroll-target="#sorting-data-frames"><span class="header-section-number">3.28</span> Sorting data frames</a></li>
-  <li><a href="#sorting-data-frames-1" id="toc-sorting-data-frames-1" class="nav-link" data-scroll-target="#sorting-data-frames-1"><span class="header-section-number">3.29</span> Sorting data frames</a></li>
-  <li><a href="#sorting-data-frames-2" id="toc-sorting-data-frames-2" class="nav-link" data-scroll-target="#sorting-data-frames-2"><span class="header-section-number">3.30</span> Sorting data frames</a></li>
-  <li><a href="#nested-sorting" id="toc-nested-sorting" class="nav-link" data-scroll-target="#nested-sorting"><span class="header-section-number">3.31</span> Nested sorting</a></li>
-  <li><a href="#the-top-n" id="toc-the-top-n" class="nav-link" data-scroll-target="#the-top-n"><span class="header-section-number">3.32</span> The top <span class="math inline">\(n\)</span></a></li>
-  <li><a href="#tibbles" id="toc-tibbles" class="nav-link" data-scroll-target="#tibbles"><span class="header-section-number">3.33</span> Tibbles</a></li>
-  <li><a href="#tibbles-1" id="toc-tibbles-1" class="nav-link" data-scroll-target="#tibbles-1"><span class="header-section-number">3.34</span> Tibbles</a></li>
-  <li><a href="#tibbles-2" id="toc-tibbles-2" class="nav-link" data-scroll-target="#tibbles-2"><span class="header-section-number">3.35</span> Tibbles</a></li>
-  <li><a href="#tibles-versus-data-frames" id="toc-tibles-versus-data-frames" class="nav-link" data-scroll-target="#tibles-versus-data-frames"><span class="header-section-number">3.36</span> Tibles versus data frames</a></li>
-  <li><a href="#tibles-versus-data-frames-1" id="toc-tibles-versus-data-frames-1" class="nav-link" data-scroll-target="#tibles-versus-data-frames-1"><span class="header-section-number">3.37</span> Tibles versus data frames</a></li>
-  <li><a href="#tibles-versus-data-frames-2" id="toc-tibles-versus-data-frames-2" class="nav-link" data-scroll-target="#tibles-versus-data-frames-2"><span class="header-section-number">3.38</span> Tibles versus data frames</a></li>
-  <li><a href="#tibles-versus-data-frames-3" id="toc-tibles-versus-data-frames-3" class="nav-link" data-scroll-target="#tibles-versus-data-frames-3"><span class="header-section-number">3.39</span> Tibles versus data frames</a></li>
-  <li><a href="#create-a-tibble-using-data_frame" id="toc-create-a-tibble-using-data_frame" class="nav-link" data-scroll-target="#create-a-tibble-using-data_frame"><span class="header-section-number">3.40</span> Create a tibble using <code>data_frame</code></a></li>
-  <li><a href="#another-difference" id="toc-another-difference" class="nav-link" data-scroll-target="#another-difference"><span class="header-section-number">3.41</span> Another difference</a></li>
-  <li><a href="#another-difference-1" id="toc-another-difference-1" class="nav-link" data-scroll-target="#another-difference-1"><span class="header-section-number">3.42</span> Another difference</a></li>
-  <li><a href="#conver-to-tibble" id="toc-conver-to-tibble" class="nav-link" data-scroll-target="#conver-to-tibble"><span class="header-section-number">3.43</span> Conver to tibble</a></li>
-  <li><a href="#conditionals" id="toc-conditionals" class="nav-link" data-scroll-target="#conditionals"><span class="header-section-number">3.44</span> Conditionals</a></li>
-  <li><a href="#conditionals-1" id="toc-conditionals-1" class="nav-link" data-scroll-target="#conditionals-1"><span class="header-section-number">3.45</span> Conditionals</a></li>
-  <li><a href="#remapping" id="toc-remapping" class="nav-link" data-scroll-target="#remapping"><span class="header-section-number">3.46</span> Remapping</a></li>
+  <li><a href="#the-tidyverse" id="toc-the-tidyverse" class="nav-link active" data-scroll-target="#the-tidyverse"><span class="header-section-number">4.1</span> The tidyverse</a></li>
+  <li><a href="#the-tidyverse-1" id="toc-the-tidyverse-1" class="nav-link" data-scroll-target="#the-tidyverse-1"><span class="header-section-number">4.2</span> The tidyverse</a></li>
+  <li><a href="#tidy-data" id="toc-tidy-data" class="nav-link" data-scroll-target="#tidy-data"><span class="header-section-number">4.3</span> Tidy data</a></li>
+  <li><a href="#tidy-data-1" id="toc-tidy-data-1" class="nav-link" data-scroll-target="#tidy-data-1"><span class="header-section-number">4.4</span> Tidy data</a></li>
+  <li><a href="#wide-data" id="toc-wide-data" class="nav-link" data-scroll-target="#wide-data"><span class="header-section-number">4.5</span> Wide data</a></li>
+  <li><a href="#tidy-data-2" id="toc-tidy-data-2" class="nav-link" data-scroll-target="#tidy-data-2"><span class="header-section-number">4.6</span> Tidy data</a></li>
+  <li><a href="#manipulating-data-frames-with-dplyr" id="toc-manipulating-data-frames-with-dplyr" class="nav-link" data-scroll-target="#manipulating-data-frames-with-dplyr"><span class="header-section-number">4.7</span> Manipulating data frames with dplyr</a></li>
+  <li><a href="#adding-a-column-with-mutate" id="toc-adding-a-column-with-mutate" class="nav-link" data-scroll-target="#adding-a-column-with-mutate"><span class="header-section-number">4.8</span> Adding a column with <code>mutate</code></a></li>
+  <li><a href="#adding-a-column-with-mutate-1" id="toc-adding-a-column-with-mutate-1" class="nav-link" data-scroll-target="#adding-a-column-with-mutate-1"><span class="header-section-number">4.9</span> Adding a column with <code>mutate</code></a></li>
+  <li><a href="#subsetting-with-filter" id="toc-subsetting-with-filter" class="nav-link" data-scroll-target="#subsetting-with-filter"><span class="header-section-number">4.10</span> Subsetting with <code>filter</code></a></li>
+  <li><a href="#selecting-columns-with-select" id="toc-selecting-columns-with-select" class="nav-link" data-scroll-target="#selecting-columns-with-select"><span class="header-section-number">4.11</span> Selecting columns with <code>select</code></a></li>
+  <li><a href="#the-pipe" id="toc-the-pipe" class="nav-link" data-scroll-target="#the-pipe"><span class="header-section-number">4.12</span> The pipe: <code>%&gt;%</code></a></li>
+  <li><a href="#the-pipe-1" id="toc-the-pipe-1" class="nav-link" data-scroll-target="#the-pipe-1"><span class="header-section-number">4.13</span> The pipe: <code>%&gt;%</code></a></li>
+  <li><a href="#more-pipe-example" id="toc-more-pipe-example" class="nav-link" data-scroll-target="#more-pipe-example"><span class="header-section-number">4.14</span> More pipe example</a></li>
+  <li><a href="#example-use-arguments-with-pipe" id="toc-example-use-arguments-with-pipe" class="nav-link" data-scroll-target="#example-use-arguments-with-pipe"><span class="header-section-number">4.15</span> Example: Use arguments with pipe</a></li>
+  <li><a href="#pipe-example" id="toc-pipe-example" class="nav-link" data-scroll-target="#pipe-example"><span class="header-section-number">4.16</span> Pipe example</a></li>
+  <li><a href="#summarizing-data" id="toc-summarizing-data" class="nav-link" data-scroll-target="#summarizing-data"><span class="header-section-number">4.17</span> Summarizing data</a></li>
+  <li><a href="#tidyverse-always-returns-tables" id="toc-tidyverse-always-returns-tables" class="nav-link" data-scroll-target="#tidyverse-always-returns-tables"><span class="header-section-number">4.18</span> Tidyverse always returns tables</a></li>
+  <li><a href="#summarizing-data-1" id="toc-summarizing-data-1" class="nav-link" data-scroll-target="#summarizing-data-1"><span class="header-section-number">4.19</span> Summarizing data</a></li>
+  <li><a href="#summarize-only-wors-with-one-variable-summaries" id="toc-summarize-only-wors-with-one-variable-summaries" class="nav-link" data-scroll-target="#summarize-only-wors-with-one-variable-summaries"><span class="header-section-number">4.20</span> Summarize only wors with one variable summaries</a></li>
+  <li><a href="#pull" id="toc-pull" class="nav-link" data-scroll-target="#pull"><span class="header-section-number">4.21</span> <code>pull</code></a></li>
+  <li><a href="#pull-1" id="toc-pull-1" class="nav-link" data-scroll-target="#pull-1"><span class="header-section-number">4.22</span> <code>pull</code></a></li>
+  <li><a href="#group-then-summarize" id="toc-group-then-summarize" class="nav-link" data-scroll-target="#group-then-summarize"><span class="header-section-number">4.23</span> Group then summarize</a></li>
+  <li><a href="#group-then-summarize-1" id="toc-group-then-summarize-1" class="nav-link" data-scroll-target="#group-then-summarize-1"><span class="header-section-number">4.24</span> Group then summarize</a></li>
+  <li><a href="#the-dot-operator" id="toc-the-dot-operator" class="nav-link" data-scroll-target="#the-dot-operator"><span class="header-section-number">4.25</span> The dot operator</a></li>
+  <li><a href="#do" id="toc-do" class="nav-link" data-scroll-target="#do"><span class="header-section-number">4.26</span> <code>do</code></a></li>
+  <li><a href="#do-1" id="toc-do-1" class="nav-link" data-scroll-target="#do-1"><span class="header-section-number">4.27</span> <code>do</code></a></li>
+  <li><a href="#sorting-data-frames" id="toc-sorting-data-frames" class="nav-link" data-scroll-target="#sorting-data-frames"><span class="header-section-number">4.28</span> Sorting data frames</a></li>
+  <li><a href="#sorting-data-frames-1" id="toc-sorting-data-frames-1" class="nav-link" data-scroll-target="#sorting-data-frames-1"><span class="header-section-number">4.29</span> Sorting data frames</a></li>
+  <li><a href="#sorting-data-frames-2" id="toc-sorting-data-frames-2" class="nav-link" data-scroll-target="#sorting-data-frames-2"><span class="header-section-number">4.30</span> Sorting data frames</a></li>
+  <li><a href="#nested-sorting" id="toc-nested-sorting" class="nav-link" data-scroll-target="#nested-sorting"><span class="header-section-number">4.31</span> Nested sorting</a></li>
+  <li><a href="#the-top-n" id="toc-the-top-n" class="nav-link" data-scroll-target="#the-top-n"><span class="header-section-number">4.32</span> The top <span class="math inline">\(n\)</span></a></li>
+  <li><a href="#tibbles" id="toc-tibbles" class="nav-link" data-scroll-target="#tibbles"><span class="header-section-number">4.33</span> Tibbles</a></li>
+  <li><a href="#tibbles-1" id="toc-tibbles-1" class="nav-link" data-scroll-target="#tibbles-1"><span class="header-section-number">4.34</span> Tibbles</a></li>
+  <li><a href="#tibbles-2" id="toc-tibbles-2" class="nav-link" data-scroll-target="#tibbles-2"><span class="header-section-number">4.35</span> Tibbles</a></li>
+  <li><a href="#tibles-versus-data-frames" id="toc-tibles-versus-data-frames" class="nav-link" data-scroll-target="#tibles-versus-data-frames"><span class="header-section-number">4.36</span> Tibles versus data frames</a></li>
+  <li><a href="#tibles-versus-data-frames-1" id="toc-tibles-versus-data-frames-1" class="nav-link" data-scroll-target="#tibles-versus-data-frames-1"><span class="header-section-number">4.37</span> Tibles versus data frames</a></li>
+  <li><a href="#tibles-versus-data-frames-2" id="toc-tibles-versus-data-frames-2" class="nav-link" data-scroll-target="#tibles-versus-data-frames-2"><span class="header-section-number">4.38</span> Tibles versus data frames</a></li>
+  <li><a href="#tibles-versus-data-frames-3" id="toc-tibles-versus-data-frames-3" class="nav-link" data-scroll-target="#tibles-versus-data-frames-3"><span class="header-section-number">4.39</span> Tibles versus data frames</a></li>
+  <li><a href="#create-a-tibble-using-data_frame" id="toc-create-a-tibble-using-data_frame" class="nav-link" data-scroll-target="#create-a-tibble-using-data_frame"><span class="header-section-number">4.40</span> Create a tibble using <code>data_frame</code></a></li>
+  <li><a href="#another-difference" id="toc-another-difference" class="nav-link" data-scroll-target="#another-difference"><span class="header-section-number">4.41</span> Another difference</a></li>
+  <li><a href="#another-difference-1" id="toc-another-difference-1" class="nav-link" data-scroll-target="#another-difference-1"><span class="header-section-number">4.42</span> Another difference</a></li>
+  <li><a href="#conver-to-tibble" id="toc-conver-to-tibble" class="nav-link" data-scroll-target="#conver-to-tibble"><span class="header-section-number">4.43</span> Conver to tibble</a></li>
+  <li><a href="#conditionals" id="toc-conditionals" class="nav-link" data-scroll-target="#conditionals"><span class="header-section-number">4.44</span> Conditionals</a></li>
+  <li><a href="#conditionals-1" id="toc-conditionals-1" class="nav-link" data-scroll-target="#conditionals-1"><span class="header-section-number">4.45</span> Conditionals</a></li>
+  <li><a href="#remapping" id="toc-remapping" class="nav-link" data-scroll-target="#remapping"><span class="header-section-number">4.46</span> Remapping</a></li>
   </ul>
 </nav>
     </div>
@@ -269,7 +281,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Tidyverse</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tidyverse</span></h1>
 </div>
 
 
@@ -286,8 +298,8 @@ window.Quarto = {
 </header>
 
 
-<section id="the-tidyverse" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="the-tidyverse"><span class="header-section-number">3.1</span> The tidyverse</h2>
+<section id="the-tidyverse" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="the-tidyverse"><span class="header-section-number">4.1</span> The tidyverse</h2>
 <p>A collection of packages particularly helpful for working with tables.</p>
 <ul>
 <li><strong>dplyr</strong> - manipulating data frames</li>
@@ -298,22 +310,22 @@ window.Quarto = {
 <li><strong>purrr</strong> package for working with functions</li>
 </ul>
 </section>
-<section id="the-tidyverse-1" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="the-tidyverse-1"><span class="header-section-number">3.2</span> The tidyverse</h2>
+<section id="the-tidyverse-1" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="the-tidyverse-1"><span class="header-section-number">4.2</span> The tidyverse</h2>
 <p>Load the main packages like this:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="tidy-data" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="tidy-data"><span class="header-section-number">3.3</span> Tidy data</h2>
+<section id="tidy-data" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="tidy-data"><span class="header-section-number">4.3</span> Tidy data</h2>
 <ul>
 <li>Each row represents one observation</li>
 <li>Columns represent the different variables</li>
 </ul>
 </section>
-<section id="tidy-data-1" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="tidy-data-1"><span class="header-section-number">3.4</span> Tidy data</h2>
+<section id="tidy-data-1" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="tidy-data-1"><span class="header-section-number">4.4</span> Tidy data</h2>
 <p>The <code>murders</code> dataset is an example of a tidy data frame.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dslabs)</span>
@@ -330,8 +342,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="wide-data" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="wide-data"><span class="header-section-number">3.5</span> Wide data</h2>
+<section id="wide-data" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="wide-data"><span class="header-section-number">4.5</span> Wide data</h2>
 <p>This is not tidy:</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -342,8 +354,8 @@ window.Quarto = {
 </div>
 <p>Later we learn how to <em>wrangle</em> into tidy format.</p>
 </section>
-<section id="tidy-data-2" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="tidy-data-2"><span class="header-section-number">3.6</span> Tidy data</h2>
+<section id="tidy-data-2" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="tidy-data-2"><span class="header-section-number">4.6</span> Tidy data</h2>
 <p>Same information in tidy format.</p>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -363,8 +375,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="manipulating-data-frames-with-dplyr" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="manipulating-data-frames-with-dplyr"><span class="header-section-number">3.7</span> Manipulating data frames with dplyr</h2>
+<section id="manipulating-data-frames-with-dplyr" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="manipulating-data-frames-with-dplyr"><span class="header-section-number">4.7</span> Manipulating data frames with dplyr</h2>
 <ul>
 <li><code>mutate</code> - change or add columns<br>
 </li>
@@ -372,16 +384,16 @@ window.Quarto = {
 <li><code>select</code> - Subset the data by selecting specific columns</li>
 </ul>
 </section>
-<section id="adding-a-column-with-mutate" class="level2" data-number="3.8">
-<h2 data-number="3.8" class="anchored" data-anchor-id="adding-a-column-with-mutate"><span class="header-section-number">3.8</span> Adding a column with <code>mutate</code></h2>
+<section id="adding-a-column-with-mutate" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="adding-a-column-with-mutate"><span class="header-section-number">4.8</span> Adding a column with <code>mutate</code></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(<span class="st">"murders"</span>)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>murders <span class="ot">&lt;-</span> <span class="fu">mutate</span>(murders, <span class="at">rate =</span> total <span class="sc">/</span> population <span class="sc">*</span> <span class="dv">100000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Notice that here we used <code>total</code> and <code>population</code> inside the function, which are objects that are <strong>not</strong> defined in our workspace.</p>
 </section>
-<section id="adding-a-column-with-mutate-1" class="level2" data-number="3.9">
-<h2 data-number="3.9" class="anchored" data-anchor-id="adding-a-column-with-mutate-1"><span class="header-section-number">3.9</span> Adding a column with <code>mutate</code></h2>
+<section id="adding-a-column-with-mutate-1" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="adding-a-column-with-mutate-1"><span class="header-section-number">4.9</span> Adding a column with <code>mutate</code></h2>
 <p>We can see the new column now</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(murders)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -396,8 +408,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="subsetting-with-filter" class="level2" data-number="3.10">
-<h2 data-number="3.10" class="anchored" data-anchor-id="subsetting-with-filter"><span class="header-section-number">3.10</span> Subsetting with <code>filter</code></h2>
+<section id="subsetting-with-filter" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="subsetting-with-filter"><span class="header-section-number">4.10</span> Subsetting with <code>filter</code></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(murders, rate <span class="sc">&lt;=</span> <span class="fl">0.71</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -410,8 +422,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="selecting-columns-with-select" class="level2" data-number="3.11">
-<h2 data-number="3.11" class="anchored" data-anchor-id="selecting-columns-with-select"><span class="header-section-number">3.11</span> Selecting columns with <code>select</code></h2>
+<section id="selecting-columns-with-select" class="level2" data-number="4.11">
+<h2 data-number="4.11" class="anchored" data-anchor-id="selecting-columns-with-select"><span class="header-section-number">4.11</span> Selecting columns with <code>select</code></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>new_table <span class="ot">&lt;-</span> <span class="fu">select</span>(murders, state, region, rate)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(new_table, rate <span class="sc">&lt;=</span> <span class="fl">0.71</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -425,14 +437,14 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="the-pipe" class="level2" data-number="3.12">
-<h2 data-number="3.12" class="anchored" data-anchor-id="the-pipe"><span class="header-section-number">3.12</span> The pipe: <code>%&gt;%</code></h2>
+<section id="the-pipe" class="level2" data-number="4.12">
+<h2 data-number="4.12" class="anchored" data-anchor-id="the-pipe"><span class="header-section-number">4.12</span> The pipe: <code>%&gt;%</code></h2>
 <p><span class="math display">\[ \mbox{original data }
 \rightarrow \mbox{ select }
 \rightarrow \mbox{ filter } \]</span></p>
 </section>
-<section id="the-pipe-1" class="level2" data-number="3.13">
-<h2 data-number="3.13" class="anchored" data-anchor-id="the-pipe-1"><span class="header-section-number">3.13</span> The pipe: <code>%&gt;%</code></h2>
+<section id="the-pipe-1" class="level2" data-number="4.13">
+<h2 data-number="4.13" class="anchored" data-anchor-id="the-pipe-1"><span class="header-section-number">4.13</span> The pipe: <code>%&gt;%</code></h2>
 <p>When using the pipe, functions take left hand side as first argumemt:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>murders <span class="sc">%&gt;%</span> <span class="fu">select</span>(state, region, rate) <span class="sc">%&gt;%</span> <span class="fu">filter</span>(rate <span class="sc">&lt;=</span> <span class="fl">0.71</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -446,8 +458,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="more-pipe-example" class="level2" data-number="3.14">
-<h2 data-number="3.14" class="anchored" data-anchor-id="more-pipe-example"><span class="header-section-number">3.14</span> More pipe example</h2>
+<section id="more-pipe-example" class="level2" data-number="4.14">
+<h2 data-number="4.14" class="anchored" data-anchor-id="more-pipe-example"><span class="header-section-number">4.14</span> More pipe example</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="dv">16</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -469,8 +481,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="example-use-arguments-with-pipe" class="level2" data-number="3.15">
-<h2 data-number="3.15" class="anchored" data-anchor-id="example-use-arguments-with-pipe"><span class="header-section-number">3.15</span> Example: Use arguments with pipe</h2>
+<section id="example-use-arguments-with-pipe" class="level2" data-number="4.15">
+<h2 data-number="4.15" class="anchored" data-anchor-id="example-use-arguments-with-pipe"><span class="header-section-number">4.15</span> Example: Use arguments with pipe</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="dv">16</span> <span class="sc">%&gt;%</span> <span class="fu">sqrt</span>() <span class="sc">%&gt;%</span> <span class="fu">log</span>(<span class="at">base =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -478,16 +490,16 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="pipe-example" class="level2" data-number="3.16">
-<h2 data-number="3.16" class="anchored" data-anchor-id="pipe-example"><span class="header-section-number">3.16</span> Pipe example</h2>
+<section id="pipe-example" class="level2" data-number="4.16">
+<h2 data-number="4.16" class="anchored" data-anchor-id="pipe-example"><span class="header-section-number">4.16</span> Pipe example</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>murders <span class="sc">%&gt;%</span> </span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(state, region, rate) <span class="sc">%&gt;%</span> </span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(rate <span class="sc">&lt;=</span> <span class="fl">0.71</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="summarizing-data" class="level2" data-number="3.17">
-<h2 data-number="3.17" class="anchored" data-anchor-id="summarizing-data"><span class="header-section-number">3.17</span> Summarizing data</h2>
+<section id="summarizing-data" class="level2" data-number="4.17">
+<h2 data-number="4.17" class="anchored" data-anchor-id="summarizing-data"><span class="header-section-number">4.17</span> Summarizing data</h2>
 <p>Summarizing variables is very common operation.</p>
 <p>Average female heights:</p>
 <div class="cell">
@@ -497,8 +509,8 @@ window.Quarto = {
 <span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">average =</span> <span class="fu">mean</span>(height))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="tidyverse-always-returns-tables" class="level2" data-number="3.18">
-<h2 data-number="3.18" class="anchored" data-anchor-id="tidyverse-always-returns-tables"><span class="header-section-number">3.18</span> Tidyverse always returns tables</h2>
+<section id="tidyverse-always-returns-tables" class="level2" data-number="4.18">
+<h2 data-number="4.18" class="anchored" data-anchor-id="tidyverse-always-returns-tables"><span class="header-section-number">4.18</span> Tidyverse always returns tables</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>s<span class="sc">$</span>average</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -506,8 +518,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="summarizing-data-1" class="level2" data-number="3.19">
-<h2 data-number="3.19" class="anchored" data-anchor-id="summarizing-data-1"><span class="header-section-number">3.19</span> Summarizing data</h2>
+<section id="summarizing-data-1" class="level2" data-number="4.19">
+<h2 data-number="4.19" class="anchored" data-anchor-id="summarizing-data-1"><span class="header-section-number">4.19</span> Summarizing data</h2>
 <p>You can compute more than one summary</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(heights)</span>
@@ -522,8 +534,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="summarize-only-wors-with-one-variable-summaries" class="level2" data-number="3.20">
-<h2 data-number="3.20" class="anchored" data-anchor-id="summarize-only-wors-with-one-variable-summaries"><span class="header-section-number">3.20</span> Summarize only wors with one variable summaries</h2>
+<section id="summarize-only-wors-with-one-variable-summaries" class="level2" data-number="4.20">
+<h2 data-number="4.20" class="anchored" data-anchor-id="summarize-only-wors-with-one-variable-summaries"><span class="header-section-number">4.20</span> Summarize only wors with one variable summaries</h2>
 <p>You can compute more than one summary</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(heights)</span>
@@ -534,8 +546,8 @@ window.Quarto = {
 <pre><code>Error in summarise_impl(.data, dots) : 
   Column `qs` must be length 1 (a summary value), not 3</code></pre>
 </section>
-<section id="pull" class="level2" data-number="3.21">
-<h2 data-number="3.21" class="anchored" data-anchor-id="pull"><span class="header-section-number">3.21</span> <code>pull</code></h2>
+<section id="pull" class="level2" data-number="4.21">
+<h2 data-number="4.21" class="anchored" data-anchor-id="pull"><span class="header-section-number">4.21</span> <code>pull</code></h2>
 <p>The <code>us_murder_rate</code> object defined above represents just one number. Yet we are storing it in a data frame:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>s <span class="ot">&lt;-</span> heights <span class="sc">%&gt;%</span> </span>
@@ -547,8 +559,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="pull-1" class="level2" data-number="3.22">
-<h2 data-number="3.22" class="anchored" data-anchor-id="pull-1"><span class="header-section-number">3.22</span> <code>pull</code></h2>
+<section id="pull-1" class="level2" data-number="4.22">
+<h2 data-number="4.22" class="anchored" data-anchor-id="pull-1"><span class="header-section-number">4.22</span> <code>pull</code></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>s <span class="sc">%&gt;%</span> <span class="fu">pull</span>(average)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -556,8 +568,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="group-then-summarize" class="level2" data-number="3.23">
-<h2 data-number="3.23" class="anchored" data-anchor-id="group-then-summarize"><span class="header-section-number">3.23</span> Group then summarize</h2>
+<section id="group-then-summarize" class="level2" data-number="4.23">
+<h2 data-number="4.23" class="anchored" data-anchor-id="group-then-summarize"><span class="header-section-number">4.23</span> Group then summarize</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>heights <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(sex)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -583,8 +595,8 @@ window.Quarto = {
 <li>Although not immediately obvious from its appearance, this is now a special data frame called a <em>grouped data frame</em></li>
 </ul>
 </section>
-<section id="group-then-summarize-1" class="level2" data-number="3.24">
-<h2 data-number="3.24" class="anchored" data-anchor-id="group-then-summarize-1"><span class="header-section-number">3.24</span> Group then summarize</h2>
+<section id="group-then-summarize-1" class="level2" data-number="4.24">
+<h2 data-number="4.24" class="anchored" data-anchor-id="group-then-summarize-1"><span class="header-section-number">4.24</span> Group then summarize</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>heights <span class="sc">%&gt;%</span> </span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sex) <span class="sc">%&gt;%</span></span>
@@ -598,8 +610,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="the-dot-operator" class="level2" data-number="3.25">
-<h2 data-number="3.25" class="anchored" data-anchor-id="the-dot-operator"><span class="header-section-number">3.25</span> The dot operator</h2>
+<section id="the-dot-operator" class="level2" data-number="4.25">
+<h2 data-number="4.25" class="anchored" data-anchor-id="the-dot-operator"><span class="header-section-number">4.25</span> The dot operator</h2>
 <ul>
 <li><p>When using the pipe, the object being passed by the expression on the left side of the pipe can be accessed via <code>.</code></p></li>
 <li><p>Here is an example that is equivalent to pull:</p></li>
@@ -611,8 +623,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="do" class="level2" data-number="3.26">
-<h2 data-number="3.26" class="anchored" data-anchor-id="do"><span class="header-section-number">3.26</span> <code>do</code></h2>
+<section id="do" class="level2" data-number="4.26">
+<h2 data-number="4.26" class="anchored" data-anchor-id="do"><span class="header-section-number">4.26</span> <code>do</code></h2>
 <ul>
 <li><p>We saw that summarize does not permit the use of functions that return more than one scaler</p></li>
 <li><p>One way to apply such function is with <code>do</code></p></li>
@@ -620,8 +632,8 @@ window.Quarto = {
 <li><p>General idea, write a function that returns what you want in a data frame, then call it with do.</p></li>
 </ul>
 </section>
-<section id="do-1" class="level2" data-number="3.27">
-<h2 data-number="3.27" class="anchored" data-anchor-id="do-1"><span class="header-section-number">3.27</span> <code>do</code></h2>
+<section id="do-1" class="level2" data-number="4.27">
+<h2 data-number="4.27" class="anchored" data-anchor-id="do-1"><span class="header-section-number">4.27</span> <code>do</code></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>qs <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="fu">quantile</span>(x,  <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="sc">/</span> <span class="dv">4</span>)</span>
@@ -644,8 +656,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="sorting-data-frames" class="level2" data-number="3.28">
-<h2 data-number="3.28" class="anchored" data-anchor-id="sorting-data-frames"><span class="header-section-number">3.28</span> Sorting data frames</h2>
+<section id="sorting-data-frames" class="level2" data-number="4.28">
+<h2 data-number="4.28" class="anchored" data-anchor-id="sorting-data-frames"><span class="header-section-number">4.28</span> Sorting data frames</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>murders <span class="sc">%&gt;%</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(population) <span class="sc">%&gt;%</span></span>
@@ -661,8 +673,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="sorting-data-frames-1" class="level2" data-number="3.29">
-<h2 data-number="3.29" class="anchored" data-anchor-id="sorting-data-frames-1"><span class="header-section-number">3.29</span> Sorting data frames</h2>
+<section id="sorting-data-frames-1" class="level2" data-number="4.29">
+<h2 data-number="4.29" class="anchored" data-anchor-id="sorting-data-frames-1"><span class="header-section-number">4.29</span> Sorting data frames</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>murders <span class="sc">%&gt;%</span> </span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(rate) <span class="sc">%&gt;%</span> </span>
@@ -678,8 +690,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="sorting-data-frames-2" class="level2" data-number="3.30">
-<h2 data-number="3.30" class="anchored" data-anchor-id="sorting-data-frames-2"><span class="header-section-number">3.30</span> Sorting data frames</h2>
+<section id="sorting-data-frames-2" class="level2" data-number="4.30">
+<h2 data-number="4.30" class="anchored" data-anchor-id="sorting-data-frames-2"><span class="header-section-number">4.30</span> Sorting data frames</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>murders <span class="sc">%&gt;%</span> </span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(rate)) <span class="sc">%&gt;%</span> </span>
@@ -695,8 +707,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="nested-sorting" class="level2" data-number="3.31">
-<h2 data-number="3.31" class="anchored" data-anchor-id="nested-sorting"><span class="header-section-number">3.31</span> Nested sorting</h2>
+<section id="nested-sorting" class="level2" data-number="4.31">
+<h2 data-number="4.31" class="anchored" data-anchor-id="nested-sorting"><span class="header-section-number">4.31</span> Nested sorting</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>murders <span class="sc">%&gt;%</span> </span>
 <span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(region, rate) <span class="sc">%&gt;%</span> </span>
@@ -712,8 +724,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="the-top-n" class="level2" data-number="3.32">
-<h2 data-number="3.32" class="anchored" data-anchor-id="the-top-n"><span class="header-section-number">3.32</span> The top <span class="math inline">\(n\)</span></h2>
+<section id="the-top-n" class="level2" data-number="4.32">
+<h2 data-number="4.32" class="anchored" data-anchor-id="the-top-n"><span class="header-section-number">4.32</span> The top <span class="math inline">\(n\)</span></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>murders <span class="sc">%&gt;%</span> <span class="fu">top_n</span>(<span class="dv">10</span>, rate)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -731,8 +743,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="tibbles" class="level2" data-number="3.33">
-<h2 data-number="3.33" class="anchored" data-anchor-id="tibbles"><span class="header-section-number">3.33</span> Tibbles</h2>
+<section id="tibbles" class="level2" data-number="4.33">
+<h2 data-number="4.33" class="anchored" data-anchor-id="tibbles"><span class="header-section-number">4.33</span> Tibbles</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(murders)</span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(murders)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -745,8 +757,8 @@ window.Quarto = {
 <li>But where is the group information stored in the data frame?</li>
 </ul>
 </section>
-<section id="tibbles-1" class="level2" data-number="3.34">
-<h2 data-number="3.34" class="anchored" data-anchor-id="tibbles-1"><span class="header-section-number">3.34</span> Tibbles</h2>
+<section id="tibbles-1" class="level2" data-number="4.34">
+<h2 data-number="4.34" class="anchored" data-anchor-id="tibbles-1"><span class="header-section-number">4.34</span> Tibbles</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>murders <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(region) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -763,8 +775,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="tibbles-2" class="level2" data-number="3.35">
-<h2 data-number="3.35" class="anchored" data-anchor-id="tibbles-2"><span class="header-section-number">3.35</span> Tibbles</h2>
+<section id="tibbles-2" class="level2" data-number="4.35">
+<h2 data-number="4.35" class="anchored" data-anchor-id="tibbles-2"><span class="header-section-number">4.35</span> Tibbles</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>murders <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(region) <span class="sc">%&gt;%</span> <span class="fu">class</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -772,8 +784,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="tibles-versus-data-frames" class="level2" data-number="3.36">
-<h2 data-number="3.36" class="anchored" data-anchor-id="tibles-versus-data-frames"><span class="header-section-number">3.36</span> Tibles versus data frames</h2>
+<section id="tibles-versus-data-frames" class="level2" data-number="4.36">
+<h2 data-number="4.36" class="anchored" data-anchor-id="tibles-versus-data-frames"><span class="header-section-number">4.36</span> Tibles versus data frames</h2>
 <ul>
 <li>Tibbles display better</li>
 <li>Subsets of tibbles are tibbles</li>
@@ -789,8 +801,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="tibles-versus-data-frames-1" class="level2" data-number="3.37">
-<h2 data-number="3.37" class="anchored" data-anchor-id="tibles-versus-data-frames-1"><span class="header-section-number">3.37</span> Tibles versus data frames</h2>
+<section id="tibles-versus-data-frames-1" class="level2" data-number="4.37">
+<h2 data-number="4.37" class="anchored" data-anchor-id="tibles-versus-data-frames-1"><span class="header-section-number">4.37</span> Tibles versus data frames</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>murders<span class="sc">$</span>Population</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -805,8 +817,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="tibles-versus-data-frames-2" class="level2" data-number="3.38">
-<h2 data-number="3.38" class="anchored" data-anchor-id="tibles-versus-data-frames-2"><span class="header-section-number">3.38</span> Tibles versus data frames</h2>
+<section id="tibles-versus-data-frames-2" class="level2" data-number="4.38">
+<h2 data-number="4.38" class="anchored" data-anchor-id="tibles-versus-data-frames-2"><span class="header-section-number">4.38</span> Tibles versus data frames</h2>
 <ul>
 <li>Tibbles can have complex entries</li>
 </ul>
@@ -822,14 +834,14 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="tibles-versus-data-frames-3" class="level2" data-number="3.39">
-<h2 data-number="3.39" class="anchored" data-anchor-id="tibles-versus-data-frames-3"><span class="header-section-number">3.39</span> Tibles versus data frames</h2>
+<section id="tibles-versus-data-frames-3" class="level2" data-number="4.39">
+<h2 data-number="4.39" class="anchored" data-anchor-id="tibles-versus-data-frames-3"><span class="header-section-number">4.39</span> Tibles versus data frames</h2>
 <ul>
 <li>Tibbles can be grouped</li>
 </ul>
 </section>
-<section id="create-a-tibble-using-data_frame" class="level2" data-number="3.40">
-<h2 data-number="3.40" class="anchored" data-anchor-id="create-a-tibble-using-data_frame"><span class="header-section-number">3.40</span> Create a tibble using <code>data_frame</code></h2>
+<section id="create-a-tibble-using-data_frame" class="level2" data-number="4.40">
+<h2 data-number="4.40" class="anchored" data-anchor-id="create-a-tibble-using-data_frame"><span class="header-section-number">4.40</span> Create a tibble using <code>data_frame</code></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb73"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a>grades <span class="ot">&lt;-</span> <span class="fu">data_frame</span>(<span class="at">names =</span> <span class="fu">c</span>(<span class="st">"John"</span>, <span class="st">"Juan"</span>, <span class="st">"Jean"</span>, <span class="st">"Yao"</span>), </span>
 <span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">exam_1 =</span> <span class="fu">c</span>(<span class="dv">95</span>, <span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">85</span>), </span>
@@ -846,8 +858,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="another-difference" class="level2" data-number="3.41">
-<h2 data-number="3.41" class="anchored" data-anchor-id="another-difference"><span class="header-section-number">3.41</span> Another difference</h2>
+<section id="another-difference" class="level2" data-number="4.41">
+<h2 data-number="4.41" class="anchored" data-anchor-id="another-difference"><span class="header-section-number">4.41</span> Another difference</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>grades <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">names =</span> <span class="fu">c</span>(<span class="st">"John"</span>, <span class="st">"Juan"</span>, <span class="st">"Jean"</span>, <span class="st">"Yao"</span>), </span>
 <span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>                     <span class="at">exam_1 =</span> <span class="fu">c</span>(<span class="dv">95</span>, <span class="dv">80</span>, <span class="dv">90</span>, <span class="dv">85</span>), </span>
@@ -858,8 +870,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="another-difference-1" class="level2" data-number="3.42">
-<h2 data-number="3.42" class="anchored" data-anchor-id="another-difference-1"><span class="header-section-number">3.42</span> Another difference</h2>
+<section id="another-difference-1" class="level2" data-number="4.42">
+<h2 data-number="4.42" class="anchored" data-anchor-id="another-difference-1"><span class="header-section-number">4.42</span> Another difference</h2>
 <ul>
 <li>To avoid this, we use the rather cumbersome argument <code>stringsAsFactors</code>:</li>
 </ul>
@@ -874,8 +886,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="conver-to-tibble" class="level2" data-number="3.43">
-<h2 data-number="3.43" class="anchored" data-anchor-id="conver-to-tibble"><span class="header-section-number">3.43</span> Conver to tibble</h2>
+<section id="conver-to-tibble" class="level2" data-number="4.43">
+<h2 data-number="4.43" class="anchored" data-anchor-id="conver-to-tibble"><span class="header-section-number">4.43</span> Conver to tibble</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as_tibble</span>(grades) <span class="sc">%&gt;%</span> <span class="fu">class</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -883,8 +895,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="conditionals" class="level2" data-number="3.44">
-<h2 data-number="3.44" class="anchored" data-anchor-id="conditionals"><span class="header-section-number">3.44</span> Conditionals</h2>
+<section id="conditionals" class="level2" data-number="4.44">
+<h2 data-number="4.44" class="anchored" data-anchor-id="conditionals"><span class="header-section-number">4.44</span> Conditionals</h2>
 <ul>
 <li><p>You should be familiar with the <code>ifelse</code> function. But let’s review it as it is very useful in the tidyverse</p></li>
 <li><p><code>ifelse</code> vectorizes conditional assignments. Here is an example</p></li>
@@ -899,8 +911,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="conditionals-1" class="level2" data-number="3.45">
-<h2 data-number="3.45" class="anchored" data-anchor-id="conditionals-1"><span class="header-section-number">3.45</span> Conditionals</h2>
+<section id="conditionals-1" class="level2" data-number="4.45">
+<h2 data-number="4.45" class="anchored" data-anchor-id="conditionals-1"><span class="header-section-number">4.45</span> Conditionals</h2>
 <ul>
 <li>The tidyverse offers another useful tool: <code>case_when</code></li>
 </ul>
@@ -915,8 +927,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="remapping" class="level2" data-number="3.46">
-<h2 data-number="3.46" class="anchored" data-anchor-id="remapping"><span class="header-section-number">3.46</span> Remapping</h2>
+<section id="remapping" class="level2" data-number="4.46">
+<h2 data-number="4.46" class="anchored" data-anchor-id="remapping"><span class="header-section-number">4.46</span> Remapping</h2>
 <p>The <code>recode</code> function is a related useful function for dealing with factor names.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="sc">-</span><span class="dv">5</span>, <span class="dv">5</span>)</span>
@@ -1355,13 +1367,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./R_basics.html" class="pagination-link" aria-label="R basics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">R basics</span></span>
+      <a href="./Programming_Basics.html" class="pagination-link" aria-label="Programming Basics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Programming Basics</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./summary.html" class="pagination-link" aria-label="Summary">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Git_GitHub.html" class="pagination-link" aria-label="Git and GitHub">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Git and GitHub</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

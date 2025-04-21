@@ -10,7 +10,9 @@ book:
     - index.qmd
     - intro.qmd
     - R_basics.qmd
+    - Programming_Basics.qmd
     - Tidyverse.qmd
+    - Git_GitHub.qmd
     - summary.qmd
     - references.qmd
 

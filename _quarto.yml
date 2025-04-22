@@ -12,7 +12,9 @@ book:
     - R_basics.qmd
     - Programming_Basics.qmd
     - Tidyverse.qmd
+    - data_viz.qmd
     - Git_GitHub.qmd
+    - probability.qmd
     - summary.qmd
     - references.qmd
 

@@ -1,0 +1,148 @@
+# LaTeX
+
+## What is LaTeX?  {.flexbox .vcenter}
+
+- Pronounced «Lah-tech» or «Lay-tech» (to rhyme with «Bertolt Brecht»)
+- A document preparation system for high-quality typesetting 
+- It is most often used for medium-to-large technical or scientific documents
+- Can be used for almost any form of publishing.
+- Typesetting journal articles, technical reports, books, and slide presentations
+- Allows for precise mathematical statements
+- https://www.latex-project.org
+
+## What is LaTeX?  {}
+
+- LaTeX is not a word processor! 
+- LaTeX encourages authors not to worry too much about the appearance of their documents but to concentrate on getting the right content. 
+- Control over large documents containing sectioning, cross-references, tables and figures.
+- Typesetting of complex mathematical formulas.
+- Automatic generation of bibliographies and indexes.
+- Multi-lingual typesetting
+- https://bookdown.org/yihui/bookdown/
+
+
+## What is LaTeX?  {}
+
+- **Importantly, LaTeX can be included right into RMarkdown documents**
+- The following slides have some examples
+
+## Operators and Symbols
+
+```{r, eval=FALSE, echo=TRUE}
+$$ \large a^x, \sqrt[n]{x}, \vec{\jmath}, \tilde{\imath}$$
+```
+
+$$ \large a^x, \sqrt[n]{x}, \vec{\jmath}, \tilde{\imath}$$
+
+```{r, eval=FALSE, echo=TRUE}
+$$ \large \alpha, \beta, \gamma$$
+```
+$$ \large \alpha, \beta, \gamma$$
+
+## Operators and Symbols
+
+```{r, eval=FALSE, echo=TRUE}
+$$ \large\approx, \neq, \nsim $$
+```
+$$ \large\approx, \neq, \nsim $$
+
+```{r, eval=FALSE, echo=TRUE}
+$$\large \partial, \mathbb{R}, \flat$$
+```
+$$\large \partial, \mathbb{R}, \flat$$
+
+## Equations
+
+Binomial sampling equation
+
+```{r, eval=FALSE, echo=TRUE}
+$$\large f(k) = {n \choose k} p^{k} (1-p)^{n-k}$$
+```
+
+$$\large f(k) = {n \choose k} p^{k} (1-p)^{n-k}$$
+
+Poisson Sampling Equation
+
+```{r, eval=FALSE, echo=TRUE}
+$$\large Pr(Y=r) = \frac{e^{-\mu}\mu^r}{r!}$$
+```
+
+$$\large Pr(Y=r) = \frac{e^{-\mu}\mu^r}{r!}$$
+
+
+
+## Differential Equations
+
+```{r, eval=FALSE, echo=TRUE}
+$$\iint xy^2\,dx\,dy =\frac{1}{6}x^2y^3$$
+```
+$$\iint xy^2\,dx\,dy =\frac{1}{6}x^2y^3$$
+
+## Matrix formulations
+
+```{r, eval=FALSE, echo=TRUE}
+$$	\begin{matrix}
+		-2 & 1 & 0 & 0 & \cdots & 0  \\
+		1 & -2 & 1 & 0 & \cdots & 0  \\
+		0 & 1 & -2 & 1 & \cdots & 0  \\
+		0 & 0 & 1 & -2 & \ddots & \vdots \\
+		\vdots & \vdots & \vdots & \ddots & \ddots & 1  \\
+		0 & 0 & 0 & \cdots & 1 & -2
+	\end{matrix} $$
+```
+	
+$$	\begin{matrix}
+		-2 & 1 & 0 & 0 & \cdots & 0  \\
+		1 & -2 & 1 & 0 & \cdots & 0  \\
+		0 & 1 & -2 & 1 & \cdots & 0  \\
+		0 & 0 & 1 & -2 & \ddots & \vdots \\
+		\vdots & \vdots & \vdots & \ddots & \ddots & 1  \\
+		0 & 0 & 0 & \cdots & 1 & -2
+	\end{matrix} $$
+	
+## Including LaTeX and Code into Markdown Files {.flexbox .vcenter}
+
+- Explicit inclusion of code and mathematical equations helps with reproducibility
+- Need to designate the 'environment' as being code or math
+- Can be included in-line or in 'chunks'
+
+## In-line versus fenced
+
+```{r, eval=FALSE, echo=TRUE}
+This equation, $y=\frac{1}{2}$, is included inline
+```
+
+This equation, $y=\frac{1}{2}$, is included inline
+
+```{r, eval=FALSE, echo=TRUE}
+Whereas this equation, $$y=\frac{1}{2}$$, is put on a separate line
+```
+
+Whereas this equation $$y=\frac{1}{2}$$ is put on a separate line
+
+## Markdown is very flexible
+- You can import RMarkdown templates into RStudio and open as a new Rmarkdown file
+- Better yet there are packages that add functionality
+- When you install the package it will show up in the 'From Template' section of the 'new file' startup screen
+- There are packages to make
+    - books
+    - journal articles
+    - slide shows
+    - interactive exercises
+    - many more
+- Some of these use 'Shiny'
+    - an interactive web based application
+    - allows users to input and get output
+
+## Final Thoughts on Markdown, LaTeX and GitHub
+- Many forms/flavors of markdown
+    - HTML and Rmarkdown are just forms of markdown
+    - There is a GitHub flavored markdown
+    - Once you learn one, all the others are very easy
+- The goal is increased collaboration and reproducibility
+    - Allows you to easily work with others by sharing the markdown file
+    - Allows **formal** representation of code and math
+    - Allows others to run your code directly
+    - Allows reports to nontech people
+    - All files are easily shared on GitHub
+- Once you start using Markdown you won't stop.....

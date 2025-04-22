@@ -1,0 +1,1621 @@
+# ggplot
+
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+library(tidyverse)
+library(gridExtra)
+library(dslabs)
+library(ggthemes)
+ds_theme_set()
+```
+## GGPlot2 and the Grammar of Graphics
+
+<br>
+<br>
+
+- GG stands for **Grammar of Graphics**
+- A good paragraph uses good grammar to convey information
+- A good figure uses good grammar in the same way
+- Seven general components used to create most figures
+
+## GGPlot2 and the Grammar of Graphics
+
+```{r, echo=FALSE, fig.cap="xxx", out.width='80%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4a.017.jpeg")
+```
+
+## Graphical representation | general approaches {.smaller}
+
+<br>
+
+1. Distributions of data
+    * location
+    * spread
+    * shape
+  
+2. Associations between variables
+    * relationship among two or more variables
+    * differences among groups in their distributions
+  
+## Graphical representation | general approaches {.smaller}
+
+<br>
+
+1. Distributions of data
+    * bar graph
+    * histogram
+    * box plot
+  
+2. Associations between variables
+    * pie chart
+    * grouped bar graph
+    * mosaic plot
+    * box plot
+    * scatter plot
+    * dot plot 'stripchart'
+
+## Box Plot {.flexbox .vcenter .smaller}
+
+- Displays median, first and third quartile, range, and extreme observations 
+- Can be combined with mean and standard error of the mean
+- Concise way to visualize many aspects of distribution
+
+```{r, echo=FALSE, out.width='50%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4a.001.jpeg")
+```
+
+## Scatter Plot {.flexbox .vcenter .smaller}
+
+<br>
+
+- Displays association between two numerical variables 
+- Goal is association not magnitude or frequency  
+- Points fill the space available 
+
+```{r, echo=FALSE, out.width='50%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4a.002.jpeg")
+```
+
+## Examples of the good, bad and the ugly of graphical representation {.flexbox .vcenter}
+
+<br>
+<br>
+
+- Examples of bad graphs and how to improve them.
+- Courtesy of K.W. Broman  
+- www.biostat.wisc.edu/~kbroman/topten_worstgraphs/ 
+
+## Ticker tape parade {.flexbox .vcenter .smaller}
+
+```{r, echo=FALSE, out.width='75%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4a.003.jpeg")
+```
+
+## A line to no understanding {.flexbox .vcenter .smaller}
+
+```{r, echo=FALSE, out.width='75%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4a.004.jpeg")
+```
+
+## A cup of hot nothing {.flexbox .vcenter .smaller}
+
+```{r, echo=FALSE, out.width='75%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4a.006.jpeg")
+```
+
+## A bake sale of pie charts {.flexbox .vcenter .smaller}
+
+```{r, echo=FALSE, out.width='75%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4a.007.jpeg")
+```
+
+## Wack a mole
+
+```{r, echo=FALSE, out.width='75%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4a.008.jpeg")
+```
+
+# Best practices
+
+## {}
+
+<br>
+<br>
+
+> "Graphical excellence is that which gives to the viewer the greatest number of ideas in the shortest time  with the least ink in the smallest space"
+>
+> --- Edward Tufte
+
+## Principles of effective display
+<br>
+<br>
+
+- Show the data  
+- Encourage the eye to compare differences 
+- Represent magnitudes honestly and accurately  
+- Draw graphical elements clearly, minimizing clutter  
+- Make displays easy to interpret 
+
+## “Above all else show the data” | Tufte  1983 
+
+```{r, echo=FALSE, out.width='75%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4a.010.jpeg")
+```
+
+## “Maximize  the  data to ink  ratio,  within  reason” | Tufte   1983   
+
+Draw  graphical  elements  clearly,  minimizing  clutter  
+
+```{r, echo=FALSE, out.width='50%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4a.011.jpeg")
+```
+
+
+## “A  graphic  does  not  distort  if  the  visual  representation  of  the  data  is  consistent  with  the  numerical   representation” – Tufte   1983   
+
+Represent  magnitudes  honestly  and  accurately  
+
+```{r, echo=FALSE, out.width='60%', fig.asp=.6, fig.align='center'}
+knitr::include_graphics("images/images_4a.012.jpeg")
+```
+
+## How Fox News makes a figure ...    
+
+```{r, echo=FALSE, out.width='75%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4a.013.jpeg")
+```
+
+## How Fox News makes a figure ...   
+
+```{r, echo=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4a.013.jpeg")
+```
+```{r, echo=FALSE, out.width='30%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4a.014.jpeg")
+```
+
+“Graphical  excellence  begins  with  telling  the  truth  about  the  data”  –  Tufte    1983  
+
+# GGPlot2 and nice figures
+
+## GGPlot2 and the Grammar of Graphics
+
+```{r, echo=FALSE, fig.cap="xxx", out.width='80%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4a.017.jpeg")
+```
+
+## The `geom_bar` function {.flexbox .vcenter}
+
+```{r, eval=TRUE, echo=TRUE,fig.asp=0.5}
+library(ggplot2)
+ggplot(data=diamonds) +
+  geom_bar(mapping=aes(x=cut))
+```
+
+## The `geom_bar` function {.flexbox .vcenter}
+Now try this...
+
+```{r gp1, eval=TRUE, echo=TRUE,fig.asp=0.5}
+ggplot(data=diamonds) +
+  geom_bar(mapping=aes(x=cut, colour=cut))
+```
+
+## The `geom_bar` function {.flexbox .vcenter}
+and this...
+
+```{r, eval=TRUE, echo=TRUE,fig.asp=0.5}
+ggplot(data=diamonds) +
+  geom_bar(mapping=aes(x=cut, fill=cut))
+```
+
+## The `geom_bar` function {.flexbox .vcenter}
+and finally this...
+
+```{r, eval=TRUE, echo=TRUE,fig.asp=0.5}
+ggplot(data=diamonds) +
+  geom_bar(mapping=aes(x=cut, fill=clarity), position="dodge")
+```
+
+## The `geom_histogram` and `geom_freqpoly` function {.flexbox .vcenter }
+With this function you can make a histogram
+```{r, eval=TRUE, echo=TRUE,fig.asp=0.4}
+ggplot(data=diamonds) +
+  geom_histogram(mapping=aes(x=carat), binwidth=0.5)
+```
+
+## The `geom_histogram` and `geom_freqpoly` function {.flexbox .vcenter }
+This allows you to make a frequency polygram
+```{r, eval=TRUE, echo=TRUE,fig.asp=0.4}
+ggplot(data=diamonds) +
+  geom_freqpoly(mapping=aes(x=carat), binwidth=0.5)
+```
+
+## The `geom_boxplot` function {.flexbox .vcenter}
+
+Boxplots are very useful for visualizing data
+
+```{r, eval=TRUE, echo=TRUE,fig.asp=0.5}
+ggplot(data=diamonds, mapping=aes(x=cut, y=price)) +
+  geom_boxplot()
+```
+
+## The `geom_boxplot` function {.flexbox .vcenter}
+
+```{r, eval=TRUE, echo=TRUE,fig.asp=0.5}
+ggplot(data=mpg, mapping=aes(x=class, y=hwy)) +
+  geom_boxplot() +
+  coord_flip()
+```
+
+## The `geom_boxplot` function {.flexbox .vcenter}
+
+```{r gp2, eval=TRUE, echo=TRUE,fig.asp=0.5}
+ggplot(data=mpg, mapping=aes(x=reorder(class, hwy, FUN=median), y=hwy)) +
+  geom_boxplot() +
+  coord_flip()
+```
+
+## The `geom_point` & `geom_smooth` functions {.flexbox .vcenter}
+
+```{r, eval=TRUE, echo=TRUE,fig.asp=0.5}
+ggplot(data=diamonds, mapping=aes(x=x, y=y)) +
+  geom_point()
+```
+
+##  `geom_point` & `geom_smooth`  {.flexbox .vcenter}
+
+```{r, eval=TRUE, echo=TRUE,fig.asp=0.5}
+ggplot(data=mpg) +
+  geom_point(mapping=aes(x=displ, y=hwy)) +
+  facet_wrap(~class, nrow=2)
+```
+
+##  `geom_point` & `geom_smooth`  {.flexbox .vcenter}
+
+```{r, eval=TRUE, echo=TRUE,fig.asp=0.5}
+ggplot(data=mpg) +
+  geom_point(mapping=aes(x=displ, y=hwy)) +
+  facet_grid(drv~cyl)
+```
+
+##  `geom_point` & `geom_smooth`  {.flexbox .vcenter}
+
+```{r, eval=TRUE, echo=TRUE,fig.asp=0.5}
+ggplot(data=mpg) +
+  geom_smooth(mapping=aes(x=displ, y=hwy), method = "loess")
+```
+
+## Combining geoms {.flexbox .vcenter}
+
+```{r, eval=TRUE, echo=TRUE,fig.asp=0.5}
+ggplot(data=mpg) +
+  geom_point(mapping=aes(x=displ, y=hwy)) +
+  geom_smooth(mapping=aes(x=displ, y=hwy), method = "loess")
+```
+
+## Adding labels {.flexbox .vcenter}
+
+```{r, eval=TRUE, echo=TRUE,fig.asp=0.5}
+ggplot(data=mpg, aes(displ, hwy)) +
+  geom_point(aes(color=class)) +
+  geom_smooth(se=FALSE, method="loess") +
+  labs(title = "Fuel efficiency generally decreases with engine size",
+  subtitle = "Two seaters (sports cars) are an exception because of their light weight",
+  caption = "Data from fueleconomy.gov")
+```
+
+
+## Themes
+
+```{r, echo=FALSE, out.width='80%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/images_4a.018.jpeg")
+```
+
+## Arranging Multiple Figures- Flexdashboard
+
+- Modify YAML header to specify graph orientation
+
+```{r, echo=TRUE, eval=FALSE}
+---
+title: Flexdashboard Options"
+output: 
+  flexdashboard::flex_dashboard:
+    
+   vertical_layout: 'fill' or 'scroll'
+         or
+     orientation: 'rows'
+---
+```
+- Or specify data width to reorganize (try this in template)
+https://rmarkdown.rstudio.com/flexdashboard/
+
+## Arranging Multiple Figures- Flexdashboard
+
+<br>
+
+```{r, echo=FALSE, out.width='30%'}
+knitr::include_graphics("images/felxdash_scroll.png")
+knitr::include_graphics("images/dashboard_orient_rows.png")
+knitr::include_graphics("images/dashboard_spec_col_widths.png")
+```
+
+
+
+
+## Introduction
+
+These slides are inspired by:
+
+["Creating effective figures and tables"](https://www.biostat.wisc.edu/~kbroman/presentations/graphs2017.pdf) by [Karl Broman](http://kbroman.org/). Code available on [GitHub](https://github.com/kbroman/Talk_Graphs) repository. [Introduction to Data Visualization course](http://paldhous.github.io/ucb/2016/dataviz/index.html) by Peter Aldhous
+
+It is a chapter in a data visualization chapter in [this book](https://rafalab.github.io/dsbook/)
+
+## Introduction
+
+-   We show some examples of plot styles we should avoid, explain how to improve them, and use these as motivation for a list of principles.
+-   We compare and contrast plots that follow these principles to those that don't.
+
+## Introduction
+
+-   The principles are mostly based on research related to how humans detect patterns and make visual comparisons.
+-   The preferred approaches are those that best fit the way our brains process visual information.
+-   When deciding on a visualization approach it is also important to keep our goal in mind.
+-   We may be comparing a viewable number of quantities, describing distribution for categories or numeric values, comparing the data from two groups, or describing the relationship between two variables.
+
+## Encoding data using visual cues
+
+-   We start by describing some principles for encoding data.
+-   There are several approaches at our disposal including:
+    -   position
+    -   aligned lengths
+    -   angles
+    -   area
+    -   brightness
+    -   color hue.
+
+## First example
+
+```{r, echo=FALSE}
+browsers <- data.frame(Browser = rep(c("Opera","Safari","Firefox","IE","Chrome"),2),
+                       Year = rep(c(2000, 2015), each = 5),
+                       Percentage = c(3,21,23,28,26, 2,22,21,27,29)) %>%
+  mutate(Browser = reorder(Browser, Percentage))
+
+p1 <- browsers %>% ggplot(aes(x = "", y = Percentage, fill = Browser)) +
+  geom_bar(width = 1, stat = "identity", col = "black")  + coord_polar(theta = "y") +
+  theme_excel() + xlab("") + ylab("") +
+  theme(axis.text=element_blank(), 
+        axis.ticks = element_blank(), 
+        panel.grid  = element_blank()) +
+  facet_grid(.~Year)
+p1
+```
+
+## Encoding data with angles and areas: not recommended
+
+-   Here we are representing quantities with both areas and angles since both the angle and area of each pie slice is proportional to the quantity it represents.
+
+-   This turns out to be a sub optimal choice since, as demonstrated by perception studies, humans are not good at precisely quantifying angles and are even worse when only are is available.
+
+## Encoding data with just area: even less recommended
+
+```{r donutchart, fig.cap="Pie chart of browser usage.", echo=FALSE}
+browsers %>% ggplot(aes(x = 2, y = Percentage, fill = Browser)) +
+  geom_bar(width = 1, stat = "identity", col = "black")  + 
+  scale_x_continuous(limits=c(0.5,2.5)) + coord_polar(theta = "y") +
+  theme_excel() + xlab("") + ylab("") +
+  theme(axis.text=element_blank(), 
+        axis.ticks = element_blank(), 
+        panel.grid  = element_blank()) +
+  facet_grid(.~Year)
+
+```
+
+## pie chart vs barplots
+
+```{r barplot, fig.height = 5, echo=FALSE}
+p2 <-browsers %>%
+  ggplot(aes(Browser, Percentage)) + 
+  geom_bar(stat = "identity", width=0.5, fill=4, col = 1) +
+  ylab("Percent using the Browser") +
+  facet_grid(.~Year)
+grid.arrange(p1, p2, nrow = 2)
+```
+
+## If forced to make a pie chart at percentages
+
+```{r, eaco = FALSE, warning = FALSE, message=FALSE, echo=FALSE}
+library(scales)
+browsers <- filter(browsers, Year == 2015)
+at <- with(browsers, 100 - cumsum(c(0,Percentage[-length(Percentage)])) - 0.5*Percentage)  
+label <- percent(browsers$Percentage/100)
+browsers %>% ggplot(aes(x = "", y = Percentage, fill = Browser)) +
+  geom_bar(width = 1, stat = "identity", col = "black")  + coord_polar(theta = "y") +
+  theme_excel() + xlab("") + ylab("") + ggtitle("2015") +
+  theme(axis.text=element_blank(), 
+        axis.ticks = element_blank(), 
+        panel.grid  = element_blank()) +
+annotate(geom = "text", 
+              x = 1.62, 
+              y =  at, 
+              label = label, size=4)
+```
+
+## Visual cues
+
+-   Position and length are the preferred ways to display quantities over angles which are preferred to area.
+
+-   Brightness and color are even harder to quantifying that angles and area but, as we will see later, they are sometimes useful when more than two dimensions are being displayed.
+
+## When to include 0
+
+-   When using length (e.g. barplots) it is misleading not to start the bars at 0.
+
+-   This is because, by using a barplot, we are implying the length is proportional to the quantities being displayed.
+
+-   By avoiding 0, relatively small difference can be made to look much bigger than they actually are.
+
+-   This approach is often used by politicians or media organizations trying to exaggerate a difference.
+
+## Example
+
+![](http://paldhous.github.io/ucb/2016/dataviz/img/class2_8.jpg)
+
+-   (Source: Fox News, via Media Matters via Fox News via [Peter Aldhous](http://paldhous.github.io/ucb/2016/dataviz/week2.html)
+
+## Same data with plot that includes 0
+
+```{r, echo=FALSE}
+data.frame(Year = as.character(c(2011, 2012, 2013)),Southwest_Border_Apprehensions = c(165244,170223,192298)) %>%
+  ggplot(aes(Year, Southwest_Border_Apprehensions )) +
+  geom_bar(stat = "identity", fill = "yellow", col = "black", width = 0.65) 
+```
+
+## Another example
+
+![](http://i2.wp.com/flowingdata.com/wp-content/uploads/2012/08/Bush-cuts.png)
+
+-   Via Fox News via [Flowingdata](http://flowingdata.com/2012/08/06/fox-news-continues-charting-excellence/)
+
+## Same data with plot the includes 0
+
+```{r, echo=FALSE, fig.height=5}
+data.frame(date = c("Now", "Jan 1, 2013"), tax_rate = c(35, 39.6)) %>%
+  mutate(date = reorder(date, tax_rate)) %>%
+  ggplot(aes(date, tax_rate)) + ylab("") + xlab("") +
+  geom_bar(stat = "identity", fill = "yellow", col = "black", width = 0.5) + 
+  ggtitle("Top Tax Rate If Bush Tax Cut Expires")
+```
+
+## When not to include 0
+
+-   When using position rather than length, it is **not** necessary to include 0.
+
+-   This is particularly the case when we want to compare differences between groups relative the variability seen within the groups.
+
+## Example: Life expectancy by continent in 2012
+
+```{r, echo=FALSE, fig.height=4, fig.width=8}
+p1 <- gapminder %>% filter(year == 2012) %>%
+  ggplot(aes(continent, life_expectancy)) +
+  geom_point()
+p2 <- p1 +
+  scale_y_continuous(limits = c(0, 84))
+grid.arrange(p2, p1, ncol = 2)
+```
+
+## Do not distrort quantities
+
+![](http://paldhous.github.io/ucb/2016/dataviz/img/class2_30.jpg)
+
+(Source: President Barack Obama’s 2011 State of the Union Address via \[Peter Aldhous\] (http://paldhous.github.io/ucb/2016/dataviz/index.html))
+
+## Use area not radius
+
+```{r, echo = FALSE}
+gdp <- c(14.6, 5.7, 5.3, 3.3, 2.5)
+gdp_data <- data.frame(Country = rep(c("United States", "China", "Japan", "Germany", "France"),2),
+           y = factor(rep(c("Radius","Area"),each=5), levels = c("Radius", "Area")),
+           GDP= c(gdp^2/min(gdp^2), gdp/min(gdp))) %>% 
+   mutate(Country = reorder(Country, GDP))
+gdp_data %>% 
+  ggplot(aes(Country, y, size = GDP)) + 
+  geom_point(show.legend = FALSE, color = "blue") + 
+  scale_size(range = c(2,30)) +
+  coord_flip() + ylab("") + xlab("")
+```
+
+## But we should not be using area or radius
+
+```{r, echo=FALSE}
+gdp_data %>% filter(y == "Area") %>% ggplot(aes(Country, GDP)) + geom_bar(stat = "identity") + ylab("GDP in trillions of US dollars")
+```
+
+## Order by a meaningful value
+
+```{r, echo=FALSE}
+data(murders)
+p1 <- murders %>% mutate(murder_rate = total / population * 100000) %>%
+  ggplot(aes(state, murder_rate)) +
+  geom_bar(stat="identity") +
+  coord_flip() +
+  xlab("")
+p1
+```
+
+## Order by a meaningful value
+
+```{r, echo=FALSE, fig.height=4, fig.width=8}
+data(murders)
+p1 <- murders %>% mutate(murder_rate = total / population * 100000) %>%
+  ggplot(aes(state, murder_rate)) +
+  geom_bar(stat="identity") +
+  coord_flip() +
+  xlab("")
+
+p2 <- murders %>% mutate(murder_rate = total / population * 100000) %>%
+  mutate(state = reorder(state, murder_rate)) %>%
+  ggplot(aes(state, murder_rate)) +
+  geom_bar(stat="identity") +
+  coord_flip() +
+  xlab("")
+grid.arrange(p1, p2, ncol = 2)
+```
+
+## Another example: Average income by region in 1970 (colors = continent)
+
+```{r, echo=FALSE, fig.height=4, fig.width=8}
+past_year <- 1970
+p1 <- gapminder %>% 
+  mutate(dollars_per_day = gdp/population/365) %>%
+  filter(year == past_year & !is.na(gdp)) %>%
+  ggplot(aes(region, dollars_per_day, fill = continent)) +
+  geom_boxplot(show.legend=FALSE) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  xlab("")
+p2 <- gapminder %>% 
+  mutate(dollars_per_day = gdp/population/365) %>%
+  filter(year == past_year & !is.na(gdp)) %>%
+  mutate(region = reorder(region, dollars_per_day, FUN = median)) %>%
+  ggplot(aes(region, dollars_per_day, fill = continent)) +
+  geom_boxplot(show.legend=FALSE) +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  xlab("")
+grid.arrange(p1, p2, ncol=2)
+```
+
+## Show the data
+
+```{r, echo=FALSE}
+data(heights)
+p1 <- heights %>% group_by(sex) %>% summarize(average = mean(height), se=sd(height)/sqrt(n())) %>%
+  ggplot(aes(sex, average)) + theme_excel() + 
+  geom_errorbar(aes(ymin = average - 2*se, ymax = average+2*se), width = 0.25)+
+  geom_bar(stat = "identity", width=0.5, fill=4, col = 1) +
+  ylab("Height in inches")
+p1
+```
+
+## Show the data
+
+```{r, echo=FALSE}
+heights %>% ggplot(aes(sex, height)) + geom_point() 
+```
+
+## jitter and alpha blending
+
+```{r, echo=FALSE}
+heights %>% ggplot(aes(sex, height)) + geom_jitter(width = 0.1, alpha = 0.2) 
+```
+
+## Compare distributions if too many points
+
+```{r, echo=FALSE, fig.height=4, fig.width=8}
+heights %>% 
+  ggplot(aes(height, ..density..)) +
+  geom_histogram(binwidth = 1, color="black") +
+  facet_grid(.~sex, scales = "free_x")
+```
+
+## Ease comparisons: Use common axes
+
+```{r, echo=FALSE, fig.height=4, fig.width=8}
+heights %>% 
+  ggplot(aes(height, ..density..)) +
+  geom_histogram(binwidth = 1, color="black") +
+  facet_grid(.~sex)
+```
+
+## Ease comparisons: align vertically
+
+```{r, echo=FALSE}
+p2 <- heights %>% 
+  ggplot(aes(height, ..density..)) +
+  geom_histogram(binwidth = 1, color="black") +
+  facet_grid(sex~.)
+p2
+```
+
+## Ease comparisons: align horizontally
+
+```{r,echo=FALSE}
+p3 <- heights %>% 
+  ggplot(aes(sex, height)) + 
+  geom_boxplot(coef=3) + 
+  geom_jitter(width = 0.1, alpha = 0.2) +
+  ylab("Height in inches")
+p3
+```
+
+## Comparison
+
+```{r, echo=FALSE, fig.width=7, fig.height=4}
+grid.arrange(p1, p2, p3, ncol = 3)
+```
+
+## Consider transformations
+
+-   As an example consider this barplot showing the average population sizes for each continent in 2015:
+
+## Consider transformations
+
+```{r, echo=FALSE}
+data(gapminder)
+p1 <- gapminder %>% filter(year == 2015) %>%
+  group_by(continent) %>% summarize(population = mean(population)) %>%
+  mutate(continent = reorder(continent, population)) %>%
+  ggplot(aes(continent, population/10^6)) + 
+  geom_bar(stat = "identity", width=0.5, fill=4) +
+  theme_excel() + 
+  ylab("Population in Millions") +
+  xlab("Continent")
+p1
+```
+
+## Show the data
+
+```{r ,echo=FALSE}
+p2 <- gapminder %>% filter(year == 2015) %>% 
+  mutate(continent = reorder(continent, population, mean)) %>%
+  ggplot(aes(continent, population/10^6)) + 
+  ylab("Population in Millions") +
+  xlab("Continent")
+p2 +  geom_jitter(width = .1, alpha = .5) 
+```
+
+## Consider transformations
+
+```{r, echo=FALSE, fig.width=8, fig.height=4}
+p2 <- p2 + geom_boxplot(coef=3) + 
+   geom_jitter(width = .1, alpha = .5) + scale_y_log10(breaks = c(1,10,100,1000))
+grid.arrange(p1, p2, ncol = 2)
+```
+
+## How can we ease comparisons?
+
+```{r, echo=FALSE}
+gapminder %>% 
+  filter(year %in% c(1970, 2010) & !is.na(gdp)) %>%
+  mutate(dollars_per_day = gdp/population/365) %>%
+  mutate(labels = paste(year, continent)) %>%
+  ggplot(aes(labels, dollars_per_day)) +
+  geom_boxplot() + 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  scale_y_continuous(trans = "log2") + 
+  ylab("Income in dollars per day")
+```
+
+## Comparisons should be adjacent
+
+```{r, echo=FALSE}
+gapminder %>% 
+  filter(year %in% c(1970, 2010) & !is.na(gdp)) %>%
+  mutate(dollars_per_day = gdp/population/365) %>%
+  mutate(labels = paste(continent, year)) %>%
+  ggplot(aes(labels, dollars_per_day)) +
+  geom_boxplot() + 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  scale_y_continuous(trans = "log2") + 
+  ylab("Income in dollars per day")
+```
+
+## Use color to highlight comparison
+
+```{r,echo=FALSE}
+ gapminder %>% 
+  filter(year %in% c(1970, 2010) & !is.na(gdp)) %>%
+  mutate(dollars_per_day = gdp/population/365, year = factor(year)) %>%
+  ggplot(aes(continent, dollars_per_day, fill = year)) +
+  geom_boxplot() + 
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  scale_y_continuous(trans = "log2") + 
+  ylab("Income in dollars per day")
+```
+
+## Think of the color blind
+
+-   About 10% of the population is color blind.
+-   Unfortunately, the default colors used in ggplot are not optimal for this group.
+-   However, ggplot does it make it easy to change the color palette used in the plots.
+
+## Think of the color blind
+
+-   Here is an example of how we can use color blind friendly pallet described [here](http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/#a-colorblind-friendly-palette):
+
+## Think of the color blind
+
+```{r, echo=FALSE}
+color_blind_friendly_cols <- c("#999999", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
+p1 <- data.frame(x=1:8, y=1:8, col = as.character(1:8)) %>% ggplot(aes(x, y, color = col)) + geom_point(size=5)
+p1 + scale_color_manual(values=color_blind_friendly_cols)
+```
+
+## Think of the color blind
+
+-   There are several resources that help you select colors, for example [this one](http://bconnelly.net/2013/10/creating-colorblind-friendly-figures/).
+
+## Alternatives to scatterplots
+
+-   Scatter plots are default when comparing two variables
+-   Slope charts are good for before after comparisons
+-   Bland-Altman plots are good for when we care about difference
+
+## Slope charts
+
+```{r,echo=FALSE}
+west <- c("Western Europe","Northern Europe","Southern Europe",
+          "Northern America","Australia and New Zealand")
+
+dat <- gapminder %>% 
+  filter(year%in% c(2010, 2015) & region %in% west & 
+           !is.na(life_expectancy) & population > 10^7) 
+
+dat %>%
+  mutate(location = ifelse(year == 2010, 1, 2), 
+         location = ifelse(year == 2015 & country%in%c("United Kingdom","Portugal"), location+0.22, location),
+         hjust = ifelse(year == 2010, 1, 0)) %>%
+  mutate(year = as.factor(year)) %>%
+  ggplot(aes(year, life_expectancy, group = country)) +
+  geom_line(aes(color = country), show.legend = FALSE) +
+  geom_text(aes(x = location, label = country, hjust = hjust), 
+            show.legend = FALSE) +
+  xlab("") + ylab("Life Expectancy")
+```
+
+## Scatter plot (with common axes)
+
+```{r, echo=FALSE}
+library(ggrepel)
+west <- c("Western Europe","Northern Europe","Southern Europe",
+          "Northern America","Australia and New Zealand")
+
+dat <- gapminder %>% 
+  filter(year%in% c(2010, 2015) & region %in% west & 
+           !is.na(life_expectancy) & population > 10^7) 
+
+dat %>% 
+   mutate(year = paste0("life_expectancy_", year)) %>%
+   select(country, year, life_expectancy) %>% spread(year, life_expectancy) %>% 
+   ggplot(aes(x=life_expectancy_2010,y=life_expectancy_2015, label = country)) + geom_point() + geom_text_repel() +
+  scale_x_continuous(limits=c(78.5, 83)) +
+  scale_y_continuous(limits=c(78.5, 83)) +
+  geom_abline(lty = 2) +
+  xlab("2010") + ylab("2015")
+```
+
+## Bland-Altman plot
+
+```{r, echo=FALSE}
+library(ggrepel)
+dat %>% 
+   mutate(year = paste0("life_expectancy_", year)) %>%
+   select(country, year, life_expectancy) %>% spread(year, life_expectancy) %>% 
+  mutate(average = (life_expectancy_2015 + life_expectancy_2010)/2,
+         difference = life_expectancy_2015 - life_expectancy_2010) %>%
+  ggplot(aes(average, difference, label = country)) + 
+  geom_point() +
+  geom_text_repel() +
+  geom_abline(lty = 2) +
+  xlab("Average of 2010 and 2015") + ylab("Difference between 2015 and 2010")
+```
+
+## Encoding a third variable
+
+```{r, echo=FALSE}
+present_year <- 2010
+
+dat <- gapminder %>%
+  mutate(region = case_when(
+    .$region %in% west ~ "The West",
+    .$region %in% "Northern Africa" ~ "Northern Africa",
+    .$region %in% c("Eastern Asia", "South-Eastern Asia") ~ "East Asia",
+    .$region == "Southern Asia"~ "Southern Asia",
+    .$region %in% c("Central America", "South America", "Caribbean") ~ "Latin America",
+    .$continent == "Africa" & .$region != "Northern Africa" ~ "Sub-Saharan Africa",
+    .$region %in% c("Melanesia", "Micronesia", "Polynesia") ~ "Pacific Islands"),
+    dollars_per_day = gdp / population / 365) %>%
+  filter(year %in% present_year & !is.na(gdp) & !is.na(infant_mortality) & !is.na(region) ) %>%
+  mutate(OPEC = ifelse(country%in%opec, "Yes", "No")) 
+
+dat %>% 
+  ggplot(aes(dollars_per_day, 1 - infant_mortality/1000, 
+             col = region, size = population/10^6,
+             pch =  OPEC)) +
+  scale_x_continuous(trans = "log2", limits=c(0.25, 150)) +
+  scale_y_continuous(trans = "logit",limit=c(0.875, .9981),
+                     breaks=c(.85,.90,.95,.99,.995,.998)) + 
+  geom_point(alpha = 0.5) 
+```
+
+## Encoding a third variable
+
+```{r, echo=FALSE}
+dat=data.frame(x=c(0:25))
+ggplot() +
+  theme_minimal() +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.title.y=element_blank(),
+        axis.text.y=element_blank(),
+        axis.ticks.y=element_blank(),
+        panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank()) +
+scale_shape_identity() + scale_y_reverse() +
+geom_point(dat, mapping=aes(x%%9, x%/%9, shape=x), size=10, fill="blue") +
+geom_text(dat, mapping=aes(x%%9, x%/%9+0.25, label=x), size=6) 
+```
+
+## Example
+
+-   The data used for these plots were collected, organized and distributed by the [Tycho Project](http://www.tycho.pitt.edu/).
+-   They include weekly reported counts data for seven diseases from 1928 to 2011, from all fifty states.
+
+```{r, echo=FALSE, warning=FALSE}
+data(us_contagious_diseases)
+```
+
+## One state is easy
+
+```{r, echo=FALSE}
+the_disease <- "Measles"
+dat <- us_contagious_diseases %>%
+  filter(!state%in%c("Hawaii","Alaska") & disease == the_disease) %>%
+  mutate(rate = count / population * 10000) %>% 
+  mutate(state = reorder(state, rate)) 
+
+dat %>% filter(state == "California") %>%
+  ggplot(aes(year, rate)) +
+  geom_line() + ylab("Cases per 10,000")  + 
+  geom_vline(xintercept=1963, col = "blue")
+```
+
+## Paletts
+
+-   Diverging colors are used to represent values that diverge from a center.
+-   We put equal emphasis on both ends of the data range: higher than the center and lower than the center.
+-   An example of when we would use a divergent pattern would be if we were to show height in standard deviations away from the average.
+-   Here are some examples of divergent patterns:
+
+## Sequential Paletts
+
+```{r, echo=FALSE}
+library(RColorBrewer)
+display.brewer.all(type="seq")
+```
+
+## Divergent Paletts
+
+```{r}
+library(RColorBrewer)
+display.brewer.all(type="div")
+```
+
+## Example
+
+```{r, echo=FALSE, fig.width=8}
+dat %>% ggplot(aes(year, state,  fill = rate)) +
+  geom_tile(color = "grey50") +
+  scale_x_continuous(expand=c(0,0)) +
+  scale_fill_gradientn(colors = brewer.pal(9, "Reds"), trans = "sqrt") +
+  geom_vline(xintercept=1963, col = "blue") +
+  theme_minimal() +  theme(panel.grid = element_blank()) +
+  ggtitle(the_disease) + 
+  ylab("") + 
+  xlab("")
+```
+
+## Alternative: eliminate one variable
+
+```{r, echo=FALSE}
+avg <- us_contagious_diseases %>%
+  filter(disease==the_disease) %>% group_by(year) %>%
+  summarize(us_rate = sum(count, na.rm=TRUE)/sum(population, na.rm=TRUE)*10000)
+dat %>% ggplot() +
+  geom_line(aes(year, rate, group = state),  color = "grey50", 
+            show.legend = FALSE, alpha = 0.2, size = 1) +
+  geom_line(mapping = aes(year, us_rate),  data = avg, size = 1, color = "black") +
+  scale_y_continuous(trans = "sqrt", breaks = c(5,25,125,300)) + 
+  ggtitle("Cases per 10,000 by state") + 
+  xlab("") + 
+  ylab("") +
+  geom_text(data = data.frame(x=1955, y=50), mapping = aes(x, y, label="US average"), color="black") + 
+  geom_vline(xintercept=1963, col = "blue") 
+```
+
+## Avoid pseudo three dimensional plots
+
+![Pseudo 3-D.](https://raw.githubusercontent.com/kbroman/Talk_Graphs/master/Figs/fig8b.png)
+
+(Source: Karl Broman)
+
+## Avoid pseudo three dimensional plots
+
+```{r colors-for-different-lines, echo=FALSE}
+##First read data
+url <- "https://github.com/kbroman/Talk_Graphs/raw/master/R/fig8dat.csv"
+dat <- read.csv(url)
+
+##Now make alternative plot
+dat %>% gather(drug, survival, -log.dose) %>%
+  mutate(drug = gsub("Drug.","",drug)) %>%
+  ggplot(aes(log.dose, survival, color = drug)) +
+  geom_line()    
+```
+
+## Avoid gratuitousthree dimensional plots
+
+-   Pseudo 3D is sometimes used completely gratuitously: plots are made to look 3D even when the 3rd dimension does not represent a quantity.
+-   This only adds confusion and makes it harder to relay your message.
+
+## Avoid gratuitousthree dimensional plots
+
+![](https://raw.githubusercontent.com/kbroman/Talk_Graphs/master/Figs/fig1e.png)
+
+## Avoid gratuitousthree dimensional plots
+
+```{r,echo=FALSE, out.width = "600px"}
+knitr::include_graphics("https://raw.githubusercontent.com/kbroman/Talk_Graphs/master/Figs/fig2d.png")
+```
+
+## Avoid too any significant digits
+
+-   By default, statistical software like R returns many significant digits.
+-   The default behavior in R is to show 7 significant digits.
+-   So many digits often adds no information and the visual clutter than can makes it hard for the consumer of your table to understand the message.
+-   As an example here are the per 10,000 disease rates for California across the five decades
+
+## Avoid too any significant digits
+
+```{r, echo=FALSE}
+tmp <- options()$digits
+options(digits=7)
+dat <- us_contagious_diseases %>%
+  filter(year %in% seq(1940,1980,10) &  state == "California" &
+          disease %in% c("Measles","Pertussis","Polio")) %>%
+  mutate(rate = count / population * 10000) %>% 
+  mutate(state = reorder(state, rate)) %>% 
+  select(state, year, disease, rate) %>%
+  spread(disease, rate)
+dat %>% knitr::kable()
+options(digits=tmp)
+```
+
+## Avoid too any significant digits
+
+-   We are reporting precision up to 0.00001 cases per 10,000, a very small value in the context the changes that are occurring across the dates.
+-   In this case 2 significant figure is more than enough and makes the point that rates are decreasing clearly:
+
+## Avoid too any significant digits
+
+```{r, echo = FALSE}
+dat %>% mutate_if(is.numeric, funs(round(., digits=1))) %>% knitr::kable()
+```
+
+## Compare vertically
+
+-   Another principle, related to displaying tables, is to place values being compared on columns rather than rows.
+
+## Compare vertically
+
+```{r, echo = FALSE}
+dat %>% mutate_if(is.numeric, funs(round(., digits=1))) %>% knitr::kable()
+```
+
+## Do not compare horizontally
+
+```{r, echo=FALSE}
+dat <- us_contagious_diseases %>%
+  filter(year %in% seq(1940,1980,10) &  state == "California" &
+          disease %in% c("Measles","Pertussis","Polio")) %>%
+  mutate(rate = count / population * 10000) %>% 
+  mutate(state = reorder(state, rate)) %>% 
+  select(state, year, disease, rate) %>%
+  spread(year, rate)
+dat %>% mutate_if(is.numeric, funs(round(., digits=1))) %>% knitr::kable()
+```
+
+## Further reading:
+
+-   ER Tufte (1983) The visual display of quantitative information. Graphics Press.
+-   ER Tufte (1990) Envisioning information. Graphics Press.
+-   ER Tufte (1997) Visual explanations. Graphics Press.
+-   WS Cleveland (1993) Visualizing data. Hobart Press.
+-   WS Cleveland (1994) The elements of graphing data. CRC Press.
+-   A Gelman, C Pasarica, R Dodhia (2002) Let's practice what we preach: Turning tables into graphs. The American Statistician 56:121-130.
+-   NB Robbins (2004) Creating more effective graphs. Wiley.
+-   [Nature Methods columns](http://bang.clearscience.info/?p=546)\
+-   A Cairo (2013) The Functional Art: An Introduction to Information Graphics and Visualization. New Riders
+-   N Yau (2013) Data Points: Visualization That Means Something. Wiley
+
+## Elements of ggplot2
+
+[Hadley Wickham's](http://hadley.nz/) ggplot2 is one of the most popular packages in the entire R canon. - It also happens to be built upon some deep visualization theory: i.e. Leland Wilkinson's [*The Grammar of Graphics*](https://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448).
+
+There's a lot to say about ggplot2's implementation of this "grammar of graphics" approach, but the three key elements are:
+
+1.  Your plot ("the visualization") is linked to your variables ("the data") through various **aesthetic mappings**.
+
+2.  Once the aesthetic mappings are defined, you can represent your data in different ways by choosing different **geoms** (i.e. "geometric objects" like points, lines or bars).
+
+3.  You build your plot in **layers**.
+
+--
+
+</br>
+
+That's kind of abstract. Let's review each element in turn with some actual plots.
+
+------------------------------------------------------------------------
+
+## 1. Aesthetic mappings
+
+```{r, aesthetics0}
+library(gapminder)
+library(tidyverse)
+ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) + 
+  geom_point()
+```
+
+------------------------------------------------------------------------
+
+## 1. Aesthetic mappings (cont.)
+
+```{r aesthetics1, eval=FALSE}
+ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) + 
+  geom_point()
+```
+
+Focus on the top line, which contains the initialising `ggplot()` function call. This function accepts various arguments, including: - Where the data come from (i.e. `data = gapminder`). - What the aesthetic mappings are (i.e. `mapping = aes(x = gdpPercap, y = lifeExp)`).
+
+--
+
+The aesthetic mappings here are pretty simple: They just define an x-axis (GDP per capita) and a y-axis (life expecancy). - To get a sense of the power and flexibility that comes with this approach, however, consider what happens if we add more aesthetics to the plot call...
+
+------------------------------------------------------------------------
+
+## 1. Aesthetic mappings (cont.)
+
+```{r aesthetics2, dev='svg'}
+ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, size = pop, col = continent)) + 
+  geom_point(alpha = 0.3) ## "alpha" controls transparency. Takes a value between 0 and 1.
+```
+
+--
+
+Note that I've dropped the "mapping =" part of the ggplot call. Most people just start with "aes(...)", since `ggplot2` knows the order of the arguments.
+
+------------------------------------------------------------------------
+
+## 1. Aesthetic mappings (cont.)
+
+We can specify aesthetic mappings in the geom layer too.
+
+```{r aesthetics3, dev='svg'}
+ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) + ## Applicable to all geoms
+  geom_point(aes(size = pop, col = continent), alpha = 0.3) ## Applicable to this geom only
+```
+
+------------------------------------------------------------------------
+
+## 1. Aesthetic mappings (cont.)
+
+Oops. What went wrong here?
+
+```{r aesthetics_mistake, warning=FALSE,dev='svg'}
+ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp)) + 
+  geom_point(aes(size = "big", col="black"), alpha = 0.3)
+```
+
+--
+
+**Answer:** Aesthetics must be mapped to variables, not descriptions!
+
+## 1. Aesthetic mappings (cont.)
+
+At this point, instead of repeating the same ggplot2 call every time, it will prove convenient to define an intermediate plot object that we can re-use.
+
+```{r p, dev='svg'}
+p = ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp))
+p
+```
+
+## 2. Geoms
+
+Once your variable relationships have been defined by the aesthetic mappings, you can invoke and combine different geoms to generate different visulaizations.
+
+```{r geoms1, dev='svg'}
+p + 
+  geom_point(alpha = 0.3)  +
+  geom_smooth(method = "loess") 
+```
+
+------------------------------------------------------------------------
+
+## 2. Geoms
+
+Aesthetics can be applied differentially across geoms.
+
+```{r geoms2, dev='svg'}
+p + 
+  geom_point(aes(size = pop, col = continent), alpha = 0.3)  +
+  geom_smooth(method = "loess") 
+```
+
+## 2. Geoms
+
+The previous plot provides a good illustration of the power of assigning aesthetics globally
+
+```{r geoms3, eval=FALSE}
+ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, col = continent)) +
+  geom_point(alpha = 0.3)  +
+  geom_smooth(method = "loess") 
+```
+
+------------------------------------------------------------------------
+
+# 2. Geoms (cont.)
+
+Similarly, note that some geoms only accept a subset of mappings. E.g. `geom_density()` doesn't know what to do with the "y" aesthetic mapping.
+
+------------------------------------------------------------------------
+
+# 2. Geoms (cont.)
+
+We can fix that by being more careful about how we build the plot.
+
+```{r geoms5, dev='svg'}
+ggplot(data = gapminder) + ## i.e. No "global" aesthetic mappings"
+  geom_density(aes(x = gdpPercap, fill = continent), alpha=0.3)
+```
+
+------------------------------------------------------------------------
+
+# 3. Build your plot in layers
+
+We've already seen how we can chain (or "layer") consecutive plot elements using the `+` connector. - The fact that we can create and then re-use an intermediate plot object (e.g. "p") is testament to this.
+
+But it bears repeating: You can build out some truly impressive complexity and transformation of your visualization through this simple layering process. - You don't have to transform your original data; ggplot2 takes care of all of that. - For example (see next slide for figure).
+
+```{r layers1}
+p2 =
+  p +
+  geom_point(aes(size = pop, col = continent), alpha = 0.3) +
+  scale_color_brewer(name = "Continent", palette = "Set1") + ## Different colour scale
+  scale_size(name = "Population", labels = scales::comma) + ## Different point (i.e. legend) scale
+  scale_x_log10(labels = scales::dollar) + ## Switch to logarithmic scale on x-axis. Use dollar units.
+  labs(x = "Log (GDP per capita)", y = "Life Expectancy") + ## Better axis titles
+  theme_minimal() ## Try a minimal (b&w) plot theme
+```
+
+------------------------------------------------------------------------
+
+## 3. Build your plot in layers (cont.)
+
+```{r layers2, dependson=p2, echo=FALSE, dev='svg'}
+p2
+```
+
+------------------------------------------------------------------------
+
+## What else?
+
+We have barely scratched the surface of ggplot2's functionality... let alone talked about the entire ecosystem of packages that has been built around it. - Here's are two quick additional examples to whet your appetite
+
+------------------------------------------------------------------------
+
+
+
+## Grammar of graphics
+
+**ggplot2** a [grammar of graphics](http://www.springer.com/us/book/9780387245447),
+
+-   Construct hundreds of different sentences by learning just a handful of verbs, nouns and adjectives without having to memorize each specific sentence.
+
+## Strength and limitation
+
+-   **ggplot2** is easier for beginners is that its default behavior is carefully chosen to satisfy the great majority of cases and is visually pleasing.
+
+-   One limitation is that **ggplot2** is designed to work exclusively with data tables in which rows are observations and columns are variables.
+
+## Sheet cheats
+
+-   You should have the [ggplot2 sheet cheat](https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf) handy.
+
+-   To find perform an internet search for "ggplot2 cheat sheet".
+
+## The components of a graph
+
+```{r ggplot-example-plot, echo=FALSE}
+library(dslabs)
+data(murders)
+library(ggthemes)
+library(ggrepel)
+
+r <- murders %>% 
+  summarize(pop=sum(population), tot=sum(total)) %>% 
+  mutate(rate = tot/pop*10^6) %>% pull(rate)
+
+murders %>% ggplot(aes(x = population/10^6, y = total, label = abb)) +  
+  geom_abline(intercept = log10(r), lty=2, col="darkgrey") +
+  geom_point(aes(color=region), size = 3) +
+  geom_text_repel() + 
+  scale_x_log10() +
+  scale_y_log10() +
+  xlab("Populations in millions (log scale)") + 
+  ylab("Total number of murders (log scale)") +
+  ggtitle("US Gun Murders in 2010") +
+  scale_color_discrete(name="Region") +
+  theme_economist()
+```
+
+## Components
+
+-   **Data**: The US murders data table is being summarized. We refer to this as the **data** component.
+
+-   **Geometry**: The plot above is a scatterplot. This is referred to as the **geometry** component.
+
+-   **Aesthetic mapping**: The plot uses several visual cues to represent the information provided by the dataset. T
+
+## Other minor components
+
+-   The points are labeled with the state abbreviations.
+-   The range of the x-axis and y-axis appears to be defined by the range of the data. They are both on log-scales.
+-   There are labels, a title, a legend, and we use the style of The Economist magazine.
+
+## Load data
+
+```{r}
+library(dslabs)
+data(murders)
+```
+
+## `ggplot` objects
+
+```{r ggplot-example-1, eval=FALSE}
+ggplot(data = murders)
+```
+
+## `ggplot` objects
+
+```{r ggplot-example-2}
+murders %>% ggplot()
+```
+
+## `ggplot` objects
+
+```{r}
+p <- ggplot(data = murders)
+class(p)
+```
+
+## Rendering a plot
+
+```{r, eval=FALSE}
+print(p)
+p
+```
+
+## Geometries
+
+> > DATA %\>% `ggplot()` + LAYER 1 + LAYER 2 + ... + LAYER N
+
+## Geometries
+
+-   Geometry function names follow the pattern: `geom_X`
+-   where X is the name of the geometry.
+-   Examples include `geom_point`, `geom_bar` and `geom_histogram`.
+
+## Aesthetics for geometries
+
+-   Look at help file. Here is `geom_point`
+
+```         
+> Aesthetics
+> 
+> geom_point understands the following aesthetics (required aesthetics are in bold):
+>
+> x
+>
+> y
+> 
+> alpha
+>
+> colour
+```
+
+## Aesthetic mappings
+
+```{r, eval = FALSE}
+murders %>% ggplot() + 
+  geom_point(aes(x = population/10^6, y = total))
+```
+
+-   We can drop the `x =` and `y =` if we wanted to since these are the first and second expected arguments, as seen in the help page.
+
+## We can add to an existing plot object
+
+```{r ggplot-example-3}
+p + geom_point(aes(population/10^6, total))
+```
+
+## Layers
+
+```{r  ggplot-example-4}
+p + geom_point(aes(population/10^6, total)) +
+  geom_text(aes(population/10^6, total, label = abb))
+```
+
+## Where are variabled defined?
+
+This is fine:
+
+```{r, eval=FALSE}
+p_test <- p + geom_text(aes(population/10^6, total, label = abb))
+```
+
+## Where are variabled defined?
+
+This is not:
+
+```{r, eval=FALSE}
+p_test <- p + geom_text(aes(population/10^6, total), label = abb) 
+```
+
+## Tinkering with arguments
+
+```{r ggplot-example-5}
+p + geom_point(aes(population/10^6, total), size = 3) +
+  geom_text(aes(population/10^6, total, label = abb))
+```
+
+## Tinkering with arguments
+
+```{r ggplot-example-6}
+p + geom_point(aes(population/10^6, total), size = 3) +
+  geom_text(aes(population/10^6, total, label = abb), nudge_x = 1)
+```
+
+## Global versus local aesthetic mappings
+
+```{r}
+args(ggplot)
+```
+
+## Global versus local aesthetic mappings
+
+```{r}
+p <- murders %>% ggplot(aes(population/10^6, total, label = abb))
+```
+
+## Global versus local aesthetic mappings
+
+```{r ggplot-example-7}
+p + geom_point(size = 3) + 
+  geom_text(nudge_x = 1.5)
+```
+
+## Global versus local aesthetic mappings
+
+```{r ggplot-example-8}
+p + geom_point(size = 3) +  
+  geom_text(aes(x = 10, y = 800, label = "Hello there!"))
+```
+
+## Scales
+
+```{r ggplot-example-9}
+p + geom_point(size = 3) + geom_text(nudge_x = 0.05) + 
+  scale_x_continuous(trans = "log10") +
+  scale_y_continuous(trans = "log10") 
+```
+
+## Scales
+
+```{r, eval=FALSE}
+p + geom_point(size = 3) +  
+  geom_text(nudge_x = 0.05) + 
+  scale_x_log10() +
+  scale_y_log10() 
+```
+
+## Labels and titles
+
+```{r, eval=FALSE}
+p + geom_point(size = 3) +  
+  geom_text(nudge_x = 0.05) + 
+  scale_x_log10() +
+  scale_y_log10() +
+  xlab("Populations in millions (log scale)") + 
+  ylab("Total number of murders (log scale)") +
+  ggtitle("US Gun Murders in 2010")
+```
+
+## Labels and titles
+
+```{r ggplot-example-10, echo=FALSE}
+p + geom_point(size = 3) +  
+  geom_text(nudge_x = 0.05) + 
+  scale_x_log10() +
+  scale_y_log10() +
+  xlab("Populations in millions (log scale)") + 
+  ylab("Total number of murders (log scale)") +
+  ggtitle("US Gun Murders in 2010")
+```
+
+## Categories as colors
+
+```{r, eval=FALSE}
+p <-  murders %>% ggplot(aes(population/10^6, total, label = abb)) +   
+  geom_text(nudge_x = 0.05) + 
+  scale_x_log10() +
+  scale_y_log10() +
+  xlab("Populations in millions (log scale)") + 
+  ylab("Total number of murders (log scale)") +
+  ggtitle("US Gun Murders in 2010")
+```
+
+## Categories as colors
+
+This won't work
+
+```{r, echo=FALSE}
+p <-  murders %>% ggplot(aes(population/10^6, total, label = abb)) +   
+  geom_text(nudge_x = 0.05) + 
+  scale_x_log10() +
+  scale_y_log10() +
+  xlab("Populations in millions (log scale)") + 
+  ylab("Total number of murders (log scale)") +
+  ggtitle("US Gun Murders in 2010")
+```
+
+```{r ggplot-example-11}
+p + geom_point(size = 3, color ="blue")
+```
+
+## Example: color as a mapping
+
+```{r ggplot-example-12}
+p + geom_point(aes(col=region), size = 3)
+```
+
+## Annotation, shapes, and adjustments
+
+```{r}
+r <- murders %>% 
+  summarize(rate = sum(total) /  sum(population) * 10^6) %>% 
+  pull(rate)
+```
+
+## Annotation, shapes, and adjustments
+
+```{r ggplot-example-13}
+p + geom_point(aes(col=region), size = 3) + 
+  geom_abline(intercept = log10(r))
+```
+
+## Annotation, shapes, and adjustments
+
+```{r}
+p <- p + geom_abline(intercept = log10(r), lty = 2, color = "darkgrey") +
+  geom_point(aes(col=region), size = 3)  
+```
+
+## Annotation, shapes, and adjustments
+
+```{r}
+p <- p + scale_color_discrete(name = "Region") 
+```
+
+## Add-on packages
+
+```{r}
+library(ggthemes)
+p + theme_economist()
+```
+
+## Another example
+
+```{r}
+library(ggthemes)
+p + theme_fivethirtyeight()
+```
+
+## Putting it all together
+
+```{r, eval=FALSE}
+r <- murders %>% 
+  summarize(rate = sum(total) /  sum(population) * 10^6) %>%
+  pull(rate)
+
+murders %>% ggplot(aes(population/10^6, total, label = abb)) +   
+  geom_abline(intercept = log10(r), lty = 2, color = "darkgrey") +
+  geom_point(aes(col=region), size = 3) +
+  geom_text_repel() + 
+  scale_x_log10() +
+  scale_y_log10() +
+  xlab("Populations in millions (log scale)") + 
+  ylab("Total number of murders (log scale)") +
+  ggtitle("US Gun Murders in 2010") + 
+  scale_color_discrete(name = "Region") +
+  theme_economist()
+```
+
+## Putting it all together
+
+```{r final-ggplot-example, echo=FALSE}
+library(ggthemes)
+library(ggrepel)
+
+r <- murders %>% 
+  summarize(rate = sum(total) /  sum(population) * 10^6) %>%
+  pull(rate)
+
+murders %>% ggplot(aes(population/10^6, total, label = abb)) +   
+  geom_abline(intercept = log10(r), lty = 2, color = "darkgrey") +
+  geom_point(aes(col=region), size = 3) +
+  geom_text_repel() + 
+  scale_x_log10() +
+  scale_y_log10() +
+  xlab("Populations in millions (log scale)") + 
+  ylab("Total number of murders (log scale)") +
+  ggtitle("US Gun Murders in 2010") + 
+  scale_color_discrete(name = "Region") +
+  theme_economist()
+```
+
+## Quick plots with `qplot` {#qplot}
+
+Make a quick scatterplot:
+
+```{r fig.height=3, fig.width=4.5}
+data(murders)
+x <- log10(murders$population)
+y <- murders$total
+qplot(x, y)
+```
+
+## Grids of plots
+
+There are often reasons to graph plots next to each other. The **gridExtra** package permits us to do that:
+
+```{r, warning=FALSE, message=FALSE, out.width='100%', fig.height=3}
+library(gridExtra)
+p1 <- murders %>%
+  mutate(rate = total/population*10^5) %>%
+  filter(population < 2*10^6) %>%
+  ggplot(aes(population/10^6, rate, label = abb)) +
+  geom_text() +
+  ggtitle("Small States")
+p2 <- murders %>%
+  mutate(rate = total/population*10^5) %>%
+  filter(population > 10*10^6) %>%
+  ggplot(aes(population/10^6, rate, label = abb)) +
+  geom_text() +
+  ggtitle("Large States")
+```
+
+## Grids of plots
+
+```{r grid-of-plots}
+grid.arrange(p1, p2, ncol = 2)
+```

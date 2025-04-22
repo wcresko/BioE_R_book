@@ -4,87 +4,82 @@
 
 Here we provide some details on Git and GitHub. However, we are only scratching the surface. To learn more about this topic, we highly recommend the following resources:
 
-* Codeacademy: [https://www.codecademy.com/learn/learn-git](https://www.codecademy.com/learn/learn-git)
-* GitHub Guides: [https://guides.github.com/activities/hello-world/](https://guides.github.com/activities/hello-world/)
-* Try Git tutorial: [https://try.github.io/levels/1/challenges/1](https://try.github.io/levels/1/challenges/1)
-* Happy Git and GitHub for the useR: [http://happygitwithr.com/](http://happygitwithr.com/)
-
+-   Codeacademy: <https://www.codecademy.com/learn/learn-git>
+-   GitHub Guides: <https://guides.github.com/activities/hello-world/>
+-   Try Git tutorial: <https://try.github.io/levels/1/challenges/1>
+-   Happy Git and GitHub for the useR: <http://happygitwithr.com/>
 
 ## Why use Git and GitHub?
 
 There are three main reasons to use Git and GitHub.
 
-1. Sharing: Even if we do not take advantage of the advanced and powerful version control functionality, we can still use Git and GitHub to share our code.
+1.  Sharing: Even if we do not take advantage of the advanced and powerful version control functionality, we can still use Git and GitHub to share our code.
 
-2. Collaborating: Once you set up a central repo, you can have multiple people make changes to code and keep versions synched. GitHub provides a free service for centralized repos. GitHub also has a special utility, called a _pull request_, that can be used by anybody to suggest changes to your code. You can easily either accept or deny the request.
+2.  Collaborating: Once you set up a central repo, you can have multiple people make changes to code and keep versions synched. GitHub provides a free service for centralized repos. GitHub also has a special utility, called a *pull request*, that can be used by anybody to suggest changes to your code. You can easily either accept or deny the request.
 
-3. Version control: The version control capabilities of Git permit us to keep track of changes we make to our code. We can also revert back to previous versions of files. Git also permits us to create _branches_ in which we can test out ideas, then decide if we _merge_ the new branch with the original.
+3.  Version control: The version control capabilities of Git permit us to keep track of changes we make to our code. We can also revert back to previous versions of files. Git also permits us to create *branches* in which we can test out ideas, then decide if we *merge* the new branch with the original.
 
 Here we focus on the sharing aspects of Git and GitHub and refer the reader to the links above to learn more about this powerful tool.
 
 ## GitHub accounts
 
-After installing git^[https://rafalab.github.io/dsbook/accessing-the-terminal-and-installing-git.html], the first step is to get a GitHub account. Basic GitHub accounts are free. To do this, go to [GitHub](github.com) where you will see a box in which you can sign up. 
+After installing git[^git_github-1], the first step is to get a GitHub account. Basic GitHub accounts are free. To do this, go to [GitHub](github.com) where you will see a box in which you can sign up.
 
-Once you have a GitHub account, you are ready to connect Git and RStudio to this account. 
+[^git_github-1]: https://rafalab.github.io/dsbook/accessing-the-terminal-and-installing-git.html
 
-A first step is to let Git know who we are. This will make it easier to connect with GitHub. We start by opening a terminal window in RStudio (remember you can get one through _Tools_ in the menu bar). Now we use the `git config` command to tell Git who we are. We will type the following two commands in our terminal window:
+Once you have a GitHub account, you are ready to connect Git and RStudio to this account.
+
+A first step is to let Git know who we are. This will make it easier to connect with GitHub. We start by opening a terminal window in RStudio (remember you can get one through *Tools* in the menu bar). Now we use the `git config` command to tell Git who we are. We will type the following two commands in our terminal window:
 
 ```{bash, eval=FALSE, echo=TRUE}
 git config --global user.name "Your Name"
 git config --global user.mail "your@email.com"
 ```
 
-
 ## GitHub repositories {#github-repos}
 
-You are now ready to create a GitHub repository (repo). The general idea is that you will have at least two copies of your code: one on your computer and one on GitHub. If you add collaborators to this project, then each will have a copy on their computer. The GitHub copy is usually considered the _master_ copy that each collaborator syncs to. Git will help you keep all the different copies synced.
+You are now ready to create a GitHub repository (repo). The general idea is that you will have at least two copies of your code: one on your computer and one on GitHub. If you add collaborators to this project, then each will have a copy on their computer. The GitHub copy is usually considered the *master* copy that each collaborator syncs to. Git will help you keep all the different copies synced.
 
 As mentioned, one of the advantages of keeping code on a GitHub repository is that you can easily share it with potential employers interested in seeing examples of your work. Because many data science companies use version control systems, like Git, to collaborate on projects, they might also be impressed that you already know at least the basics.
 
 The first step in creating a repo for your code is to initialize on GitHub. Because you already created an account, you will have a page on GitHub with the URL `http://github.com/username`.
 
-To create a repo, first log in to your account by clicking the _Sign In_ button on [https://github.com](http://github.com). You might already be signed in, in which case the _Sign In_ button will not show up.
+To create a repo, first log in to your account by clicking the *Sign In* button on [https://github.com](http://github.com). You might already be signed in, in which case the *Sign In* button will not show up.
 
-Once on your account, you can click on _Repositories_ and then click on _New_ to create a new repo:
+Once on your account, you can click on *Repositories* and then click on *New* to create a new repo:
 
 You will then want to choose a good descriptive name for the project. In the future, you might have dozens of repos so keep that in mind when choosing a name. Here we will use `homework-0`. We recommend you make the repo public. If you want to keep it private, you will have to pay a monthly charge.
 
-You now have your first repo on GitHub. The next step will be to _clone it_ on your computer and start editing and syncing using Git. 
+You now have your first repo on GitHub. The next step will be to *clone it* on your computer and start editing and syncing using Git.
 
 To do this, it is convenient to copy the link provided by GitHub specifically to connect to this repo, using Git as shown below. We will later need to copy and paste this so make sure to remember this step.
 
-
 ## Overview of Git {#git-overview}
 
+The main actions in Git are to:
 
-The main actions in Git are to: 
+1.  **pull** changes from the remote repo, in this case the GitHub repo
+2.  **add** files, or as we say in the Git lingo *stage* files
+3.  **commit** changes to the local repo
+4.  **push** changes to the *remote* repo, in our case the GitHub repo
 
-1. **pull** changes from the remote repo, in this case the GitHub repo
-2. **add** files, or as we say in the Git lingo _stage_ files
-3. **commit** changes to the local repo
-4. **push** changes to the _remote_ repo, in our case the GitHub repo
-
-To effectively permit version control and collaboration in Git, files move across four different areas: 
+To effectively permit version control and collaboration in Git, files move across four different areas:
 
 ![](images/git/git-layout.png)
 
-
 But how does it all get started? There are two ways: we can clone an existing repo or initialize one. We will explore cloning first.
- 
+
 ### Clone
 
-We are going to _clone_ an existing _Upstream Repository_. You can see it on GitHub here: [https://github.com/rairizarry/murders](https://github.com/rairizarry/murders). By visiting this page, you can see multiple files and directories. This is the Upstream Repository. By clicking the green clone button, we can copy the repo's URL `https://github.com/rairizarry/murders.git`. 
+We are going to *clone* an existing *Upstream Repository*. You can see it on GitHub here: <https://github.com/rairizarry/murders>. By visiting this page, you can see multiple files and directories. This is the Upstream Repository. By clicking the green clone button, we can copy the repo's URL `https://github.com/rairizarry/murders.git`.
 
-But what does _clone_ mean? Rather than download all these files to your computer, we are going to actually copy the entire Git structure, which means we will add the files and directories to each of the three local stages: Working Directory, Staging Area, and Local Repository. When you clone, all three are exactly the same to start. 
+But what does *clone* mean? Rather than download all these files to your computer, we are going to actually copy the entire Git structure, which means we will add the files and directories to each of the three local stages: Working Directory, Staging Area, and Local Repository. When you clone, all three are exactly the same to start.
 
 You can quickly see an example of this by doing the following. Open a terminal and type:
-
 
 ```{r, echo=FALSE}
 wd <- getwd() ##so we set back later. We are about to start switching dirs
 ```
-
 
 ```{bash}
 pwd
@@ -94,7 +89,6 @@ git clone https://github.com/rairizarry/murders.git
 cd murders
 ```
 
-
 You now have cloned a GitHub repo and have a working Git directory, with all the files, on your system.
 
 ```{bash}
@@ -103,8 +97,7 @@ ls
 
 ![](images/git/git-clone.png)
 
-The _Working Directory_ is the same as your Unix working directory. When you edit files using an editor such as RStudio, you change the files in this area and only in this area. Git can tell you how these files relate to the versions of the files in other areas with the command `git status`:
-
+The *Working Directory* is the same as your Unix working directory. When you edit files using an editor such as RStudio, you change the files in this area and only in this area. Git can tell you how these files relate to the versions of the files in other areas with the command `git status`:
 
 ![](images/git/git-status.png)
 
@@ -171,7 +164,7 @@ echo "adding a second line" >> new-file.txt
 git commit -m "minor change to new-file" new-file.txt
 ```
 
-We can keep track of all the changes we have made with: 
+We can keep track of all the changes we have made with:
 
 ```{bash}
 git log new-file.txt
@@ -187,9 +180,7 @@ git push
 knitr::opts_knit$set(root.dir = wd)
 ```
 
-
 ![](images/git/git-push.png)
-
 
 However, in this particular example, you will not be able to do this because you do not have permission to edit the upstream repo. If this was your repo, you could.
 
@@ -198,7 +189,6 @@ If this is a collaborative project, the upstream repo may change and become diff
 ```{bash, eval=FALSE}
 git fetch
 ```
-
 
 ![](images/git/git-fetch.png)
 
@@ -210,7 +200,7 @@ git merge
 
 ![](images/git/git-merge.png)
 
-However, we often just want to change both with one command. For this, we use: 
+However, we often just want to change both with one command. For this, we use:
 
 ```{bash, eval=FALSE}
 git pull
@@ -220,18 +210,15 @@ git pull
 
 We will learn in Section \@ref(rstudio-git) how RStudio has buttons to do all this. The details provided here should help you understand what happens in the background.
 
-
 ## Initializing a Git directory {#init}
 
 Now let's learn the second way we can get started: by initializing a directory on our own computer rather than cloning.
 
-Suppose we already have a populated local directory and we want to turn this directory into a collaborative GitHub repository. The most efficient way of achieving this is by  _initializing_ the local directory.
+Suppose we already have a populated local directory and we want to turn this directory into a collaborative GitHub repository. The most efficient way of achieving this is by *initializing* the local directory.
 
 To demonstrate how to do this we will initialize the gun murders directory we created in Section \@ref(prep-project). Note that we already created a directory with several subdirectories on our computer but we do not yet have a Git local repo or GitHub upstream repo.
 
-We start by creating a new repo on our GitHub page. We click on the _New_ button:
-
-
+We start by creating a new repo on our GitHub page. We click on the *New* button:
 
 At this moment, we can start a terminal and `cd` into our local projects directory. In our example, it would be:
 
@@ -239,24 +226,24 @@ At this moment, we can start a terminal and `cd` into our local projects directo
 cd ~/projects/murders
 ```
 
-We then _intialize_ the directory. This turns the directory into a Git directory and Git starts tracking:
+We then *intialize* the directory. This turns the directory into a Git directory and Git starts tracking:
 
 ```{bash, eval=FALSE}
 git init
 ```
 
-All the files are now **only** in our working directory; no files are in our local repo or on GitHub. 
+All the files are now **only** in our working directory; no files are in our local repo or on GitHub.
 
-The next step is to connect the local repo with the GitHub repo. In a previous example, we had RStudio do this for us. Now we need to do it ourselves. We can by adding any of the files and committing it: 
+The next step is to connect the local repo with the GitHub repo. In a previous example, we had RStudio do this for us. Now we need to do it ourselves. We can by adding any of the files and committing it:
 
 ```{bash, eval=FALSE}
 git add README.txt
 git commit -m "First commit. Adding README.txt file just to get started"
 ```
 
-We now have a file in our local repo and can connect it to the upstream repo, which has url: `https://github.com/rairizarry/murders.git`. 
+We now have a file in our local repo and can connect it to the upstream repo, which has url: `https://github.com/rairizarry/murders.git`.
 
-To do this, we use the command `git remote add`. 
+To do this, we use the command `git remote add`.
 
 ```{bash, eval=FALSE}
 git remote add origin `https://github.com/rairizarry/murders.git`
@@ -270,55 +257,41 @@ git push
 
 In Section \@ref(organizing) we continue to work with this example, as we demonstrate how we can use RStudio to work with Git and keep a project synced on GitHub.
 
-
 ## Using Git and GitHub in RStudio {#rstudio-git}
 
 While command line Git is a powerful and flexible tool, it can be somewhat daunting when we are getting started. RStudio provides a graphical interface that facilitates the use of Git in the context of a data analysis project. We describe how to use this RStudio feature to do this here.
 
-Now we are ready to start an RStudio project that uses version control and stores the code on a GitHub repo. To do this, we start a project but, instead of _New Directory_, we will select _Version Control_ and then we will select _Git_ as our version control system:
+Now we are ready to start an RStudio project that uses version control and stores the code on a GitHub repo. To do this, we start a project but, instead of *New Directory*, we will select *Version Control* and then we will select *Git* as our version control system:
 
+The repository URL is the link you used to clone. In Section \@ref(github-repos), we used `https://github.com/username/homework-0.git` as an example. In the project directory name, you need to put the name of the folder that was generated, which in our example will be the name of the repo `homework-0`. This will create a folder called `homework-0` on your local system. Once you do this, the project is created and it is aware of the connection to a GitHub repo. You will see on the top right corner the name and type of project as well as a new tab on the upper right pane titled *Git*.
 
-The repository URL is the link you used to clone. In Section \@ref(github-repos), we used `https://github.com/username/homework-0.git` as an example. In the project directory name, you need to put the name of the folder that was generated, which in our example will be the name of the repo `homework-0`. This will create a folder called `homework-0` on your local system. Once you do this, the project is created and it is aware of the connection to a GitHub repo. You will see on the top right corner the name and type of project as well as a new tab on the upper right pane titled _Git_. 
+! If you select this tab, it will show you the files on your project with some icons that give you information about these files and their relationship to the repo. In the example below, we already added a file to the folder, called *code.R* which you can see in the editing pane.
 
-!
-If you select this tab, it will show you the files on your project with some icons that give you information about these files and their relationship to the repo. In the example below, we already added a file to the folder, called _code.R_ which you can see in the editing pane.
+We now need to pay attention to the Git pane. It is important to know that **your local files and the GitHub repo will not be synced automatically**. As described in Section \@ref(git-overview), you have to sync using git push when you are ready. We show you can do this through RStudio rather than the terminal below.
 
-We now need to pay attention to the Git pane. It is important to know that **your local files and the GitHub repo will not be synced automatically**.  As described in Section \@ref(git-overview), you have to sync using git push when you are ready. We show you can do this through RStudio rather than the terminal below. 
+Before we start working on a collaborative project, usually the first thing we do is *pull* in the changes from the remote repo, in our case the one on GitHub. However, for the example shown here, since we are starting with an empty repo and we are the only ones making changes, we don't need to start by pulling.
 
-Before we start working on a collaborative project, usually the first thing we do is _pull_ in the changes from the remote repo, in our case the one on GitHub. However, for the example shown here, since we are starting with an empty repo and we are the only ones making changes, we don't need to start by pulling.
+In RStudio, the status of the file as it relates to the remote and local repos are represented in the status symbols with colors. A yellow square means that Git knows nothing about this file. To sync with the GitHub repo, we need to *add* the file, then *commit* the change to our local Git repo, then *push* the change to the GitHub repo. Right now, the file is just on our computer. To add the file using RStudio, we click the *Stage* box. You will see that the status icon now changes to a green A.
 
-In RStudio, the status of the file as it relates to the remote and local repos are represented in the status symbols with colors. A yellow square means that Git knows nothing about this file. To sync with the GitHub repo, we need to _add_ the file, then _commit_ the change to our local Git repo, then _push_ the change to the GitHub repo. Right now, the file is just on our computer. To add the file using RStudio, we click the _Stage_ box. You will see that the status icon now changes to a green A. 
+Note: we are only adding the *code.R* file. We don't necessarily need to add all the files in our local repo to the GitHub repo, only the ones we want to keep track of or the ones we want to share. If our work is producing files of a certain type that we do not want to keep track of, we can add the suffix that defines these files to the .gitignore file. More details on using .gitignore are included here: <https://git-scm.com/docs/gitignore>. These files will stop appearing in your RStudio Git pane. For the example shown here, we will only be adding *code.R*. But, in general, for an RStudio project, we recommend adding both the .gitignore and .Rproj files.
 
-
-Note: we are only adding the _code.R_ file. We don't necessarily need to add all the files in our local repo to the GitHub repo, only the ones we want to keep track of or the ones we want to share. If our work is producing files of a certain type that we do not want to keep track of, we can add the suffix that defines these files to the .gitignore file. More details on using .gitignore are included here: [https://git-scm.com/docs/gitignore](https://git-scm.com/docs/gitignore). These files will stop appearing in your RStudio Git pane. For the example shown here, we will only be adding _code.R_. But, in general, for an RStudio project, we recommend adding both the .gitignore and .Rproj files.
-
-Now we are ready to commit the file to our local repo. In RStudio, we can use the _Commit_ button. This will open a new dialog window. With Git, whenever we commit a change, we are required to enter a comment describing the changes being _committed_. 
+Now we are ready to commit the file to our local repo. In RStudio, we can use the *Commit* button. This will open a new dialog window. With Git, whenever we commit a change, we are required to enter a comment describing the changes being *committed*.
 
 In this case, we will simply describe that we are adding a new script. In this dialog box, RStudio also gives you a summary of what you are changing to the GitHub repo. In this case, because it is a new file, the entire file is highlighted as green, which highlights the changes.
 
-Once we hit the commit button, we should see a message from Git with a summary of the changes that were committed. Now we are ready to _push_ these changes to the GitHub repo. We can do this by clicking on the _Push_ button on the top right corner:
+Once we hit the commit button, we should see a message from Git with a summary of the changes that were committed. Now we are ready to *push* these changes to the GitHub repo. We can do this by clicking on the *Push* button on the top right corner:
 
-We now see a message from Git letting us know that the push has succeeded.
-In the pop-up window we no longer see the `code.R` file. This is because no new changes have been performed since we last pushed. We can exit this pop-up window now and continue working on our code.
+We now see a message from Git letting us know that the push has succeeded. In the pop-up window we no longer see the `code.R` file. This is because no new changes have been performed since we last pushed. We can exit this pop-up window now and continue working on our code.
 
-
-If we now visit our repo on the web, we will see that it matches our local copy. 
-
+If we now visit our repo on the web, we will see that it matches our local copy.
 
 Congratulations, you have successfully shared code on a GitHub repository!
 
-
-
-
-
-
 https://learngitbranching.js.org/
 
--------
+------------------------------------------------------------------------
 
 ![](images/images_5a.007.jpeg)
-
-
 
 ![](images/images_5a.008.jpeg)
 
@@ -334,14 +307,13 @@ https://learngitbranching.js.org/
 
 ![](images/images_5a.014.jpeg)
 
-
 ## Clone the repository
 
-- First make a *new directory* into which you will clone our course repository
-    - This will prevent you from overwriting any of the documents you have have edited
-    - And it's good practice to do it again
-- You should work through the terminal application and use Unix to do this
-- Open the terminal and navigate to your new directory and type the following:
+-   First make a *new directory* into which you will clone our course repository
+    -   This will prevent you from overwriting any of the documents you have have edited
+    -   And it's good practice to do it again
+-   You should work through the terminal application and use Unix to do this
+-   Open the terminal and navigate to your new directory and type the following:
 
 ```{bash, echo=TRUE, eval=FALSE}
 git clone https://github.com/wcresko/evomics_stat_2019.git
@@ -349,7 +321,7 @@ git clone https://github.com/wcresko/evomics_stat_2019.git
 
 ## Update the repository
 
-- Now to update the repository you just need to use these commands
+-   Now to update the repository you just need to use these commands
 
 ```{bash, echo=TRUE, eval=FALSE}
 git status
@@ -358,9 +330,486 @@ git status
 git merge origin/master
 ```
 
-- The first command just tells you if anything has changed  
-- If so, do the second!
-- This is **much safer** than `git pull` 
+-   The first command just tells you if anything has changed\
+-   If so, do the second!
+-   This is **much safer** than `git pull`
 
+
+
+
+
+## Git
+
+- Git is a distributed version control system. (Wait, what?)
+- Okay, try this: Imagine if Dropbox and the "Track changes" feature in MS Word had a baby. Git would be that baby.
+- In fact, it's even better than that because Git is optimised for the things that economists and data scientists spend a lot of time working on (e.g. code).
+- There is a learning curve, but I promise you it's worth it.
+
+## GitHub
+
+- It's important to realise that Git and GitHub are distinct things.
+- GitHub is an online hosting platform that provides an array of services built on top of the Git system. (Similar platforms include Bitbucket and GitLab.)
+- Just like we don't *need* Rstudio to run R code, we don't *need* GitHub to use Git... But it will make our lives so much easier.
+
+---
+
+## Git(Hub) for scientific research
+
+### From software development...
+
+Git and GitHub's role in global software development is not in question.
+- There's a high probability that your favourite app, program or package is built using Git-based tools. (RStudio is a case in point.)
+
+### ... to scientific research
+
+Scientists and academic researchers are cottoning on too. 
+- Benefits of VC and collaboration tools aside, Git(Hub) helps to operationalise the ideals of open science and reproducibility.
+- Journals have increasingly strict requirements regarding reproducibility and data access. GH makes this easy (DOI integration, off-the-shelf licenses, etc.)
+- I host all of the code and data for my [papers](http://grantmcdermott.com/research/) on GH. Same for teaching materials. I even use it to host and maintain my [website](https://github.com/grantmcdermott/grantmcdermott.github.io).
+- *Nature:* "[Democratic databases: science on GitHub](https://www.nature.com/news/democratic-databases-science-on-github-1.20719)" (Perkel, 2016).
+
+
+
+# Main Git operations
+
+Now that you've cloned your first repo and made some local changes, it's time to learn the four main Git operations.
+
+1. **Stage** (or "add")
+  - Tell Git that you want to add changes to the repo history (file edits, additions, deletions, etc.)
+2. **Commit**
+  - Tell Git that, yes, you are sure these changes should be part of the repo history.
+3. **Pull**
+  - Get any new changes made on the GitHub repo (i.e. the upstream remote), either by your collaborators or you on another machine.
+4. **Push**
+  - Push any (committed) local changes to the GitHub repo
+
+--
+
+For the moment, it will be useful to group the first two operations and last two operations together. (They are often combined in practice too, although you'll soon get a sense of when and why they should be split up.)
+
+--
+
+
+# Recap
+
+Here's a step-by-step summary of what we just did.
+- Made same changes to a file and saved them locally.
+- *Staged* these local changes.
+- *Committed* these local changes to our Git history with a helpful message.
+- *Pulled* from the GitHub repo just in case anyone else made changes too (not expected here, but good practice).
+- *Pushed* our changes to the GitHub repo.
+
+</br>
+
+NB aside: Always pull from the upstream repo *before* you push any changes. Seriously, do this even on solo projects; making it a habit will save you headaches down the road.
+
+--
+
+PS — You were likely challenged for your GitHub credentials at some point. Learn how to cache these [here](https://happygitwithr.com/credential-caching.html).
+
+--
+
+PPS — Speaking of credentials, an even better approach is to [switch to SSH](https://happygitwithr.com/ssh-keys.html). I recommend you do this once you feel comfortable with the main Git operations.
+
+---
+
+# Why this workflow?
+
+Creating the repo on GitHub first means that it will always be "upstream" of your (and any other) local copies.
+- In effect, this allows GitHub to act as the central node in the distributed VC network.
+- Especially valuable when you are collaborating on a project with others — more on this later — but also has advantages when you are working alone.
+- If you would like to move an existing project to GitHub, my advice is still to create an empty repo there first, clone it locally, and then copy all your files across.
+
+RStudio Projects are great. 
+- Again, they interact seamlessly with Git(Hub), as we've just seen. 
+- They also solve absolute vs. relative path problems, since the .Rproj file acts as an anchor point for all other files in the repo.<sup>1</sup>
+
+.footnote[<sup>1</sup> You know that calling files from `YourComputer/YourName/Documents/Special-Subfolder/etc` in your scripts makes you a bad person, right?]
+
+
+# Why bother with the shell?
+
+The GitHub + RStudio Project combo is ideal for new users.
+- RStudio's Git integration and built-in GUI cover all the major operations.
+- RStudio Projects FTW.
+
+However, I want to go over Git <a href="http://happygitwithr.com/ssh-keys.html#shell" target="_blank">shell</a> commands so that you can internalise the basics.
+- The shell is more powerful and flexible. Does some things that the RStudio Git GUI can't.
+- Potentially more appropriate for projects that aren't primarily based in R. (Although, no real harm in using RStudio Projects to clone a non-R repo.)
+- Also, I'm kinda tired of screen recording animated GIFs.
+
+--
+
+(Yes, we're going to cover the shell in depth next lecture, but think of this as a sneak preview.)
+
+---
+
+# Main Git shell commands
+
+Clone a repo.
+
+```{bash}
+$ git clone REPOSITORY-URL
+```
+
+See the commit history (hit spacebar to scroll down or q to exit).
+```{bash}
+$ git log
+```
+
+What has changed? 
+```{bash}
+$ git status
+```
+---
+
+# Main Git shell commands (cont.)
+
+Stage ("add") a file or group of files.
+```{bash}
+$ git add NAME-OF-FILE-OR-FOLDER
+```
+
+You can use [wildcard](https://ryanstutorials.net/linuxtutorial/wildcards.php) characters to stage a group of files (e.g. sharing a common prefix). There are a bunch of useful flag options too:
+
+- Stage all files.
+```{bash}
+$ git add -A
+```
+- Stage updated files only (modified or deleted, but not new).
+```{bash}
+$ git add -u
+```
+- Stage new files only (not updated).
+```{bash}
+$ git add .
+```
+
+---
+
+# Main Git shell commands (cont.)
+
+Commit your changes.
+```{bash}
+$ git commit -m "Helpful message"
+```
+
+Pull from the upstream repository (i.e. GitHub).
+```{bash}
+$ git pull
+```
+
+Push any local changes that you've committed to the upstream repo (i.e. GitHub).
+```{bash}
+$ git push
+```
+
+
+# Merge conflicts
+
+Let's confirm what's going on.
+```{bash}
+$ git status
+```
+
+As part of the response, you should see something like:
+```{bash}
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+
+   * both modified:   README.md 
+```
+Git is protecting P1 by refusing the merge. It wants to make sure that you don't accidentally overwrite all of your changes by pulling P2's version of the README.
+- In this case, the source of the problem was obvious. Once we start working on bigger projects, however, `git status` can provide a helpful summary to see which files are in conflict.
+
+---
+
+# Merge conflicts (cont.)
+
+Okay, let's see what's happening here by opening up the README file. RStudio is a good choice, although your preferred text editor is fine.<sup>1</sup>
+
+You should see something like:
+
+```{bash}
+# README
+Some text here.
+<<<<<<< HEAD
+Text added by Partner 2.
+=======
+Text added by Partner 1.
+>>>>>>> 814e09178910383c128045ce67a58c9c1df3f558.
+More text here.
+```
+
+.footnote[<sup>1</sup> Other good choices are <a href="https://code.visualstudio.com/" target="_blank">VS Code</a> or <a href="https://atom.io/" target="_blank">Atom</a>, which both support native Git(Hub) integration. You can set your preferred default editor with `$ git config --global core.editor "PREFERRED_EDITOR"`.]
+
+---
+
+# Merge conflicts (cont.)
+
+What do these symbols mean?
+
+```{bash}
+# README
+Some text here.
+<<<<<<< HEAD
+Text added by Partner 2.
+=======
+Text added by Partner 1.
+>>>>>>> 814e09178910383c128045ce67a58c9c1df3f558.
+More text here.
+```
+
+
+
+```{bash}
+# README
+Some text here.
+*<<<<<<< HEAD
+Text added by Partner 2.
+=======
+Text added by Partner 1.
+>>>>>>> 814e09178910383c128045ce67a58c9c1df3f558.
+More text here.
+```
+
+- `<<<<<<< HEAD` Indicates the start of the merge conflict.
+
+
+
+# Merge conflicts (cont.)
+
+What do these symbols mean?
+
+```{bash}
+# README
+Some text here.
+<<<<<<< HEAD
+Text added by Partner 2.
+*=======
+Text added by Partner 1.
+>>>>>>> 814e09178910383c128045ce67a58c9c1df3f558.
+More text here.
+```
+
+- `<<<<<<< HEAD` Indicates the start of the merge conflict.
+- `=======` Indicates the break point used for comparison.
+
+---
+count: false
+
+# Merge conflicts (cont.)
+
+What do these symbols mean?
+
+```{bash}
+# README
+Some text here.
+<<<<<<< HEAD
+Text added by Partner 2.
+=======
+Text added by Partner 1.
+*>>>>>>> 814e09178910383c128045ce67a58c9c1df3f558.
+More text here.
+```
+
+- `<<<<<<< HEAD` Indicates the start of the merge conflict.
+- `=======` Indicates the break point used for comparison.
+- `>>>>>>> <long string>` Indicates the end of the lines that had a merge conflict.
+
+---
+
+# Merge conflicts (cont.)
+
+Fixing these conflicts is a simple matter of (manually) editing the README file.
+- Delete the lines of the text that you don't want.
+- Then, delete the special Git merge conflict symbols.
+
+Once that's done, you should be able to stage, commit, pull and finally push your changes to the GitHub repo without any errors.
+
+
+
+# Branches and forking
+
+# What are branches and why use them?
+
+Branches are one of Git's coolest features.
+- Allow you to take a snapshot of your existing repo and try out a whole new idea *without affecting* your main (i.e. "master") branch.
+- Only once you (and your collaborators) are 100% satisfied, would you merge it back into the master branch.<sup>1</sup>
+  - This is how most new features in modern software and apps are developed.
+  - It is also how bugs are caught and fixed.
+  - But researchers can easily — and should! — use it to try out new ideas and analysis (e.g. robustness checks, revisions, etc.)
+- If you aren't happy, then you can just delete the experimental branch and continue as if nothing happened.
+
+
+--
+
+I use branches all the time for my own research projects.
+
+
+# Branch shell commands
+
+Create a new branch on your local machine and switch to it:
+
+```{bash}
+$ git checkout -b NAME-OF-YOUR-NEW-BRANCH
+```
+
+Push the new branch to GitHub:
+```{bash}
+$ git push origin NAME-OF-YOUR-NEW-BRANCH
+```
+
+List all branches on your local machine:
+```{bash}
+$ git branch
+```
+
+Switch back to (e.g.) the master branch:
+```{bash}
+$ git checkout master
+```
+
+Delete a branch
+```{bash}
+$ git branch -d NAME-OF-YOUR-FAILED-BRANCH
+$ git push origin :NAME-OF-YOUR-FAILED-BRANCH
+```
+
+---
+
+# Merging branches + Pull requests
+
+You have two options:
+
+### 1. Locally
+- Commit your final changes to the new branch (say we call it "new-idea").
+- Switch back to the master branch: `$ git checkout master`
+- Merge in the new-idea branch changes: `$ git merge new-idea`
+- Delete the new-idea branch (optional): `$ git branch -d new-idea`
+  
+### 2. Remotely (i.e. *pull requests* on GitHub)
+- PRs are a way to notify collaborators — or yourself! — that you have completed a feature.
+- You write a summary of all the changes contained in the branch.
+- You then assign suggested reviewers of your code — including yourself potentially — who are then able to approve these changes ("Merge pull request") on GitHub.
+- Let's practice this now in class...
+
+---
+
+# Your first pull request
+
+You know that "new-idea" branch we just created a few slides back? Switch over to it if you haven't already.
+- Remember: `$ git checkout new-idea` (or just click on the branches tab in RStudio)
+
+Make some local changes and then commit + push them to GitHub.
+- The changes themselves don't really matter. Add text to the README, add some new files, whatever.
+
+After pushing these changes, head over to your repo on GitHub.
+- You should see a new green button with "Compare & pull request". Click it.
+- Add a meta description of what this PR accomplishes. You can also change the title if you want.
+- Click "Create pull request".
+- (Here's where you or your collaborators would review all the changes.)
+- Once satisfied, click "Merge pull request" and then confirm.
+
+???
+
+See instructions <a href="https://help.github.com/articles/creating-a-pull-request/" target="_blank">here</a>.
+
+
+
+# Forks
+
+Git forks lie somewhere between cloning a repo and branching from it.
+- In fact, if you fork a repo then you are really creating a copy of it.
+
+Forking a repo on GitHub is [very simple](https://help.github.com/articles/fork-a-repo/); just click the "Fork" button in the top-right corner of said repo.
+- This will create an independent copy of the repo under your GitHub account.
+- Try this now. Use one of [my repos](https://github.com/grantmcdermott?tab=repositories) if you can't think of anyone else's.
+
+Once you fork a repo, you are free to do anything you want to it. (It's yours.) However, forking — in combination with pull requests — is actually how much of the world's software is developed. For example:
+- Outside user *B* forks *A*'s repo. She adds a new feature (or fixes a bug she's identified) and then [issues an upstream pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/).
+- *A* is notified and can then decide whether to merge *B*'s contribution with the main project.
+
+---
+
+# Forks (cont.)
+
+Creating forks is super easy as we've just seen. However, maintaining them involves some more leg work if you want to stay up to date with the original repo.
+- GitHub: "[Syncing a fork](https://help.github.com/articles/syncing-a-fork/)"
+- OTOH, this isn't going to be an issue for completed projects. E.g. Forking the repo that contains the code and data of a published paper.
+
+
+# README
+
+README files are special in GitHub because they act as repo landing pages.
+- For a project tied to a research paper, this is where you should be explicit about the goal of the research paper, the software requirements, how to run the analysis, and so forth (e.g. [here](https://github.com/grantmcdermott/bycatch)).
+- On the other end of the scale, many GitHub repos are basically standalone README files. Think of these as version-controlled blog posts (e.g. [here](https://github.com/jfiksel/github-classroom-for-teachers)). 
+
+README files can also be added to the *sub-directories* of a repo, where they will act as a landing pages too.
+- Particularly useful for bigger projects. Say, where you are using multiple programming languages (e.g. [here](https://github.com/grantmcdermott/blueparadox)), or want to add more detail about a dataset (e.g. [here](https://github.com/grantmcdermott/sceptic-priors/tree/master/data)).
+
+READMEs should be written in Markdown, which GH automatically renders.
+- We'll learn more about [Markdown](https://www.markdownguide.org/) (and its close relation, [R Markdown](https://rmarkdown.rstudio.com/)) during the course of our homework assignments.
+
+---
+
+# .gitignore
+
+A .gitignore file tells Git what to — *wait for it* — ignore.
+
+This is especially useful if you want to exclude whole folders or a class of files (e.g. based on size or type).
+- Proprietary data files should be ignored from the beginning if you intend to make a repo public at some point.
+- Very large individual files (>100 MB) exceed GitHub's maximum allowable size and should be ignored regardless. See <a href="https://help.github.com/articles/working-with-large-files/" target="_blank">here</a> and <a href="https://help.github.com/articles/versioning-large-files/" target=_"blank">here</a>.
+
+I typically add compiled datasets to my .gitignore in the early stages of a project.
+- Reduces redundant version control history, where the main thing is the code that produces the compiled dataset, not the end CSV in of itself. ("Source is real.")
+- Simple to remove from my .gitignore once the project is being finalised (e.g. paper is being submitted).
+  
+---
+
+# .gitignore (cont.)
+
+You can create a .gitignore file in multiple ways.
+
+- A .gitignore file was automatically generated if you cloned your repo with an RStudio Project.
+- You could also have the option of adding one when you first create a repo on GitHub.
+- Or, you can create one with your preferred text editor. (Must be saved as ".gitignore".)
+
+Once the .gitignore file is created, simply add in lines of text corresponding to the files that should be ignored.
+
+- To ignore a single a file: `FILE-I-WANT-TO-IGNORE.csv`
+- To ignore a whole folder (and all of its contents, subfolders, etc.): `FOLDER-NAME/**`
+- The standard shell commands and special characters apply.
+  - E.g. Ignore all CSV files in the repo: `*.csv`
+  - E.g. Ignore all files beginning with "test": `test*`
+  - E.g. Don't ignore a  particular file: `!somefile.txt`
+
+---
+
+# GitHub Issues
+
+[GitHub Issues](https://guides.github.com/features/issues/) are another great way to interact with your collaborators and/or package maintainers.
+- If you spot any problems with these lecture notes, please file an issue [here](https://github.com/uo-ec607/lectures/issues)!
+  
+
+# Recipe (shell commands in grey)
+
+1. Create a repo on GitHub and initialize with a README.
+
+2. Clone the repo to your local machine. Preferably using an RStudio Project, but as you wish. (E.g. Shell command: `$ git clone REPOSITORY-URL`)
+
+3. Stage any changes you make: `$ git add -A`
+
+4. Commit your changes: `$ git commit -m "Helpful message"`
+
+5. Pull from GitHub: `$ git pull`
+
+6. (Fix any merge conflicts.)
+
+7. Push your changes to GitHub: `$ git push`
+
+--
+
+Repeat steps 3—7 (but especially steps 3 and 4) often.
 
 

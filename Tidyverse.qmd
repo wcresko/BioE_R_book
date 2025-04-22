@@ -1,17 +1,186 @@
 # Tidyverse
 
+## A biological example to get us started
+
+<br> <br>
+
+-   Say you perform an experiment on two different strains of stickleback fish, one from an ocean population (RS) and one from a freshwater lake (BP) by making them microbe free.
+
+<br>
+
+-   Microbes in the gut are known to interact with the gut epithelium in ways that lead to a proper maturation of the immune system.
+
+## A biological example to get us started
+
+-   You carry out an experiment by treating multiple fish from each strain so that some of them have a conventional microbiota, and some are inoculated with only one bacterial species.
+
+<br>
+
+-   You then measure the levels of gene expression in the stickleback gut using RNA-seq.
+
+<br>
+
+-   You suspect that the sex of the fish might be important so you track it too.
+
+## A biological example to get us started
+
+<br>
+
+```{r, echo=FALSE, out.width='50%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/week_01.005.jpeg")
+```
+
+##  {.flexbox .vcenter}
+
+```{r, echo=FALSE, out.width='100%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/week_01.006.jpeg")
+```
+
+## Collecting Data with Analyses in Mind
+
+<br> <br>
+
+-   How should the data set be organized to best analyze it?
+-   What are the key properties of the variables?
+-   Why does it matter for learning `R`?
+-   Why does it matter for performing statistical analyses in `R`?
+
+## Data set rules of thumb (aka Tidy Data)
+
+<br> <br>
+
+-   Store a copy of data in non-proprietary formats
+-   Leave an uncorrected file when doing analyses
+-   Maintain effective metadata about the data
+-   When you add observations to a database, add rows
+-   When you add variables to a database, add columns
+-   A column of data should contain only one data type
+
+##  {.flexbox .vcenter}
+
+```{r, echo=FALSE, out.width='100%', fig.asp=.75, fig.align='center'}
+knitr::include_graphics("images/week_01.007.jpeg")
+```
+
+------------------------------------------------------------------------
+
+# Tidyverse family of packages {.smaller}
+
+## Tidyverse family of packages {.smaller}
+
+```{r, echo=FALSE, out.width='90%', fig.align='center'}
+knitr::include_graphics("images/week_3.011.jpeg")
+```
+
+## Tidyverse family of packages {.vcenter .flexbox}
+
+-   Hadley Wickham and others have written `R` packages to modify data
+
+-   These packages do many of the same things as base functions in `R`
+
+-   However, they are specifically designed to do them faster and more easily
+
+-   Wickham also wrote the package `GGPlot2` for elegant graphics creations
+
+-   GG stands for ‘Grammar of Graphics’
+
+## Example of a tibble {.smaller}
+
+```{r, echo=FALSE, out.width='80%', fig.align='center'}
+knitr::include_graphics("images/week_3.012.jpeg")
+```
+
+## Example of a tibble {.smaller}
+
+```{r, echo=FALSE, out.width='80%', fig.align='center'}
+knitr::include_graphics("images/week_3.013.jpeg")
+```
+
+## Key functions in `dplyr` for vectors
+
+<br>
+
+-   Pick observations by their values with `filter()`.
+-   Reorder the rows with `arrange()`.
+-   Pick variables by their names with `select()`.
+-   Create new variables with functions of existing variables with `mutate()`.
+-   Collapse many values down to a single summary with `summarise()`.
+
+## `filter()`, `arrange()` & `select()`
+
+```{r, echo=T, eval=F}
+filter(flights, month == 11 | month == 12)
+```
+
+```{r, echo=T, eval=F}
+arrange(flights, year, month, day)
+```
+
+```{r, echo=T, eval=F}
+select(flights, year, month, day)
+```
+
+```{r, echo=FALSE, out.width='60%', fig.align='center'}
+knitr::include_graphics("images/week_3.015.jpeg")
+```
+
+## `mutate()` & `transmutate()`
+
+This function will add a new variable that is a function of other variable(s)
+
+```{r, echo=T, eval=F}
+mutate(flights,
+  gain = arr_delay - dep_delay,
+  hours = air_time / 60,
+  gain_per_hour = gain / hours
+)
+```
+
+This function will replace the old variable with the new variable
+
+```{r, echo=T, eval=F}
+transmute(flights,
+  gain = arr_delay - dep_delay,
+  hours = air_time / 60,
+  gain_per_hour = gain / hours
+)
+```
+
+## `group_by( )` & `summarize( )`
+
+<br>
+
+This first function allows you to aggregate data by values of categorical variables (factors)
+
+```{r, echo=T, eval=F}
+by_day <- group_by(flights, year, month, day)
+```
+
+Once you have done this aggregation, you can then calculate values (in this case the mean) of other variables split by the new aggregated levels of the categorical variable
+
+```{r, echo=T, eval=F}
+summarise(by_day, delay = mean(dep_delay, na.rm = TRUE))
+```
+
+## `group_by( )` & `summarize( )`
+
+<br>
+
+-   Note - you can get a lot of missing values!
+-   That’s because aggregation functions obey the usual rule of missing values:
+    -   if there’s any missing value in the input, the output will be a missing value.
+    -   fortunately, all aggregation functions have an `na.rm` argument which removes the missing values prior to computation
+
 ## The tidyverse
 
 A collection of packages particularly helpful for working with tables.
 
-
-- __dplyr__ - manipulating data frames 
-- __ggplot2__ - data visualization
-- __readr__ - importing data
-- __stringr__ - string manipulation
-- __lubridate__ - dates and times
-- __purrr__ package for working with functions
-
+-   **dplyr** - manipulating data frames
+-   **ggplot2** - data visualization
+-   **readr** - importing data
+-   **stringr** - string manipulation
+-   **lubridate** - dates and times
+-   **purrr** package for working with functions
 
 ## The tidyverse
 
@@ -21,14 +190,12 @@ Load the main packages like this:
 library(tidyverse)
 ```
 
+## Tidy data
 
-## Tidy data 
+-   Each row represents one observation
+-   Columns represent the different variables
 
-- Each row represents one observation 
-- Columns represent the different variables 
-
-
-## Tidy data 
+## Tidy data
 
 The `murders` dataset is an example of a tidy data frame.
 
@@ -49,11 +216,11 @@ wide_data <- read_csv(filename)
 select(wide_data, country, `1960`:`1965`) %>% as.data.frame
 ```
 
-Later we learn how to _wrangle_ into tidy format.
+Later we learn how to *wrangle* into tidy format.
 
 ## Tidy data
 
-Same information in tidy format. 
+Same information in tidy format.
 
 ```{r, echo=FALSE}
 library(dslabs)
@@ -64,22 +231,20 @@ tidy_data <- gapminder %>%
 head(tidy_data, 12)
 ```
 
-
 ## Manipulating data frames with dplyr
 
-- `mutate` - change or add columns   
-- `filter`-  filter rows based on a rule
-- `select` - Subset the data by selecting specific columns
+-   `mutate` - change or add columns\
+-   `filter`- filter rows based on a rule
+-   `select` - Subset the data by selecting specific columns
 
 ## Adding a column with `mutate`
-
 
 ```{r, message=FALSE}
 data("murders")
 murders <- mutate(murders, rate = total / population * 100000)
 ```
 
-Notice that here we used `total` and `population` inside the function, which are objects that are **not** defined in our workspace. 
+Notice that here we used `total` and `population` inside the function, which are objects that are **not** defined in our workspace.
 
 ## Adding a column with `mutate`
 
@@ -89,13 +254,11 @@ We can see the new column now
 head(murders)
 ```
 
-
 ## Subsetting with `filter`
 
 ```{r}
 filter(murders, rate <= 0.71)
 ```
-
 
 ## Selecting columns with `select`
 
@@ -110,9 +273,7 @@ $$ \mbox{original data }
 \rightarrow \mbox{ select }
 \rightarrow \mbox{ filter } $$
 
-
 ## The pipe: `%>%`
-
 
 When using the pipe, functions take left hand side as first argumemt:
 
@@ -121,7 +282,6 @@ murders %>% select(state, region, rate) %>% filter(rate <= 0.71)
 ```
 
 ## More pipe example
-
 
 ```{r}
 sqrt(16)
@@ -134,10 +294,10 @@ log2(sqrt(16))
 ```
 
 ## Example: Use arguments with pipe
+
 ```{r}
 16 %>% sqrt() %>% log(base = 2)
 ```
-
 
 ## Pipe example
 
@@ -160,7 +320,6 @@ s <- heights %>%
   summarize(average = mean(height))
 ```
 
-
 ## Tidyverse always returns tables
 
 ```{r}
@@ -180,7 +339,6 @@ heights %>%
             q75 = quantile(height, .75))
 ```
 
-
 ## Summarize only wors with one variable summaries
 
 You can compute more than one summary
@@ -192,10 +350,11 @@ heights %>%
   summarize(qs = quantile(height, c(1,2,3) / 4))
 ```
 
-```
+```         
 Error in summarise_impl(.data, dots) : 
   Column `qs` must be length 1 (a summary value), not 3
 ```
+
 ## `pull`
 
 The `us_murder_rate` object defined above represents just one number. Yet we are storing it in a data frame:
@@ -213,16 +372,14 @@ class(s)
 s %>% pull(average)
 ```
 
-
 ## Group then summarize
 
 ```{r}
 heights %>% group_by(sex)
 ```
 
-- The result does not look very different from `heights`, except we see `Groups: sex [2]` when we print the object. 
-- Although not immediately obvious from its appearance, this is now a special data frame called a _grouped data frame_ 
-
+-   The result does not look very different from `heights`, except we see `Groups: sex [2]` when we print the object.
+-   Although not immediately obvious from its appearance, this is now a special data frame called a *grouped data frame*
 
 ## Group then summarize
 
@@ -234,9 +391,9 @@ heights %>%
 
 ## The dot operator
 
-- When using the pipe, the object being passed by the expression on the left side of the pipe can be accessed via `.`
+-   When using the pipe, the object being passed by the expression on the left side of the pipe can be accessed via `.`
 
-- Here is an example that is equivalent to pull:
+-   Here is an example that is equivalent to pull:
 
 ```{r}
 s %>% .$average
@@ -244,13 +401,13 @@ s %>% .$average
 
 ## `do`
 
-- We saw that summarize does not permit the use of functions that return more than one scaler
+-   We saw that summarize does not permit the use of functions that return more than one scaler
 
-- One way to apply such function is with `do`
+-   One way to apply such function is with `do`
 
-- Think of `do` as a connection between R base and the tidyverse.
+-   Think of `do` as a connection between R base and the tidyverse.
 
-- General idea, write a function that returns what you want in a data frame, then call it with do.
+-   General idea, write a function that returns what you want in a data frame, then call it with do.
 
 ## `do`
 
@@ -288,7 +445,7 @@ murders %>%
   head()
 ```
 
-## Nested sorting 
+## Nested sorting
 
 ```{r}
 murders %>% 
@@ -296,28 +453,23 @@ murders %>%
   head()
 ```
 
-
-## The top $n$ 
-
+## The top $n$
 
 ```{r}
 murders %>% top_n(10, rate)
 ```
 
-
 ## Tibbles
-
 
 ```{r}
 data(murders)
 class(murders)
 ```
 
-- Remember `group_by`  permits stratifying data before computing summary statistics. 
-- But where is the group information stored in the data frame? 
+-   Remember `group_by` permits stratifying data before computing summary statistics.
+-   But where is the group information stored in the data frame?
 
 ## Tibbles
-
 
 ```{r}
 murders %>% group_by(region) %>% head()
@@ -331,8 +483,8 @@ murders %>% group_by(region) %>% class()
 
 ## Tibles versus data frames
 
-- Tibbles display better 
-- Subsets of tibbles are tibbles
+-   Tibbles display better
+-   Subsets of tibbles are tibbles
 
 ```{r}
 class(murders[,4])
@@ -346,10 +498,9 @@ murders$Population
 as_tibble(murders)$Population
 ```
 
-
 ## Tibles versus data frames
 
-- Tibbles can have complex entries
+-   Tibbles can have complex entries
 
 ```{r}
 tibble(id = c(1, 2, 3), func = c(mean, median, sd))
@@ -357,9 +508,9 @@ tibble(id = c(1, 2, 3), func = c(mean, median, sd))
 
 ## Tibles versus data frames
 
-- Tibbles can be grouped
+-   Tibbles can be grouped
 
-## Create a tibble using `data_frame` 
+## Create a tibble using `data_frame`
 
 ```{r}
 grades <- data_frame(names = c("John", "Juan", "Jean", "Yao"), 
@@ -379,7 +530,8 @@ class(grades$names)
 
 ## Another difference
 
-- To avoid this, we use the rather cumbersome argument `stringsAsFactors`:
+-   To avoid this, we use the rather cumbersome argument `stringsAsFactors`:
+
 ```{r}
 grades <- data.frame(names = c("John", "Juan", "Jean", "Yao"), 
                      exam_1 = c(95, 80, 90, 85), 
@@ -396,9 +548,9 @@ as_tibble(grades) %>% class()
 
 ## Conditionals
 
-- You should be familiar with the `ifelse` function. But let's review it as it is very useful in the tidyverse
+-   You should be familiar with the `ifelse` function. But let's review it as it is very useful in the tidyverse
 
-- `ifelse` vectorizes conditional assignments. Here is an example
+-   `ifelse` vectorizes conditional assignments. Here is an example
 
 ```{r}
 x <- seq(-5, 5)
@@ -407,7 +559,7 @@ ifelse(x>0, "positive", "non-positive")
 
 ## Conditionals
 
-- The tidyverse offers another useful tool: `case_when`
+-   The tidyverse offers another useful tool: `case_when`
 
 ```{r}
 x <- seq(-5, 5)
@@ -427,3 +579,6 @@ recode(sign(x), "1" = "positive", "0" = "zero", "-1" = "nonpositive")
 ```
 
 Mainly useful for changing codes to actual meaningful level names.
+
+
+

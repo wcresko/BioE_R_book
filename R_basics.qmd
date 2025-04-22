@@ -1,4 +1,20 @@
-# R basics
+# R basics {#r-basics}
+
+## Some R basics
+
+1.  Everything is an object.
+
+2.  Everything has a name.
+
+3.  You do things using functions.
+
+4.  Functions come pre-written in packages (i.e. "libraries"), although you can — and should — write your own functions too.
+
+--
+
+</br>
+
+Points 1. and 2. can be summarised as an [object-orientated programming](https://en.wikipedia.org/wiki/Object-oriented_programming) (OOP) approach. - This may sound super abstract now, but we'll see *lots* of examples over the coming weeks that will make things clear.
 
 ## Math and assigning variables
 
@@ -20,22 +36,24 @@ y_log
 
 # Why use `R`?
 
-## {}
-- R is a _statistical_ programming language (derived from S)
-- Superb data management & graphics capabilities
-- You can write your own functions
-- Powerful and flexible
-- Runs on all computer platforms
-- Well established system of packages and documentation
-- Active development and dedicated community
-- Can use a nice GUI front end such as `Rstudio`
-- Reproducibility 
-    - keep your scripts to see exactly what was done
-    - distribute these with your data
-    - embed your `R` analyses in polished `RMarkdown` files
-- FREE
-    
-## {.flexbox .vcenter}
+## 
+
+-   R is a *statistical* programming language (derived from S)
+-   Superb data management & graphics capabilities
+-   You can write your own functions
+-   Powerful and flexible
+-   Runs on all computer platforms
+-   Well established system of packages and documentation
+-   Active development and dedicated community
+-   Can use a nice GUI front end such as `Rstudio`
+-   Reproducibility
+    -   keep your scripts to see exactly what was done
+    -   distribute these with your data
+    -   embed your `R` analyses in polished `RMarkdown` files
+-   FREE
+
+##  {.flexbox .vcenter}
+
 ```{r, echo=FALSE, out.width='35%'}
 knitr::include_graphics("images/volcano_plot.png")
 knitr::include_graphics("images/rainbow_boxplot.png")
@@ -44,29 +62,28 @@ knitr::include_graphics("images/Stacked_barplot.png")
 
 ```
 
-## `R` resources  {.flexbox .vcenter}
+## `R` resources {.flexbox .vcenter}
 
-- The R Project Homepage: http://www.r-project.org
-- Quick R Homepage: http://www.statmethods.net
-- Bioconductor: http://www.bioconductor.org    
-- An Introduction to R (long!): http://cran.r-project.org/doc/manuals/R-intro.html
-- R for Data Science: https://r4ds.had.co.nz
-- Google - tutorials, guides, demos, packages and more
+-   The R Project Homepage: http://www.r-project.org
+-   Quick R Homepage: http://www.statmethods.net
+-   Bioconductor: http://www.bioconductor.org\
+-   An Introduction to R (long!): http://cran.r-project.org/doc/manuals/R-intro.html
+-   R for Data Science: https://r4ds.had.co.nz
+-   Google - tutorials, guides, demos, packages and more
 
 ## Running `R` {.flexbox .vcenter}
-- Need to make sure that you have `R` installed 
-    - locally or on a server
-    - https://www.r-project.org
-  
-- Run R from the command line
-    - just type `R`
-    - can run it locally as well as on clusters
 
-- Install a R *Integrated Development Environment* (IDE)
-    - RStudio: http://www.rstudio.com
-    - Makes working with R much easier, particularly for a new R user
-    - Run on Windows, Mac or Linux OS
-    - We're running as a server on the AWS instances
+-   Need to make sure that you have `R` installed
+    -   locally or on a server
+    -   https://www.r-project.org
+-   Run R from the command line
+    -   just type `R`
+    -   can run it locally as well as on clusters
+-   Install a R *Integrated Development Environment* (IDE)
+    -   RStudio: http://www.rstudio.com
+    -   Makes working with R much easier, particularly for a new R user
+    -   Run on Windows, Mac or Linux OS
+    -   We're running as a server on the AWS instances
 
 ## `RStudio` {.flexbox .vcenter}
 
@@ -74,65 +91,67 @@ knitr::include_graphics("images/Stacked_barplot.png")
 knitr::include_graphics("images/RStudio_Screenshot.png")
 ```
 
+## Packages
 
-## Exercise 1.1 - Exploring `RStudio` {}
-- Open `RStudio` by adding `:8787` to your AMI url   
-- Take a few minutes to familiarize yourself with the `Rstudio` environment by locating the following features:
-    - See what types of new files can be made in `Rstudio` by clicking the top left icon- open a new R script.
-    - The windows clockwise from top left are: the code editor, the workspace and history, the plots and files window, and the R console.
-    - In the plots and files window, click on the packages and help tabs to see what they offer. 
-- Now open the file called *Exercises_for_R_Lectures.Rmd* in /workshop_materials/evomics_stat_2019/03.Exercises/ 
-    - This file will serve as your digital notebook for parts of the workshop and contains the other exercises.
+# Install and load
 
-___________________
+Open up your laptops. For the remainder of this first lecture, we're going continue playing around with [ggplot2](https://ggplot2.tidyverse.org/) (i.e. livecoding).
 
-# Introduction to `RMarkdown`
+If you don't have them already, install the `ggplot2` and `gapminder` packages via either: - **Console:** Enter `install.packages(c("ggplot2", "gapminder"), dependencies=T)`. - **RStudio:** Click the "Packages" tab in the bottom-right window pane. Then click "Install" and search for these two packages.
 
-## `RMarkdown` {.flexbox .vcenter}
+![](pics/install.gif)
 
-- A great way to embed `R code` into descriptive files to keep your life organized
-    - http://kbroman.org/knitr_knutshell/pages/Rmarkdown.html
-    - https://bookdown.org/yihui/rmarkdown/
-    - https://bookdown.org/yihui/bookdown/
-- You can insert `R chunks` into `Rmarkdown` documents
-- You will be doing more with markdown on Thursday
+------------------------------------------------------------------------
 
-## Exercise 1.2 - Intro to `RMarkdown` Files
+# Install and load (cont.)
 
-- Take a few minutes to familiarize yourself with RMarkdown files by completing exercise 1.2 in your exercises document.
+Once the packages are installed, load them into your R session with the `library()` function.
 
-___________________
+```{r pkg_load}
+library(ggplot2)
+library(gapminder) ## We're just using this package for the gapminder data
+```
 
-# BASICS of `R` 
+Notice too that you don't need quotes around the package names any more. Reason: R now recognises these packages as defined objects with given names. ("Everything in R is an object and everything has a name.")
 
-## BASICS of `R` {}
+--
 
-- Commands can be submitted through 
-    - terminal, console or scripts
-    - can be embedded as `code chunks` in RMarkdown
-- On these slides evaluating code chunks and showing output
-    - shown here after the two `#` symbols
-    - the number of output items is in `[]`
-- `R` follows the normal priority of mathematical evaluation (PEDMAS)
+PS — A convenient way to combine the package installation and loading steps is with the [pacman package's](https://github.com/trinker/pacman) `p_load()` function. If you run `pacman::p_load(ggplot, gapminder)` it will first look to see whether it needs to install either package before loading them. Clever. - We'll get to this next week, but if you want to run a function from an (installed) package without loading it, you can use the `PACKAGE::package_function()` syntax.
 
-## BASICS of `R` {}
+
+
+# BASICS of `R`
+
+## BASICS of `R`
+
+-   Commands can be submitted through
+    -   terminal, console or scripts
+    -   can be embedded as `code chunks` in RMarkdown
+-   On these slides evaluating code chunks and showing output
+    -   shown here after the two `#` symbols
+    -   the number of output items is in `[]`
+-   `R` follows the normal priority of mathematical evaluation (PEDMAS)
+
+## BASICS of `R`
 
 Input code chunk and then output
+
 ```{r basic multiplication, echo=TRUE}
 4*4
 ```
 
 Input code chunk and then output
+
 ```{r more multiplication, echo=TRUE}
 (4+3*2^2)
 ```
 
 ## Assigning Variables {.flexbox .vcenter}
 
-- A better way to do this is to assign variables
-- Variables are assigned values using the `<-` operator.
-- Variable names must begin with a letter, but other than that, just about anything goes.
-- Do keep in mind that `R` is **case sensitive**.
+-   A better way to do this is to assign variables
+-   Variables are assigned values using the `<-` operator.
+-   Variable names must begin with a letter, but other than that, just about anything goes.
+-   Do keep in mind that `R` is **case sensitive**.
 
 ## Assigning Variables {.flexbox .vcenter}
 
@@ -152,10 +171,9 @@ These do not work
 3*y <- 3
 ```
 
+## Arithmetic operations on functions
 
-## Arithmetic operations on functions {}
-
-- Arithmetic operations can be performed easily on functions as well as numbers.
+-   Arithmetic operations can be performed easily on functions as well as numbers.
 
 ```{r functions, eval = TRUE, echo = TRUE}
 x <- 12
@@ -164,11 +182,11 @@ x^2
 log(x)
 ```
 
-## Arithmetic operations on functions {}
-- Note that the last of these - `log` - is a built in function of `R`, and therefore the object of the function needs to be put in parentheses
-- These parentheses will be important, and we'll come back to them later when we add arguments after the object in the parentheses  
-- The outcome of calculations can be assigned to new variables as well, and the results can be checked using the `print` command
+## Arithmetic operations on functions
 
+-   Note that the last of these - `log` - is a built in function of `R`, and therefore the object of the function needs to be put in parentheses
+-   These parentheses will be important, and we'll come back to them later when we add arguments after the object in the parentheses\
+-   The outcome of calculations can be assigned to new variables as well, and the results can be checked using the `print` command
 
 ## Arithmetic operations on functions {.flexbox .vcenter}
 
@@ -182,11 +200,12 @@ print(z)
 ```
 
 ## STRINGS {.flexbox .vcenter}
-- Operations can be performed on _character_ variables as well
-- Note that "characters" need to be set off by quotation marks to differentiate them from numbers
-- The `c` stands for `concatenate`
-- Note that we are using the same variable names as we did previously, which means that we're overwriting our previous assignment
-- A good rule of thumb is to use new names for each variable, and make them short but still descriptive
+
+-   Operations can be performed on *character* variables as well
+-   Note that "characters" need to be set off by quotation marks to differentiate them from numbers
+-   The `c` stands for `concatenate`
+-   Note that we are using the same variable names as we did previously, which means that we're overwriting our previous assignment
+-   A good rule of thumb is to use new names for each variable, and make them short but still descriptive
 
 ## STRINGS {.flexbox .vcenter}
 
@@ -199,14 +218,13 @@ z <- c(x,y)
 print (z)
 ```
 
-
 ## VECTORS {.flexbox .vcenter}
 
-- In general `R` thinks in terms of vectors
-    - a list of characters, factors or numerical values ("I Love")
-    - it will benefit any `R` user to try to write scripts with that in mind
-    - it will simplify most things
-- Vectors can be assigned directly using the 'c()' function and then entering the exact values.
+-   In general `R` thinks in terms of vectors
+    -   a list of characters, factors or numerical values ("I Love")
+    -   it will benefit any `R` user to try to write scripts with that in mind
+    -   it will simplify most things
+-   Vectors can be assigned directly using the 'c()' function and then entering the exact values.
 
 ## VECTORS {.flexbox .vcenter}
 
@@ -220,12 +238,12 @@ z <- n +3
 print(z)
 ```
 
-## FACTORS {.flexbox .vcenter}
+## FACTORS {#factors .flexbox .vcenter}
 
-- The vector `x` is now what is called a list of character values ("I Love").
-- Sometimes we would like to treat the characters as if they were units for subsequent calculations.
-- These are called `factors`, and we can redefine our character variables as factors.
-- This might seem a bit strange, but it’s important for statistical analyses where we might want to see the mean or variance for two different treatments.
+-   The vector `x` is now what is called a list of character values ("I Love").
+-   Sometimes we would like to treat the characters as if they were units for subsequent calculations.
+-   These are called `factors`, and we can redefine our character variables as factors.
+-   This might seem a bit strange, but it’s important for statistical analyses where we might want to see the mean or variance for two different treatments.
 
 ## FACTORS {.flexbox .vcenter}
 
@@ -233,17 +251,18 @@ print(z)
 x_factor <- as.factor(x)
 print (x_factor)
 ```
-- Note that factor levels are reported alphabetically
+
+-   Note that factor levels are reported alphabetically
 
 ## FACTORS {.flexbox .vcenter}
 
-- We can also determine how `R` "sees" a variable using `str()` or `class()` functions. 
-- This is a useful check when importing datasets or verifying that you assigned a class correctly
+-   We can also determine how `R` "sees" a variable using `str()` or `class()` functions.
+-   This is a useful check when importing datasets or verifying that you assigned a class correctly
+
 ```{r, eval = TRUE, echo = TRUE}
 str(x)
 class(x)
 ```
-
 
 ## Types or 'classes' of vectors of data {.smaller}
 
@@ -251,41 +270,40 @@ class(x)
 knitr::include_graphics("images/week_3.014.jpeg")
 ```
 
-## Types of vectors of data {}
+## Types of vectors of data
 
-- `int` stands for integers  
+-   `int` stands for integers
 
-- `dbl` stands for doubles, or real numbers
+-   `dbl` stands for doubles, or real numbers
 
-- `chr` stands for character vectors, or strings  
+-   `chr` stands for character vectors, or strings
 
-- `dttm` stands for date-times (a date + a time)  
+-   `dttm` stands for date-times (a date + a time)
 
-- `lgl` stands for logical, vectors that contain only TRUE or FALSE
+-   `lgl` stands for logical, vectors that contain only TRUE or FALSE
 
-- `fctr` stands for factors, which R uses to represent categorical variables with fixed possible values  
+-   `fctr` stands for factors, which R uses to represent categorical variables with fixed possible values
 
-- `date` stands for dates  
+-   `date` stands for dates
 
 ## Types of vectors of data {.smaller}
 
-- Logical vectors can take only three possible values:
-    - `FALSE`
-    - `TRUE`
-    - `NA` which is 'not available'.
-
-- Integer and double vectors are known collectively as numeric vectors.
-    - In `R` numbers are doubles by default.
-
-- Integers have one special value: NA, while doubles have four:
-    - `NA`
-    - `NaN` which is 'not a number'
-    - `Inf`
-    - `-Inf`
+-   Logical vectors can take only three possible values:
+    -   `FALSE`
+    -   `TRUE`
+    -   `NA` which is 'not available'.
+-   Integer and double vectors are known collectively as numeric vectors.
+    -   In `R` numbers are doubles by default.
+-   Integers have one special value: NA, while doubles have four:
+    -   `NA`
+    -   `NaN` which is 'not a number'
+    -   `Inf`
+    -   `-Inf`
 
 ## Basic Statistics {.flexbox .vcenter}
 
 Many functions exist to operate on vectors.
+
 ```{r, eval = FALSE, echo = TRUE}
 mean(n)
 median(n)
@@ -297,17 +315,17 @@ sum(n)
 length(n)
 sample(n, replace = T) #has an additional argument (replace=T)
 ```
-- Arguments modify or direct the function in some way
-    - There are many arguments for each function, some of which are defaults
-    - Tab complete is helpful to view argument options
+
+-   Arguments modify or direct the function in some way
+    -   There are many arguments for each function, some of which are defaults
+    -   Tab complete is helpful to view argument options
 
 ## Getting Help {.flexbox .vcenter}
 
-- Getting Help on any function is very easy - just type a question mark and the name of the function.
-- There are functions for just about anything within `R` and it is easy enough to write your own functions if none already exist to do what you want to do.
-- In general, function calls have a simple structure: a function name, a set of parentheses and an optional set of parameters/arguments to send to the function.
-- Help pages exist for all functions that, at a minimum, explain what parameters exist for the function.  
-
+-   Getting Help on any function is very easy - just type a question mark and the name of the function.
+-   There are functions for just about anything within `R` and it is easy enough to write your own functions if none already exist to do what you want to do.
+-   In general, function calls have a simple structure: a function name, a set of parentheses and an optional set of parameters/arguments to send to the function.
+-   Help pages exist for all functions that, at a minimum, explain what parameters exist for the function.
 
 ## Getting Help {.flexbox .vcenter}
 
@@ -320,21 +338,24 @@ sample(n, replace = T) #has an additional argument (replace=T)
 - args(mean)
 ```
 
-## Creating vectors {}
+## Creating vectors
 
-- Creating a vector of new data by entering it by hand can be a drag
-- However, it is also very easy to use functions such as
-    - `seq`
-    - `sample`
+-   Creating a vector of new data by entering it by hand can be a drag
+-   However, it is also very easy to use functions such as
+    -   `seq`
+    -   `sample`
 
-## Creating vectors {}
-- What do the arguments mean?
+## Creating vectors
+
+-   What do the arguments mean?
+
 ```{r, echo = TRUE}
 seq_1 <- seq(0.0, 10.0, by = 0.1)
 print(seq_1)
 ```
 
-## Creating vectors {}
+## Creating vectors
+
 ```{r, echo = TRUE}
 seq_2 <- seq(10.0, 0.0, by = -0.1)
 print(seq_2)
@@ -354,10 +375,10 @@ seq_square_new <- (seq_2)^2
 print(seq_square_new)
 ```
 
-
 ## Drawing samples from distributions {.smaller}
 
-- Here is a way to create your own data sets that are random samples...
+-   Here is a way to create your own data sets that are random samples...
+
 ```{r Samples from distributions 2, out.width='50%', echo = TRUE}
 x <- rnorm (n = 10000, mean = 0, sd = 10)
 y <- sample (1:10000, 10000, replace = T)
@@ -376,19 +397,19 @@ hist(x)
 
 ## Drawing samples from distributions {.flexbox .vcenter}
 
-- You’ve probably figured out that y from the last example is drawing numbers with equal probability.
-- What if you want to draw from a distribution?
-- Again, play around with the arguments in the parentheses to see what happens.
+-   You’ve probably figured out that y from the last example is drawing numbers with equal probability.
+-   What if you want to draw from a distribution?
+-   Again, play around with the arguments in the parentheses to see what happens.
 
 ```{r Samples from distributions 4, out.width='50%', echo = TRUE, eval=F}
 x <- rnorm (10000, 0, 10)
 y <- sample (???, 10000, replace = ???)
 ```
 
-## Drawing samples from distributions {.flexbox .vcenter out.width='50%'}
+## Drawing samples from distributions {.flexbox .vcenter out.width="50%"}
 
-- `dnorm()` generates the probability density, which can be plotted using the `curve()` function.
-- Note that is curve is added to the plot using `add=TRUE`
+-   `dnorm()` generates the probability density, which can be plotted using the `curve()` function.
+-   Note that is curve is added to the plot using `add=TRUE`
 
 ```{r, out.width='30%', echo = TRUE}
 x <-rnorm(1000, 0, 100)
@@ -396,20 +417,134 @@ hist(x, xlim = c(-500,500))
 curve(50000*dnorm(x, 0, 100), xlim = c(-500,500), add=TRUE, col='Red')
 ```
 
+## Creating Data Frames in `R` {.smaller}
 
-# R basics {#r-basics}
+- As you have seen, in `R` you can generate your own random data set drawn from nearly any distribution very easily.
+- Often we will want to use collected data.
+- Now, let’s make a dummy dataset to get used to dealing with data frames
+    - Set up three variables (habitat, temp and elevation) as vectors
+
+```{r, echo=TRUE}
+habitat <- factor(c("mixed", "wet", "wet", "wet", "dry", "dry", "dry","mixed"))
+temp <- c(3.4, 3.4, 8.4, 3, 5.6, 8.1, 8.3, 4.5)
+elevation <- c(0, 9.2, 3.8, 5, 5.6, 4.1, 7.1, 5.3)
+```
+
+## Creating Data Frames in R {.smaller}
+- Create a data frame where vectors become columns
+
+```{r, echo=TRUE}
+mydata <- data.frame(habitat, temp, elevation)
+row.names(mydata) <- c("Reedy Lake", "Pearcadale", "Warneet", "Cranbourne", "Lysterfield", "Red Hill", "Devilbend", "Olinda")
+head(mydata)
+```
+- Now you have a hand-made data frame with row names
+
+## R Interlude: Reading in Data Frames in R
+- A strength of `R` is being able to import data from an external source
+    - Create the same table that you did above in a spreadsheet using LibreOffice 
+    - Export it to comma separated and tab separated text files for importing into `R`.
+    - The first will read in a comma-delimited file, whereas the second is a tab-delimited
+    - In both cases the header and row.names arguments indicate that there is a header row and row label column
+    - Note that the name of the file by itself will have `R` look in the PWD, whereas a full path can also be used
+
+## Reading in Data Frames in R {.flexbox .vcenter}
+
+```{r, eval = FALSE, echo = TRUE}
+YourFile <- read.table('yourfile.csv', header=T, row.names=1, sep=',')
+YourFile <- read.csv('yourfile.csv', header=T, row.names=1, sep=',')
+YourFile <- read.table('yourfile.txt', header=T, row.names=1, sep='\t')
+```
+
+## Exporting Data Frames in R {.flexbox .vcenter}
+
+```{r, eval = FALSE, echo = TRUE}
+write.csv(YourFile, "yourfile.csv", quote=F, row.names=T, sep=",")
+write.table(YourFile, "yourfile.txt", quote=F, row.names=T, sep="\t")
+```
+- you will get more practice with this during the next R interlude
+
+## Arguments in `R` Functions
+
+- Sometimes `R` can guess what you mean because of order...
+
+```{r, eval=T, echo=T}
+x <- rnorm(1000, 0, 10)  #n=, mean=, sd=
+x[1:10]
+```
+
+- But sometimes if the order isn't right, you can confuse `R` and get something you _really_ didn't want...
+```{r, eval=T, echo=T}
+x2 <- rnorm(10, 1000, 0)  #n=, mean=, sd=
+x2
+```
+
+## Arguments in `R` Functions
+
+- A work-around and best-practice: include the arguments!!
+```{r, eval=T, echo=T}
+set.seed(145)
+x <- rnorm(n=1000, mean=0, sd=10)  #n=, mean=, sd=
+x[1:10]
+```
+
+```{r, eval=T, echo=T}
+set.seed(145)
+x2 <- rnorm(sd=10, n=1000, mean=0)  #n=, mean=, sd=
+x2[1:10]
+```
+   
+  - Notice we also set the seed to replicate our sample results!
 
 
-In this book, we will be using the R software environment for all our
-analysis. You will learn R and data analysis techniques simultaneously. To follow along you will therefore need access to R. We also recommend the use of an _integrated development environment_ (IDE), such as RStudio, to save your work. 
-Note that it is common for a course or workshop to offer access to an R environment and an IDE through your web browser, as done by RStudio cloud^[https://rstudio.cloud]. If you have access to such a resource, you don't need to install R and RStudio. However, if you intend on becoming an advanced data analyst, we highly recommend installing these tools on your computer^[https://rafalab.github.io/dsbook/installing-r-rstudio.html]. 
-Both R and RStudio are free and available online. 
+## Indexing in data frames {.flexbox .vcenter}
+- Next up - indexing just a subset of the data
+- This is a very important feature in `R`, that allows you to analyze just a subset of the data.
+```{r, echo=TRUE, eval=FALSE}
+print (YourFile[,2])
+print (YourFile$temp)
+print (YourFile[2,])
+plot (YourFile$temp, YourFile$elevation)
+```
 
-##  Case study: US Gun Murders
+## Indexing in data frames {.flexbox .vcenter}
+- You can also assign values, or single values, from a data set to a new variable
 
-Imagine you live in Europe and are offered a job in a US company with many locations across all states. It is a great job, but news with headlines such as **US Gun Homicide Rate Higher Than Other Developed Countries**^[http://abcnews.go.com/blogs/headlines/2012/12/us-gun-ownership-homicide-rate-higher-than-other-developed-countries/] have you worried. Charts like this may concern you even more:
+```{r, echo=TRUE, eval=FALSE}
+x <- (YourFile[,2])
+y <-  (YourFile$temp)
+z <- (YourFile$elevation)
+plot (y, z)
+```
+
+## Indexing in data frames {.flexbox .vcenter}
+- You can perform operations on particular levels of a factor
+- Note that the first argument is the numerical column vector, and the second is the factor column vector.
+- The third is the operation. **Reversing the first two does not work**
+    - Tab complete will tell you the correct order for arguments 
+
+```{r, eval = FALSE, echo = TRUE}
+tapply(YourFile$temp, YourFile$habitat, mean)
+tapply(YourFile$temp, YourFile$habitat, var)
+```
+
+
+## R basics
+
+In this book, we will be using the R software environment for all our analysis. You will learn R and data analysis techniques simultaneously. To follow along you will therefore need access to R. We also recommend the use of an *integrated development environment* (IDE), such as RStudio, to save your work. Note that it is common for a course or workshop to offer access to an R environment and an IDE through your web browser, as done by RStudio cloud[^r_basics-1]. If you have access to such a resource, you don't need to install R and RStudio. However, if you intend on becoming an advanced data analyst, we highly recommend installing these tools on your computer[^r_basics-2]. Both R and RStudio are free and available online.
+
+[^r_basics-1]: https://rstudio.cloud
+
+[^r_basics-2]: https://rafalab.github.io/dsbook/installing-r-rstudio.html
+
+## Case study: US Gun Murders
+
+Imagine you live in Europe and are offered a job in a US company with many locations across all states. It is a great job, but news with headlines such as **US Gun Homicide Rate Higher Than Other Developed Countries**[^r_basics-3] have you worried. Charts like this may concern you even more:
+
+[^r_basics-3]: http://abcnews.go.com/blogs/headlines/2012/12/us-gun-ownership-homicide-rate-higher-than-other-developed-countries/
 
 Or even worse, this version from [everytown.org](https://everytownresearch.org):
+
 ```{r murder-rate-example-2, echo=FALSE, out.width="70%"}
 # from https://everytownresearch.org/wp-content/uploads/2016/07/GunTrends_murders_per_1000.png
 # knitr::include_graphics(file.path(img_path,"GunTrends_murders_per_1000.png"))
@@ -434,8 +569,8 @@ dat |>
 
 <!--(Source  [everytown.org](https://everytownresearch.org))-->
 
-But then you remember that the US is a large and diverse country with 50 very different states as well as the District of Columbia (DC). 
- 
+But then you remember that the US is a large and diverse country with 50 very different states as well as the District of Columbia (DC).
+
 ```{r us-murders-by-state-map, message=FALSE, echo=FALSE}
 library(tidyverse)
 library(dslabs)
@@ -459,8 +594,7 @@ murders %>% mutate(murder_rate = total/population*10^5,
 rm(fifty_states)
 ```
 
-
-California, for example, has a larger population than Canada, and 20 US states have populations larger than that of Norway. In some respects, the variability across states in the US is akin to the variability across countries in Europe. Furthermore, although not included in the charts above, the murder rates in Lithuania, Ukraine, and Russia are higher than 4 per 100,000. So perhaps the news reports that worried you are too superficial. You have options of where to live and want to determine the safety of each particular state. We will gain some insights by examining data related to gun homicides in the US during 2010 using R. 
+California, for example, has a larger population than Canada, and 20 US states have populations larger than that of Norway. In some respects, the variability across states in the US is akin to the variability across countries in Europe. Furthermore, although not included in the charts above, the murder rates in Lithuania, Ukraine, and Russia are higher than 4 per 100,000. So perhaps the news reports that worried you are too superficial. You have options of where to live and want to determine the safety of each particular state. We will gain some insights by examining data related to gun homicides in the US during 2010 using R.
 
 Before we get started with our example, we need to cover logistics as well as some of the very basic building blocks that are required to gain more advanced R skills. Be aware that the usefulness of some of these building blocks may not be immediately obvious, but later in the book you will appreciate having mastered these skills.
 
@@ -474,8 +608,7 @@ Suppose a high school student asks us for help solving several quadratic equatio
 
 $$
 \frac{-b - \sqrt{b^2 - 4ac}}{2a}\,\, \mbox{ and } \frac{-b + \sqrt{b^2 - 4ac}}{2a}
-$$
-which of course change depending on the values of $a$, $b$, and $c$. One advantage of programming languages is that we can define variables and write expressions with these variables, similar to how we do so in math, but obtain a numeric solution. We will write out general code for the quadratic equation below, but if we are asked to solve $x^2 + x -1 = 0$, then we define:
+$$ which of course change depending on the values of $a$, $b$, and $c$. One advantage of programming languages is that we can define variables and write expressions with these variables, similar to how we do so in math, but obtain a numeric solution. We will write out general code for the quadratic equation below, but if we are asked to solve $x^2 + x -1 = 0$, then we define:
 
 ```{r}
 a <- 1
@@ -483,11 +616,11 @@ b <- 1
 c <- -1
 ```
 
-which stores the values for later use. We use `<-` to assign values to the variables. 
+which stores the values for later use. We use `<-` to assign values to the variables.
 
 We can also assign values using `=` instead of `<-`, but we recommend against using `=` to avoid confusion.
 
-Copy and paste the code above into your console to define the three variables. Note that R does not print anything when we make this assignment. This means the objects were defined successfully. Had you made a mistake, you would have received an error message. 
+Copy and paste the code above into your console to define the three variables. Note that R does not print anything when we make this assignment. This means the objects were defined successfully. Had you made a mistake, you would have received an error message.
 
 To see the value stored in a variable, we simply ask R to evaluate `a` and it shows the stored value:
 
@@ -501,42 +634,38 @@ A more explicit way to ask R to show us the value stored in `a` is using `print`
 print(a)
 ```
 
-We use the term _object_ to describe stuff that is stored in R. Variables are examples, but objects can also be more complicated entities such as functions, which are described later.
-
-
+We use the term *object* to describe stuff that is stored in R. Variables are examples, but objects can also be more complicated entities such as functions, which are described later.
 
 ### The workspace
 
-As we define objects in the console, we are actually changing the _workspace_. You can see all the variables saved in your workspace by typing:
+As we define objects in the console, we are actually changing the *workspace*. You can see all the variables saved in your workspace by typing:
 
 ```{r}
 ls()
 ```
 
-In RStudio, the _Environment_ tab shows the values:
+In RStudio, the *Environment* tab shows the values:
 
 ![](images/rstudio-environment.png)
 
+We should see `a`, `b`, and `c`. If you try to recover the value of a variable that is not in your workspace, you receive an error. For example, if you type `x` you will receive the following message: `Error: object 'x' not found`.
 
-We should see  `a`, `b`, and `c`. If you try to recover the value of a variable that is not in your workspace, you receive an error. For example, if you type `x` you will receive the following message: `Error: object 'x' not found`.
-
-Now since these values are saved in variables, to obtain a solution to our equation, we use the quadratic formula:  
+Now since these values are saved in variables, to obtain a solution to our equation, we use the quadratic formula:
 
 ```{r}
 (-b + sqrt(b^2 - 4*a*c) ) / ( 2*a )
 (-b - sqrt(b^2 - 4*a*c) ) / ( 2*a )
 ```
 
+### Functions
 
-### Functions 
-
-Once you define variables, the data analysis process can usually be described as a series of _functions_ applied to the data. R includes several predefined functions and most of the analysis pipelines we construct make extensive use of these. 
+Once you define variables, the data analysis process can usually be described as a series of *functions* applied to the data. R includes several predefined functions and most of the analysis pipelines we construct make extensive use of these.
 
 We already used the `install.packages`, `library`, and `ls` functions. We also used the function `sqrt` to solve the quadratic equation above. There are many more prebuilt functions and even more can be added through packages. These functions do not appear in the workspace because you did not define them, but they are available for immediate use.
 
 In general, we need to use parentheses to evaluate a function. If you type `ls`, the function is not evaluated and instead R shows you the code that defines the function. If you type `ls()` the function is evaluated and, as seen above, we see objects in the workspace.
 
-Unlike `ls`, most functions require one or more _arguments_. Below is an example of how we assign an object to the argument of the function `log`. Remember that we earlier defined `a` to be 1:
+Unlike `ls`, most functions require one or more *arguments*. Below is an example of how we assign an object to the argument of the function `log`. Remember that we earlier defined `a` to be 1:
 
 ```{r}
 log(8)
@@ -555,7 +684,7 @@ For most functions, we can also use this shorthand:
 ?log
 ```
 
-The help page will show you what arguments the function is expecting. For example, `log` needs `x` and `base` to run. However, some arguments are required and others are optional. You can determine which arguments are optional by noting in the help document that a default value is assigned with `=`. Defining these is optional. For example, the base of the function `log` defaults to `base = exp(1)` making `log` the natural log by default. 
+The help page will show you what arguments the function is expecting. For example, `log` needs `x` and `base` to run. However, some arguments are required and others are optional. You can determine which arguments are optional by noting in the help document that a default value is assigned with `=`. Defining these is optional. For example, the base of the function `log` defaults to `base = exp(1)` making `log` the natural log by default.
 
 If you want a quick look at the arguments without opening the help system, you can type:
 
@@ -570,6 +699,7 @@ log(8, base = 2)
 ```
 
 Note that we have not been specifying the argument `x` as such:
+
 ```{r}
 log(x = 8, base = 2)
 ```
@@ -600,19 +730,19 @@ You can see the arithmetic operators by typing:
 help("+") 
 ```
 
-or 
+or
 
 ```{r, eval = TRUE}
 ?"+"
 ```
 
-and the relational operators by typing: 
+and the relational operators by typing:
 
 ```{r, eval = TRUE}
 help(">") 
 ```
 
-or 
+or
 
 ```{r}
 ?">"
@@ -631,10 +761,11 @@ This shows you the object name for these datasets. These datasets are objects th
 ```{r, eval=FALSE}
 co2
 ```
+
 R will show you Mauna Loa atmospheric CO2 concentration data.
 
 Other prebuilt objects are mathematical quantities, such as the constant $\pi$ and $\infty$:
- 
+
 ```{r}
 pi
 Inf+1
@@ -642,8 +773,7 @@ Inf+1
 
 ### Variable names
 
-We have used the letters `a`, `b`, and `c` as variable names, but variable names can be almost anything. Some basic rules in R are that variable names have to start with a letter, can't contain spaces, and should not be variables that are predefined in R. For example, don't name one of your variables `install.packages` by typing something like 
-`install.packages <- 2`.
+We have used the letters `a`, `b`, and `c` as variable names, but variable names can be almost anything. Some basic rules in R are that variable names have to start with a letter, can't contain spaces, and should not be variables that are predefined in R. For example, don't name one of your variables `install.packages` by typing something like `install.packages <- 2`.
 
 A nice convention to follow is to use meaningful words that describe what is stored, use only lower case, and use underscores as a substitute for spaces. For the quadratic equations, we could use something like this:
 
@@ -652,15 +782,15 @@ solution_1 <- (-b + sqrt(b^2 - 4*a*c)) / (2*a)
 solution_2 <- (-b - sqrt(b^2 - 4*a*c)) / (2*a)
 ```
 
-For more advice, we highly recommend studying Hadley Wickham's style guide^[http://adv-r.had.co.nz/Style.html].
+For more advice, we highly recommend studying Hadley Wickham's style guide[^r_basics-4].
+
+[^r_basics-4]: http://adv-r.had.co.nz/Style.html
 
 ### Saving your workspace
 
-Values remain in the workspace until you end your session or erase them with the function `rm`. But workspaces also can be saved for later use. In fact, when you quit R, the program asks you if you want to save your workspace. If you do save it, the next time you start R, the program will restore the workspace. 
+Values remain in the workspace until you end your session or erase them with the function `rm`. But workspaces also can be saved for later use. In fact, when you quit R, the program asks you if you want to save your workspace. If you do save it, the next time you start R, the program will restore the workspace.
 
-We actually recommend against saving the workspace this way because, as you start working on different projects, it will become harder to keep track of what is saved. Instead, we recommend you assign the workspace a specific name. You can do this by using the function `save` or `save.image`. To load, use the function `load`. When saving a workspace, we recommend the suffix `rda` or `RData`. In RStudio, you can also do this by navigating to the _Session_ tab and choosing _Save Workspace as_. You can later load it using the _Load Workspace_ options in the same tab.
-You can read the help pages on  `save`, `save.image`, and  `load` to learn more. 
-
+We actually recommend against saving the workspace this way because, as you start working on different projects, it will become harder to keep track of what is saved. Instead, we recommend you assign the workspace a specific name. You can do this by using the function `save` or `save.image`. To load, use the function `load`. When saving a workspace, we recommend the suffix `rda` or `RData`. In RStudio, you can also do this by navigating to the *Session* tab and choosing *Save Workspace as*. You can later load it using the *Load Workspace* options in the same tab. You can read the help pages on `save`, `save.image`, and `load` to learn more.
 
 ### Motivating scripts
 
@@ -676,10 +806,9 @@ c <- -1
 
 By creating and saving a script with the code above, we would not need to retype everything each time and, instead, simply change the variable names. Try writing the script above into an editor and notice how easy it is to change the variables and receive an answer.
 
-### Commenting your code 
+### Commenting your code
 
 If a line of R code starts with the symbol `#`, it is not evaluated. We can use this to write reminders of why we wrote particular code. For example, in the script above we could add:
-
 
 ```{r, eval=FALSE}
 ## Code to compute solution to quadratic equation of the form ax^2 + bx + c
@@ -693,8 +822,7 @@ c <- -1
 (-b - sqrt(b^2 - 4*a*c)) / (2*a)
 ```
 
-
-## Exercises 
+## Exercises
 
 1\. What is the sum of the first 100 positive integers? The formula for the sum of integers $1$ through $n$ is $n(n+1)/2$. Define $n=100$ and then use R to compute the sum of $1$ through $100$ using the formula. What is the sum?
 
@@ -708,24 +836,22 @@ x <- seq(1, n)
 sum(x)
 ```
 
-Based on the result, what do you think the functions `seq` and `sum` do?  You can use `help`.
+Based on the result, what do you think the functions `seq` and `sum` do? You can use `help`.
 
-a. `sum` creates a list of numbers and `seq` adds them up.
-b. `seq` creates a list of numbers and `sum` adds them up.
-c. `seq` creates a random list and `sum` computes the sum of 1 through 1,000.
-d. `sum` always returns the same number.
+a.  `sum` creates a list of numbers and `seq` adds them up.
+b.  `seq` creates a list of numbers and `sum` adds them up.
+c.  `seq` creates a random list and `sum` computes the sum of 1 through 1,000.
+d.  `sum` always returns the same number.
 
-4\. In math and programming, we say that we evaluate a function when we replace the argument with a given number. So if we type `sqrt(4)`, we evaluate the `sqrt` function. In R, you can evaluate a function inside another function. The evaluations happen from the inside out.  Use one line of code to compute the log, in base 10, of the square root of 100.
-
+4\. In math and programming, we say that we evaluate a function when we replace the argument with a given number. So if we type `sqrt(4)`, we evaluate the `sqrt` function. In R, you can evaluate a function inside another function. The evaluations happen from the inside out. Use one line of code to compute the log, in base 10, of the square root of 100.
 
 5\. Which of the following will always return the numeric value stored in `x`? You can try out examples and use the help system if you want.
 
-a. `log(10^x)`
-b. `log10(x^10)`
-c. `log(exp(x))`
-d. `exp(log(x, base = 2))`
-    
-    
+a.  `log(10^x)`
+b.  `log10(x^10)`
+c.  `log(exp(x))`
+d.  `exp(log(x, base = 2))`
+
 ## Data types
 
 Variables in R can be of different types. For example, we need to distinguish numbers from character strings and tables from simple lists of numbers. The function `class` helps us determine what type of object we have:
@@ -739,9 +865,9 @@ To work efficiently in R, it is important to learn the different types of variab
 
 ### Data frames {#data-frames}
 
-Up to now, the variables we have defined are just one number. This is not very useful for storing data. The most common way of storing a dataset in R is in a _data frame_. Conceptually, we can think of a data frame as a table with rows representing observations and the different variables reported for each observation defining the columns. Data frames are particularly useful for datasets because we can combine different data types into one object. 
+Up to now, the variables we have defined are just one number. This is not very useful for storing data. The most common way of storing a dataset in R is in a *data frame*. Conceptually, we can think of a data frame as a table with rows representing observations and the different variables reported for each observation defining the columns. Data frames are particularly useful for datasets because we can combine different data types into one object.
 
-A large proportion of data analysis challenges start with data stored in a data frame. For example, we stored the data for our motivating example in a data frame. You can access this dataset by loading the __dslabs__ library and loading the `murders` dataset using the `data` function:
+A large proportion of data analysis challenges start with data stored in a data frame. For example, we stored the data for our motivating example in a data frame. You can access this dataset by loading the **dslabs** library and loading the `murders` dataset using the `data` function:
 
 ```{r}
 library(dslabs)
@@ -798,25 +924,26 @@ names(murders)
 
 It is important to know that the order of the entries in `murders$population` preserves the order of the rows in our data table. This will later permit us to manipulate one variable based on the results of another. For example, we will be able to order the state names by the number of murders.
 
-**Tip**: R comes with a very nice auto-complete functionality that saves us the trouble of typing out all the names. Try typing `murders$p` then hitting the _tab_ key on your keyboard. This functionality and many other useful auto-complete features are available when working in RStudio.
+**Tip**: R comes with a very nice auto-complete functionality that saves us the trouble of typing out all the names. Try typing `murders$p` then hitting the *tab* key on your keyboard. This functionality and many other useful auto-complete features are available when working in RStudio.
 
 ### Vectors: numerics, characters, and logical
 
-The object `murders$population` is not one number but several. We call these types of objects _vectors_. A single number is technically a vector of length 1, but in general we use the term vectors to refer to objects with several entries. The function `length` tells you how many entries are in the vector:
+The object `murders$population` is not one number but several. We call these types of objects *vectors*. A single number is technically a vector of length 1, but in general we use the term vectors to refer to objects with several entries. The function `length` tells you how many entries are in the vector:
 
 ```{r}
 pop <- murders$population
 length(pop)
 ```
 
-This particular vector is _numeric_ since population sizes are numbers:
+This particular vector is *numeric* since population sizes are numbers:
 
 ```{r}
 class(pop)
 ```
-In a numeric vector, every entry must be a number. 
 
-To store character strings, vectors can also be of class _character_. For example, the state names are characters:
+In a numeric vector, every entry must be a number.
+
+To store character strings, vectors can also be of class *character*. For example, the state names are characters:
 
 ```{r}
 class(murders$state)
@@ -824,7 +951,7 @@ class(murders$state)
 
 As with numeric vectors, all entries in a character vector need to be a character.
 
-Another important type of vectors are _logical vectors_. These must be either `TRUE` or `FALSE`. 
+Another important type of vectors are *logical vectors*. These must be either `TRUE` or `FALSE`.
 
 ```{r}
 z <- 3 == 2
@@ -832,9 +959,9 @@ z
 class(z)
 ```
 
-Here the `==` is a relational operator asking if 3 is equal to 2. In R, if you just use one `=`, you actually assign a variable, but if you use two `==` you test for equality. 
+Here the `==` is a relational operator asking if 3 is equal to 2. In R, if you just use one `=`, you actually assign a variable, but if you use two `==` you test for equality.
 
-You can see the other _relational operators_ by typing:
+You can see the other *relational operators* by typing:
 
 ```{r, eval=FALSE}
 ?Comparison
@@ -844,11 +971,9 @@ In future sections, you will see how useful relational operators can be.
 
 We discuss more important features of vectors after the next set of exercises.
 
-
 **Advanced**: Mathematically, the values in `pop` are integers and there is an integer class in R. However, by default, numbers are assigned class numeric even when they are round integers. For example, `class(1)` returns numeric. You can turn them into class integer with the `as.integer()` function or by adding an `L` like this: `1L`. Note the class by typing: `class(1L)`
 
-
-### Factors {#factors}
+### Factors
 
 In the `murders` dataset, we might expect the region to also be a character vector. However, it is not:
 
@@ -856,14 +981,13 @@ In the `murders` dataset, we might expect the region to also be a character vect
 class(murders$region)
 ```
 
-It is a _factor_. Factors are useful for storing categorical data. We can see that there are only 4 regions by using the `levels` function:
-
+It is a *factor*. Factors are useful for storing categorical data. We can see that there are only 4 regions by using the `levels` function:
 
 ```{r}
 levels(murders$region)
 ```
 
-In the background, R stores these _levels_ as integers and keeps a map to keep track of the labels. This is more memory efficient than storing all the characters. 
+In the background, R stores these *levels* as integers and keeps a map to keep track of the labels. This is more memory efficient than storing all the characters.
 
 Note that the levels have an order that is different from the order of appearance in the factor object. The default is for the levels to follow alphabetical order. However, often we want the levels to follow a different order. We will see several examples of this in the Data Visualization part of the book. The function `reorder` lets us change the order of the levels of a factor variable based on a summary computed on a numeric vector. We will demonstrate this with a simple example.
 
@@ -878,12 +1002,11 @@ levels(region)
 
 The new order is in agreement with the fact that the Northeast has the least murders and the South has the most.
 
-**Warning**: Factors can be a source of confusion since sometimes they behave like characters and sometimes they do not. As a result, confusing factors and characters are a common source of bugs.  
+**Warning**: Factors can be a source of confusion since sometimes they behave like characters and sometimes they do not. As a result, confusing factors and characters are a common source of bugs.
 
 ### Lists
 
-Data frames are a special case of _lists_. We will cover lists in more detail later, but know that they are useful because you can store any combination of different types. Below is an example of a list we created for you:
-
+Data frames are a special case of *lists*. We will cover lists in more detail later, but know that they are useful because you can store any combination of different types. Below is an example of a list we created for you:
 
 ```{r, echo=FALSE}
 record <- list(name = "John Doe",
@@ -928,15 +1051,13 @@ If a list does not have names, you cannot extract the elements with `$`, but you
 record2[[1]]
 ```
 
-
-We won't be using lists until later, but you might encounter one in your own exploration of R. For this reason, we show you some basics here. 
-
+We won't be using lists until later, but you might encounter one in your own exploration of R. For this reason, we show you some basics here.
 
 ### Matrices {#matrices}
 
-Matrices are another type of object that are common in R. Matrices are similar to data frames in that they are two-dimensional: they have rows and columns. However, like numeric, character and logical vectors, entries in matrices have to be all the same type. For this reason data frames are much more useful for storing data, since we can have characters, factors, and numbers in them. 
+Matrices are another type of object that are common in R. Matrices are similar to data frames in that they are two-dimensional: they have rows and columns. However, like numeric, character and logical vectors, entries in matrices have to be all the same type. For this reason data frames are much more useful for storing data, since we can have characters, factors, and numbers in them.
 
-Yet matrices have a major advantage over data frames: we can perform matrix algebra operations, a powerful type of mathematical technique. We do not describe these operations in this book, but much of what happens in the background when you perform a data analysis involves matrices. We cover matrices in more detail in Chapter \@ref(matrix-algebra) but describe them briefly here since some of the functions we will learn return matrices. 
+Yet matrices have a major advantage over data frames: we can perform matrix algebra operations, a powerful type of mathematical technique. We do not describe these operations in this book, but much of what happens in the background when you perform a data analysis involves matrices. We cover matrices in more detail in Chapter \@ref(matrix-algebra) but describe them briefly here since some of the functions we will learn return matrices.
 
 We can define a matrix using the `matrix` function. We need to specify the number of rows and columns.
 
@@ -993,8 +1114,7 @@ murders[25, 1]
 murders[2:3, ]
 ```
 
-
-## Exercises 
+## Exercises
 
 1\. Load the US murders dataset.
 
@@ -1004,19 +1124,19 @@ data(murders)
 ```
 
 Use the function `str` to examine the structure of the `murders` object. Which of the following best describes the variables represented in this data frame?
-    
-a. The 51 states.
-b. The murder rates for all 50 states and DC.
-c. The state name, the abbreviation of the state name, the state's region, and the state's population and total number of murders for 2010. 
-d. `str` shows no relevant information.
-    
+
+a.  The 51 states.
+b.  The murder rates for all 50 states and DC.
+c.  The state name, the abbreviation of the state name, the state's region, and the state's population and total number of murders for 2010.
+d.  `str` shows no relevant information.
+
 2\. What are the column names used by the data frame for these five variables?
-    
+
 3\. Use the accessor `$` to extract the state abbreviations and assign them to the object `a`. What is the class of this object?
 
 4\. Now use the square brackets to extract the state abbreviations and assign them to the object `b`. Use the `identical` function to determine if `a` and `b` are the same.
 
-5\. We saw that the `region` column stores a factor. You can corroborate this by typing: 
+5\. We saw that the `region` column stores a factor. You can corroborate this by typing:
 
 ```{r, eval=FALSE}
 class(murders$region)
@@ -1026,13 +1146,13 @@ With one line of code, use the function `levels` and `length` to determine the n
 
 6\. The function `table` takes a vector and returns the frequency of each element. You can quickly see how many states are in each region by applying this function. Use this function in one line of code to create a table of states per region.
 
-##  Vectors
+## Vectors
 
-In R, the most basic objects available to store data are _vectors_. As we have seen, complex datasets can usually be broken down into components that are vectors. For example, in a data frame, each column is a vector. Here we learn more about this important class.
+In R, the most basic objects available to store data are *vectors*. As we have seen, complex datasets can usually be broken down into components that are vectors. For example, in a data frame, each column is a vector. Here we learn more about this important class.
 
 ### Creating vectors
 
-We can create vectors using the function `c`, which stands for _concatenate_. We use `c` to concatenate entries in the following way:
+We can create vectors using the function `c`, which stands for *concatenate*. We use `c` to concatenate entries in the following way:
 
 ```{r}
 codes <- c(380, 124, 818)
@@ -1051,13 +1171,14 @@ In R you can also use single quotes:
 country <- c('italy', 'canada', 'egypt')
 ```
 
-But be careful not to confuse the single quote ' with the _back quote_ `. 
+But be careful not to confuse the single quote ' with the *back quote* \`.
 
 By now you should know that if you type:
 
 ```{r, eval=FALSE}
 country <- c(italy, canada, egypt)
 ```
+
 you receive an error because the variables `italy`, `canada`, and `egypt` are not defined. If we do not use the quotes, R looks for variables with those names and returns an error.
 
 ### Names
@@ -1070,10 +1191,13 @@ codes
 ```
 
 The object `codes` continues to be a numeric vector:
+
 ```{r}
 class(codes)
 ```
+
 but with names:
+
 ```{r}
 names(codes)
 ```
@@ -1131,11 +1255,13 @@ class(seq(1, 10, 0.5))
 ### Subsetting
 
 We use square brackets to access specific elements of a vector. For the vector `codes` we defined above, we can access the second element using:
+
 ```{r}
 codes[2]
 ```
 
 You can get more than one entry by using a multi-entry vector as an index:
+
 ```{r}
 codes[c(1,3)]
 ```
@@ -1155,7 +1281,7 @@ codes[c("egypt","italy")]
 
 ## Coercion
 
-In general, _coercion_ is an attempt by R to be flexible with data types. When an entry does not match the expected, some of the prebuilt R functions try to guess what was meant before throwing an error. This can also lead to confusion. Failing to understand _coercion_ can drive programmers crazy when attempting to code in R since it behaves quite differently from most other languages in this regard. Let's learn about it with some examples.
+In general, *coercion* is an attempt by R to be flexible with data types. When an entry does not match the expected, some of the prebuilt R functions try to guess what was meant before throwing an error. This can also lead to confusion. Failing to understand *coercion* can drive programmers crazy when attempting to code in R since it behaves quite differently from most other languages in this regard. Let's learn about it with some examples.
 
 We said that vectors must be all of the same type. So if we try to combine, say, numbers and characters, you might expect an error:
 
@@ -1170,7 +1296,7 @@ x
 class(x)
 ```
 
-R _coerced_ the data into characters. It guessed that because you put a character string in the vector, you meant the 1 and 3 to actually be character strings `"1"` and "`3`". The fact that not even a warning is issued is an example of how coercion can cause many unnoticed errors in R. 
+R *coerced* the data into characters. It guessed that because you put a character string in the vector, you meant the 1 and 3 to actually be character strings `"1"` and "`3`". The fact that not even a warning is issued is an example of how coercion can cause many unnoticed errors in R.
 
 R also offers functions to change from one type to another. For example, you can turn numbers into characters with:
 
@@ -1185,12 +1311,12 @@ You can turn it back with `as.numeric`:
 ```{r}
 as.numeric(y)
 ```
- 
-This function is actually quite useful since datasets that include numbers as character strings are common. 
+
+This function is actually quite useful since datasets that include numbers as character strings are common.
 
 ### Not availables (NA)
 
-When a function tries to coerce one type to another and encounters an impossible case, it usually gives us a warning and turns the entry into a special value called an `NA` for "not available".  For example:
+When a function tries to coerce one type to another and encounters an impossible case, it usually gives us a warning and turns the entry into a special value called an `NA` for "not available". For example:
 
 ```{r}
 x <- c("1", "b", "3")
@@ -1207,31 +1333,24 @@ As a data scientist you will encounter the `NA`s often as they are generally use
 
 2\. Now create a vector with the city names and call the object `city`.
 
-
 3\. Use the `names` function and the objects defined in the previous exercises to associate the temperature data with its corresponding city.
 
- 
 4\. Use the `[` and `:` operators to access the temperature of the first three cities on the list.
-    
- 
-5\. Use the `[` operator to access the temperature of Paris and San Juan. 
-   
-6\. Use the `:` operator to create a sequence of numbers $12,13,14,\dots,73$. 
-   
+
+5\. Use the `[` operator to access the temperature of Paris and San Juan.
+
+6\. Use the `:` operator to create a sequence of numbers $12,13,14,\dots,73$.
+
 7\. Create a vector containing all the positive odd numbers smaller than 100.
 
 8\. Create a vector of numbers that starts at 6, does not pass 55, and adds numbers in increments of 4/7: 6, 6 + 4/7, 6 + 8/7, and so on. How many numbers does the list have? Hint: use `seq` and `length`.
- 
+
 9\. What is the class of the following object `a <- seq(1, 10, 0.5)`?
-
-
 
 10\. What is the class of the following object `a <- seq(1, 10)`?
 
-   
 11\. The class of `class(a<-1)` is numeric, not integer. R defaults to numeric and to force an integer, you need to add the letter `L`. Confirm that the class of `1L` is integer.
 
-  
 12\. Define the following vector:
 
 ```{r}
@@ -1239,15 +1358,12 @@ x <- c("1", "3", "5")
 ```
 
 and coerce it to get integers.
-  
-  
-
 
 ## Sorting
 
-Now that we have mastered some basic R knowledge, let's try to gain some insights into the safety of different states in the context of gun murders. 
+Now that we have mastered some basic R knowledge, let's try to gain some insights into the safety of different states in the context of gun murders.
 
-### `sort` 
+### `sort`
 
 Say we want to rank the states from least to most gun murders. The function `sort` sorts a vector in increasing order. We can therefore see the largest number of gun murders by typing:
 
@@ -1276,12 +1392,13 @@ x[index]
 ```
 
 This is the same output as that returned by `sort(x)`. If we look at this index, we see why it works:
+
 ```{r}
 x
 order(x)
 ```
 
-The second entry of `x` is the smallest, so `order(x)` starts with `2`. The next smallest is the third entry, so the second entry is `3` and so on. 
+The second entry of `x` is the smallest, so `order(x)` starts with `2`. The next smallest is the third entry, so the second entry is `3` and so on.
 
 How does this help us order the states by murders? First, remember that the entries of vectors you access with `$` follow the same order as the rows in the table. For example, these two vectors containing state names and abbreviations, respectively, are matched by their order:
 
@@ -1320,8 +1437,7 @@ Does this mean California is the most dangerous state? In an upcoming section, w
 
 ### `rank`
 
-Although not as frequently used as `order` and `sort`, the function `rank` is also related to order and can be useful.
-For any given vector it returns a vector with the rank of the first entry, second entry, etc., of the input vector. Here is a simple example:
+Although not as frequently used as `order` and `sort`, the function `rank` is also related to order and can be useful. For any given vector it returns a vector with the rank of the first entry, second entry, etc., of the input vector. Here is a simple example:
 
 ```{r}
 x <- c(31, 4, 15, 92, 65)
@@ -1341,18 +1457,17 @@ if(knitr::is_html_output()){
 }
 ```
 
-
 ### Beware of recycling
 
-Another common source of unnoticed errors in R is the use of _recycling_. We saw that vectors are added elementwise. So if the vectors don't match in length, it is natural to assume that we should get an error. But we don't. Notice what happens:
+Another common source of unnoticed errors in R is the use of *recycling*. We saw that vectors are added elementwise. So if the vectors don't match in length, it is natural to assume that we should get an error. But we don't. Notice what happens:
 
 ```{r, warning=TRUE}
 x <- c(1,2,3)
 y <- c(10, 20, 30, 40, 50, 60, 70)
 x+y
 ```
-We do get a warning, but no error. For the output, R has recycled the numbers in `x`. Notice the last digit of numbers in the output. 
- 
+
+We do get a warning, but no error. For the output, R has recycled the numbers in `x`. Notice the last digit of numbers in the output.
 
 ## Exercises
 
@@ -1366,13 +1481,12 @@ data("murders")
 1\. Use the `$` operator to access the population size data and store it as the object `pop`. Then use the `sort` function to redefine `pop` so that it is sorted. Finally, use the `[` operator to report the smallest population size.
 
 2\. Now instead of the smallest population size, find the index of the entry with the smallest population size. Hint: use `order` instead of `sort`.
-  
+
 3\. We can actually perform the same operation as in the previous exercise using the function `which.min`. Write one line of code that does this.
 
 4\. Now we know how small the smallest state is and we know which row represents it. Which state is it? Define a variable `states` to be the state names from the `murders` data frame. Report the name of the state with the smallest population.
 
 5\. You can create a data frame using the `data.frame` function. Here is a quick example:
-
 
 ```{r}
 temp <- c(35, 88, 42, 84, 81, 30)
@@ -1386,24 +1500,21 @@ Use the `rank` function to determine the population rank of each state from smal
 6\. Repeat the previous exercise, but this time order `my_df` so that the states are ordered from least populous to most populous. Hint: create an object `ind` that stores the indexes needed to order the population values. Then use the bracket operator `[` to re-order each column in the data frame.
 
 7\. The `na_example` vector represents a series of counts. You can quickly examine the object using:
-    
+
 ```{r}
 data("na_example")  
 str(na_example)
 ```
 
 However, when we compute the average with the function `mean`, we obtain an `NA`:
-    
+
 ```{r}
 mean(na_example)
 ```
-    
-The `is.na` function returns a logical vector that tells us which entries are `NA`. Assign this logical vector to an object called `ind` and determine how many `NA`s does `na_example` have.
-    
-   
-8\. Now compute the average again, but only for the entries that are not `NA`. Hint: remember the `!` operator.
 
- 
+The `is.na` function returns a logical vector that tells us which entries are `NA`. Assign this logical vector to an object called `ind` and determine how many `NA`s does `na_example` have.
+
+8\. Now compute the average again, but only for the entries that are not `NA`. Hint: remember the `!` operator.
 
 ## Vector arithmetics
 
@@ -1419,23 +1530,23 @@ with over `r floor(max(murders$population)/10^6)` million inhabitants. It is the
 
 ### Rescaling a vector
 
-In R, arithmetic operations on vectors occur _element-wise_. For a quick example, suppose we have height in inches:
+In R, arithmetic operations on vectors occur *element-wise*. For a quick example, suppose we have height in inches:
 
 ```{r}
 inches <- c(69, 62, 66, 70, 70, 73, 67, 73, 67, 70)
 ```
+
 and want to convert to centimeters. Notice what happens when we multiply `inches` by 2.54:
 
 ```{r}
 inches * 2.54
 ```
- 
-In the line above, we multiplied each element by 2.54.  Similarly, if for each entry we want to compute how many inches taller or shorter than 69 inches, the average height for males, we can subtract it from every entry like this:
+
+In the line above, we multiplied each element by 2.54. Similarly, if for each entry we want to compute how many inches taller or shorter than 69 inches, the average height for males, we can subtract it from every entry like this:
 
 ```{r}
 inches - 69
 ```
-
 
 ### Two vectors
 
@@ -1478,8 +1589,7 @@ Once we do this, we notice that California is no longer near the top of the list
 murders$abb[order(murder_rate)]
 ```
 
-
-## Exercises 
+## Exercises
 
 1\. Previously we created this data frame:
 
@@ -1488,10 +1598,10 @@ temp <- c(35, 88, 42, 84, 81, 30)
 city <- c("Beijing", "Lagos", "Paris", "Rio de Janeiro", 
           "San Juan", "Toronto")
 city_temps <- data.frame(name = city, temperature = temp)
-```     
+```
 
 Remake the data frame using the code above, but add a line that converts the temperature from Fahrenheit to Celsius. The conversion is $C = \frac{5}{9} \times (F - 32)$.
-    
+
 2\. What is the following sum $1+1/2^2 + 1/3^2 + \dots 1/100^2$? Hint: thanks to Euler, we know it should be close to $\pi^2/6$.
 
 3\. Compute the per 100,000 murder rate for each state and store it in the object `murder_rate`. Then compute the average murder rate for the US using the function `mean`. What is the average?
@@ -1531,16 +1641,15 @@ Note that we get back a logical vector with `TRUE` for each entry smaller than o
 murders$state[ind]
 ```
 
-In order to count how many are TRUE, the function `sum` returns the sum of the entries of a vector and logical vectors get _coerced_ to numeric with `TRUE` coded as 1 and `FALSE` as 0. Thus we can count the states using:
+In order to count how many are TRUE, the function `sum` returns the sum of the entries of a vector and logical vectors get *coerced* to numeric with `TRUE` coded as 1 and `FALSE` as 0. Thus we can count the states using:
 
 ```{r}
 sum(ind)
 ```
 
-
 ### Logical operators
 
-Suppose we like the mountains and we want to move to a safe state in the western region of the country. We want the murder rate to be at most 1. In this case, we want two different things to be true. Here we can use the logical operator _and_, which in R is represented with `&`. This operation results in `TRUE` only when both logicals are `TRUE`. To see this, consider this example:
+Suppose we like the mountains and we want to move to a safe state in the western region of the country. We want the murder rate to be at most 1. In this case, we want two different things to be true. Here we can use the logical operator *and*, which in R is represented with `&`. This operation results in `TRUE` only when both logicals are `TRUE`. To see this, consider this example:
 
 ```{r}
 TRUE & TRUE
@@ -1555,7 +1664,7 @@ west <- murders$region == "West"
 safe <- murder_rate <= 1
 ```
 
-and we can use the `&`  to get a vector of logicals that tells us which states satisfy both conditions:
+and we can use the `&` to get a vector of logicals that tells us which states satisfy both conditions:
 
 ```{r}
 ind <- safe & west
@@ -1570,7 +1679,6 @@ Suppose we want to look up California's murder rate. For this type of operation,
 ind <- which(murders$state == "California")
 murder_rate[ind]
 ```
-
 
 ### `match`
 
@@ -1589,7 +1697,6 @@ murder_rate[ind]
 
 ### `%in%`
 
-
 If rather than an index we want a logical that tells us whether or not each element of a first vector is in a second, we can use the function `%in%`. Let's imagine you are not sure if Boston, Dakota, and Washington are states. You can find out like this:
 
 ```{r}
@@ -1598,16 +1705,17 @@ c("Boston", "Dakota", "Washington") %in% murders$state
 
 Note that we will be using `%in%` often throughout the book.
 
-**Advanced**: There is a connection between `match` and `%in%` through `which`. To see this, notice that the following two lines produce the same index (although in different order): 
+**Advanced**: There is a connection between `match` and `%in%` through `which`. To see this, notice that the following two lines produce the same index (although in different order):
 
 ```{r}
 match(c("New York", "Florida", "Texas"), murders$state)
 which(murders$state%in%c("New York", "Florida", "Texas"))
 ```
 
-## Exercises 
+## Exercises
 
 Start by loading the library and data.
+
 ```{r}
 library(dslabs)
 data(murders)
@@ -1621,7 +1729,7 @@ data(murders)
 
 4\. Now extend the code from exercises 2 and 3 to report the states in the Northeast with murder rates lower than 1. Hint: use the previously defined logical vector `low` and the logical operator `&`.
 
-5\. In a previous exercise we computed the murder rate for each state and the average of these numbers. How many states are below the average? 
+5\. In a previous exercise we computed the murder rate for each state and the average of these numbers. How many states are below the average?
 
 6\. Use the match function to identify the states with abbreviations AK, MI, and IA. Hint: start by defining an index of the entries of `murders$abb` that match the three abbreviations, then use the `[` operator to extract the states.
 
@@ -1642,7 +1750,6 @@ x <- murders$population / 10^6
 y <- murders$total
 plot(x, y)
 ```
-
 
 ```{r first-plot, out.width="60%", echo=FALSE}
 rafalib::mypar()
@@ -1682,7 +1789,7 @@ murders$state[which.max(x)]
 
 ### `boxplot`
 
-Boxplots will also be described in the Data Visualization part of the book.  They provide a more terse summary than histograms, but they are easier to stack with other boxplots. For example, here we can use them to compare the different regions:
+Boxplots will also be described in the Data Visualization part of the book. They provide a more terse summary than histograms, but they are easier to stack with other boxplots. For example, here we can use them to compare the different regions:
 
 ```{r eval=FALSE}
 murders$rate <- with(murders, total / population * 100000)
@@ -1712,10 +1819,9 @@ x <- matrix(1:120, 12, 10)
 image(x)
 ```
 
- 
-## Exercises 
+## Exercises
 
-1\. We made a plot of total murders versus population and noted a strong relationship. Not surprisingly, states with larger populations had more murders. 
+1\. We made a plot of total murders versus population and noted a strong relationship. Not surprisingly, states with larger populations had more murders.
 
 ```{r, eval = FALSE}
 library(dslabs)
@@ -1726,10 +1832,7 @@ plot(population_in_millions, total_gun_murders)
 ```
 
 Keep in mind that many states have populations below 5 million and are bunched up. We may gain further insights from making this plot in the log scale. Transform the variables using the `log10` transformation and then plot them.
-    
-    
+
 2\. Create a histogram of the state populations.
 
-    
 3\. Generate boxplots of the state populations by region.
-   
